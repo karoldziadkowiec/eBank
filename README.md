@@ -2,6 +2,7 @@
 
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
+To-do list:
 - registration: choice between admin and customer, customer data -> contact details (address, correspondence address, telephone number, e-mail) -> login details, sys. where you forget your password, acceptance of the regulations
 - login: choice between admin and client, login, password,
 - Home: date top right, two tabs, + and - next to it. under the history of the last 5 transfers, next to this month's expenses
