@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace eBank
     /// </summary>
     public partial class MainWindow : Window
     {
+        string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
         public MainWindow()
         {
             InitializeComponent();
@@ -32,9 +34,19 @@ namespace eBank
 
         private void goToHomePage(object sender, RoutedEventArgs e)
         {
-            HomePage homePage = new HomePage();
+            string login = login_TextBox.Text;
+            string password = password_PasswordBox.Password;
+
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Complete the empty fields.", "eBank");
+                return;
+            }
+
+            MainWindow homePage = new MainWindow();
             homePage.Show();
             this.Hide();
+
         }
 
         private void goToRegisterPage(object sender, RoutedEventArgs e)

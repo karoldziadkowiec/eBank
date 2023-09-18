@@ -19,8 +19,10 @@ namespace eBank
     /// </summary>
     public partial class HomePage : Window
     {
-        public HomePage()
+        Client client = null;
+        public HomePage(Client _client)
         {
+            client = _client;
             InitializeComponent();
         }
     }
