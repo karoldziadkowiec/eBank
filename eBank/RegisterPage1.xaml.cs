@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace eBank
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy RegisterPage1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RegisterPage1 : Window
     {
-        public MainWindow()
+        public RegisterPage1()
         {
             InitializeComponent();
 
@@ -30,25 +29,19 @@ namespace eBank
             accountType_ComboBox.SelectedItem = "Client";
         }
 
-        private void goToHomePage(object sender, RoutedEventArgs e)
+        private void goToNextRegisterPage(object sender, RoutedEventArgs e)
         {
-            HomePage homePage = new HomePage();
-            homePage.Show();
+            RegisterPage2 registerPage2 = new RegisterPage2();
+            registerPage2.Show();
             this.Hide();
         }
 
-        private void goToRegisterPage(object sender, RoutedEventArgs e)
+        private void goToLoginPage(object sender, RoutedEventArgs e)
         {
-            RegisterPage1 registerPage1 = new RegisterPage1();
-            registerPage1.Show();
+            MainWindow loginPage = new MainWindow();
+            loginPage.Show();
             this.Hide();
         }
 
-        private void goToPasswordReminderPage(object sender, RoutedEventArgs e)
-        {
-            PasswordReminderPage passwordReminderPage = new PasswordReminderPage();
-            passwordReminderPage.Show();
-            this.Hide();
-        }
     }
 }

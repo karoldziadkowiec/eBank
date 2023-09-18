@@ -1,0 +1,77 @@
+﻿<Window x:Class="eBank.RegisterPage1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eBank"
+        mc:Ignorable="d"
+        Title="eBank" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icon.png" >
+    <Grid>
+        <Canvas Background="#FFEDEDED">
+            <Rectangle x:Name="leftGreen_Rectangle" Height="484" Stroke="Black" Width="280
+               " Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="eBank_Label" Content="eBank" Canvas.Left="48" Canvas.Top="226" Foreground="White" Height="86" Width="185" VerticalAlignment="Top" FontFamily="Eras ITC" FontSize="60" HorizontalAlignment="Center"/>
+            <Image x:Name="logo_Image" Height="100" Canvas.Left="90" Canvas.Top="137" Width="100" Source="/icon.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="name_TextBox" Canvas.Left="328" TextWrapping="Wrap" Canvas.Top="173" Width="200" Height="35" VerticalAlignment="Center" FontFamily="Calibri Light" FontSize="25" TabIndex="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" MaxLines="2" MaxLength="20"/>
+            <Button x:Name="next_Button" Content="Next" Canvas.Left="567" Canvas.Top="374" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="178" Foreground="White" BorderBrush="#FF002301" Background="#FF002301" FontFamily="Calibri" FontSize="25" TabIndex="10" Click="goToNextRegisterPage"/>
+            <Button x:Name="close_Button" Content="Close" Canvas.Left="567" Canvas.Top="414" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="177" Foreground="White" Background="#FF002301" BorderBrush="#FF002301" FontFamily="Calibri" FontSize="25" TabIndex="11" Click="goToLoginPage"/>
+            <Label x:Name="birthday_Label" Content="Birthday" Canvas.Left="323" Canvas.Top="284" RenderTransformOrigin="0.108,0.518" HorizontalAlignment="Center" VerticalAlignment="Top" Width="116" FontFamily="Calibri" FontSize="22" Height="34"/>
+            <Label x:Name="name_Label" Content="Name" Canvas.Left="323" Canvas.Top="131" HorizontalAlignment="Left" VerticalAlignment="Center" Height="35" Width="76" FontFamily="Calibri" FontSize="22"/>
+            <Label x:Name="step1_Label" Content="Step 1" Canvas.Left="323" Canvas.Top="20" FontSize="25" FontFamily="Calibri" HorizontalAlignment="Left" VerticalAlignment="Center" Height="37" Width="71" Foreground="#FF002301"/>
+            <Rectangle Height="2
+               " Canvas.Left="328" Stroke="#FF002301" Canvas.Top="166" Width="200" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="2                       " Canvas.Left="328" Stroke="#FF002301" Canvas.Top="318" Width="200" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <ComboBox x:Name="accountType_ComboBox" Canvas.Left="328" Canvas.Top="99" Width="134" BorderBrush="White" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" TabIndex="1" FontFamily="Calibri" FontSize="22">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <Rectangle Height="2" Canvas.Left="327" Stroke="#FF002301" Canvas.Top="56" Width="240" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="accountType_Label" Content="Account type" Canvas.Left="323" Canvas.Top="58" FontSize="22" FontFamily="Calibri" Height="34" Width="140" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.477,0.57"/>
+            <Rectangle Height="2" Canvas.Left="394" Stroke="#FF002301" Canvas.Top="40" Width="19" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90.0
+                                         "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Height="2" Canvas.Left="327" Stroke="#FF002301" Canvas.Top="56" Width="67" Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="step2_Label" Content="Step 2" Canvas.Left="411" Canvas.Top="20" FontSize="25" FontFamily="Calibri" Height="38" Width="71" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF909090"/>
+            <Label x:Name="step3_Label" Content="Step 3" Canvas.Left="498" Canvas.Top="20" FontSize="25" FontFamily="Calibri" Height="38" Width="74" Foreground="#FF909090" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle Height="2" Canvas.Left="481" Stroke="#FF002301" Canvas.Top="40" Width="19" Fill="#FF002301" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90.0                                          "/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Stroke="#FF002301" Fill="#FF002301" Height="2" Canvas.Left="328" Canvas.Top="92" Width="134" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label x:Name="peselNumber_Label" Content="PESEL number" Canvas.Left="323" Canvas.Top="208" Height="35" Width="141" FontFamily="Calibri" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="2                " Canvas.Left="328" Stroke="#FF002301" Canvas.Top="242" Width="200" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="peselNumber_TextBox" Canvas.Left="328" TextWrapping="Wrap" Canvas.Top="249" Width="200" Height="35" FontFamily="Calibri Light" FontSize="25" TabIndex="4" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" MaxLines="4" MaxLength="11"/>
+            <DatePicker x:Name="birthday_DatePicker" Canvas.Left="329" Canvas.Top="325" HorizontalAlignment="Left" VerticalAlignment="Center" Width="199" FirstDayOfWeek="Monday" FontFamily="Calibri" FontSize="22" TabIndex="6"/>
+            <TextBox x:Name="surname_TextBox" Canvas.Left="542" TextWrapping="Wrap" Canvas.Top="173" Width="200
+                     " Height="35" FontFamily="Calibri Light" FontSize="25" TabIndex="3" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" MaxLines="3" MaxLength="30"/>
+            <Label x:Name="surname_Label" Content="Surname" Canvas.Left="537" Canvas.Top="131" Height="35" Width="105" FontFamily="Calibri" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="2                " Canvas.Left="542" Stroke="#FF002301" Canvas.Top="166" Width="200" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="idCardNumber_Label" Content="ID card number" Canvas.Left="537" Canvas.Top="208" Height="35" Width="171" FontFamily="Calibri" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="2                " Canvas.Left="542" Stroke="#FF002301" Canvas.Top="242" Width="200" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="idCardNumber_TextBox" Canvas.Left="542" TextWrapping="Wrap" Canvas.Top="249" Width="200" Height="35" FontFamily="Calibri Light" FontSize="25" TabIndex="5" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MaxLines="5" MaxLength="9"/>
+            <Label x:Name="gender_Label" Content="Gender" Canvas.Left="537" Canvas.Top="286" RenderTransformOrigin="0.108,0.518" Width="116" FontFamily="Calibri" FontSize="22" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle Height="2                       " Canvas.Left="542" Stroke="#FF002301" Canvas.Top="318" Width="200" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <RadioButton x:Name="man_RadioButton" Content="Man" Canvas.Left="542" Canvas.Top="332" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Calibri" Width="53" Height="21" FontSize="15" TabIndex="7"/>
+            <RadioButton x:Name="woman_RadioButton" Content="Woman" Canvas.Left="600" Canvas.Top="332" FontFamily="Calibri" Width="72" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" RenderTransformOrigin="0.507,0.864" Height="25" TabIndex="8"/>
+            <RadioButton x:Name="other_RadioButton" Content="Other" Canvas.Left="677" Canvas.Top="332" FontFamily="Calibri" Width="73" FontSize="15" RenderTransformOrigin="0.507,0.864" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" TabIndex="9"/>
+        </Canvas>
+    </Grid>
+</Window>

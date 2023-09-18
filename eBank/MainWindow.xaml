@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:eBank"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="eBank" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icon.png" >
     <Grid>
-        
+        <Canvas Background="#FFEDEDED">
+            <Rectangle x:Name="leftGreen_Rectangle" Height="484" Stroke="Black" Width="280
+                       " Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="eBank_Label" Content="eBank" Canvas.Left="48" Canvas.Top="226" Foreground="White" Height="86" Width="185" VerticalAlignment="Top" FontFamily="Eras ITC" FontSize="60" HorizontalAlignment="Center"/>
+            <Image x:Name="logo_Image" Height="100" Canvas.Left="90" Canvas.Top="137" Width="100" Source="/icon.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="login_TextBox" Canvas.Left="326" TextWrapping="Wrap" Canvas.Top="147" Width="417" Height="44" VerticalAlignment="Center" FontFamily="Calibri Light" FontSize="25" TabIndex="1" VerticalContentAlignment="Center"/>
+            <Button x:Name="login_Button" Content="Login" Canvas.Left="328" Canvas.Top="291" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="416" Foreground="White" BorderBrush="#FF002301" Background="#FF002301" FontFamily="Calibri" FontSize="25" TabIndex="4" Click="goToHomePage"/>
+            <Button x:Name="register_Button" Content="Register" Canvas.Left="328" Canvas.Top="346" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="415" Foreground="White" Background="#FF002301" BorderBrush="#FF002301" FontFamily="Calibri" FontSize="25" TabIndex="5" Click="goToRegisterPage"/>
+            <Label x:Name="password_Label" Content="Password" Canvas.Left="323" Canvas.Top="191" RenderTransformOrigin="0.108,0.518" HorizontalAlignment="Center" VerticalAlignment="Top" Width="116" FontFamily="Calibri" FontSize="25" Height="38"/>
+            <Label x:Name="login_Label" Content="Login" Canvas.Left="323" Canvas.Top="101" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="109" FontFamily="Calibri" FontSize="25"/>
+            <Label x:Name="accountType_Label" Content="Account type" Canvas.Left="323" Canvas.Top="18" FontSize="25" FontFamily="Calibri" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="156"/>
+            <Rectangle Height="2
+                       " Canvas.Left="327" Stroke="#FF002301" Canvas.Top="140" Width="416" Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle Height="2                       " Canvas.Left="327" Stroke="#FF002301" Canvas.Top="229" Width="416" Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <ComboBox x:Name="accountType_ComboBox" Canvas.Left="326" Canvas.Top="63" Width="135" BorderBrush="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" TabIndex="3" FontFamily="Calibri" FontSize="22">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <Rectangle Height="2" Canvas.Left="327" Stroke="#FF002301" Canvas.Top="56" Width="134" Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <PasswordBox x:Name="password_PasswordBox" Canvas.Left="327" Canvas.Top="236" Width="416" HorizontalAlignment="Left" Height="44" VerticalAlignment="Center" FontFamily="Calibri Light" FontSize="25" VerticalContentAlignment="Center" TabIndex="2"/>
+            <Button x:Name="passwordReminder_Button" Content="I forgot my password." Canvas.Left="462" Canvas.Top="401" Height="26" Width="148" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFEDEDED" BorderBrush="#FFEDEDED" FontFamily="Calibri" FontSize="15" FontStyle="Italic" TabIndex="6" Click="goToPasswordReminderPage"/>
+        </Canvas>
+
     </Grid>
 </Window>
