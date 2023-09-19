@@ -3,7 +3,6 @@
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 To-do list:
-- login: logging in, password reminder
 - Home: date top right, two tabs, + and - next to it. under the history of the last 5 transfers, next to this month's expenses
 - History: displaying a table with transfers, printing transaction history in PDF, filtering if necessary
 - Transfers: deposit, withdrawal, regular transfer, own transfer, BLIK, phone top-up, currency transfer, tax transfer
@@ -11,6 +10,7 @@ To-do list:
 - Settings: blocking, limits,
 - Profile: profile details, my finances, edit profile, delete profile
 - Log out: question box
+- ADMIN PANEL
 
 
 Databases:
