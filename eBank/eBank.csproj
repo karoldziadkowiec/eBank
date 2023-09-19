@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminHomePage.xaml.cs">
+      <DependentUpon>AdminHomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="PasswordReminderPage.xaml.cs">
       <DependentUpon>PasswordReminderPage.xaml</DependentUpon>
@@ -68,6 +71,10 @@
     <Compile Include="RegisterPage3.xaml.cs">
       <DependentUpon>RegisterPage3.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

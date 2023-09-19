@@ -35,8 +35,15 @@ namespace eBank
 
         private void goToHomePage(object sender, RoutedEventArgs e)
         {
+            string accountType = accountType_ComboBox.Text;
             string login = login_TextBox.Text;
             string password = password_PasswordBox.Password;
+
+            if (string.IsNullOrEmpty(accountType))
+            {
+                MessageBox.Show("Select account type.", "eBank");
+                return;
+            }
 
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
             {
@@ -52,11 +59,10 @@ namespace eBank
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM clients WHERE login = @login AND password = @password";
-
+                    string query = "SELECT * FROM clients WHERE accountType = @accountType AND login = @login AND password = @password";
                     command.CommandText = query;
                     command.Connection = connection;
-
+                    command.Parameters.AddWithValue("@accountType", accountType);
                     command.Parameters.AddWithValue("@login", login);
                     command.Parameters.AddWithValue("@password", password);
 
@@ -67,7 +73,7 @@ namespace eBank
                             while (reader.Read())
                             {
                                 int id = reader.GetInt32(0);
-                                string accountType = reader.GetString(1);
+                                accountType = reader.GetString(1);
                                 string peselNumber = reader.GetString(2);
                                 string name = reader.GetString(3);
                                 string surname = reader.GetString(4);
@@ -103,10 +109,17 @@ namespace eBank
                                     placeOfBirth, residentialAddress, correspondenceAddress, email, phoneNumber, 
                                     passwordReminder, withdrawalLimit, transactionLimit, creationDateString, 
                                     cardNumber, cardActivity, cardColor, ccardStartDateString, cardEndDateString);
-                                HomePage homePage = new HomePage(client);
 
-                                homePage.Show();
-                                this.Hide();
+                                if (client.accountType == "Client") {
+                                    HomePage homePage = new HomePage(client);
+                                    homePage.Show();
+                                    this.Hide();
+                                }
+                                else {
+                                    AdminHomePage adminHomePage = new AdminHomePage(client);
+                                    adminHomePage.Show();
+                                    this.Hide();
+                                }
                             }
                         }
                         else

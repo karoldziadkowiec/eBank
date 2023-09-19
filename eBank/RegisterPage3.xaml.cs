@@ -120,7 +120,7 @@ namespace eBank
             {
                 if (ex.Number == 2627) // Error number for duplicate (unique constraint violation)
                 {
-                    MessageBox.Show("Registration error. The given login already has an account.", "eBank");
+                    MessageBox.Show("The given client already has an account. Check your data again: PESEL number, ID card number, login.", "eBank");
                 }
                 else
                 {

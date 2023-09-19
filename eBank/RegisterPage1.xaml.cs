@@ -58,10 +58,10 @@ namespace eBank
 
             string creationDate = DateTime.Today.ToString("yyyy-MM-dd");
             int activity = 1;
-            float checkingAccount = 0.0f;
-            float savingsAccount = 0.0f;
-            float withdrawalLimit = 1000.0f;
-            float transactionLimit = 1000.0f;
+            double checkingAccount = 0.0d;
+            double savingsAccount = 0.0d;
+            double withdrawalLimit = 1000.0d;
+            double transactionLimit = 1000.0d;
             int cardActivity = 0;
             string cardNumber = "";
             string cardColor = "";
