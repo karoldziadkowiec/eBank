@@ -3,8 +3,7 @@
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 To-do list:
-- registration: choice between admin and customer, customer data -> contact details (address, correspondence address, telephone number, e-mail) -> login details, sys. where you forget your password, acceptance of the regulations
-- login: choice between admin and client, login, password,
+- login: logging in, password reminder
 - Home: date top right, two tabs, + and - next to it. under the history of the last 5 transfers, next to this month's expenses
 - History: displaying a table with transfers, printing transaction history in PDF, filtering if necessary
 - Transfers: deposit, withdrawal, regular transfer, own transfer, BLIK, phone top-up, currency transfer, tax transfer
@@ -14,12 +13,9 @@ To-do list:
 - Log out: question box
 
 
-Bazy danych:
-- clients: id, pesel, name, surname, login, password, sex, birthday, idCardNumber, placeOfBirth, residentialAddress, correspondenceAddress, telNumber, email, creationDate
-- accountData: id, clientID, checkingAccount, savingsAccount
+Databases:
+- clients: id(int), accountType(varchar), peselNumber(varchar), name(varchar), surname(varchar), login(varchar), password(varchar), checkingAccount(float), savingsAccount(float), activity(int), gender(varchar), birthday(datetime), idCardNumber(varchar), placeOfBirth(varchar), residentialAddress(varchar), correspondenceAddress(varchar), email(varchar), telNumber(varchar), passwordReminder(varchar), withdrawalLimit(float), transactionLimit(float), creationDate(datetime), cardNumber(varchar), cardActivity(int), cardColor(varchar), cardStartDate(datetime), cardEndDate(datetime)
 - eBankData: id, name, value
-- settings: id, accountType, clientID, activity, card, question, withdrawalLimit, transactionLimit
-- cards: id, clientID, number, activity, color, startDate, endDate
 - transactions: id, senderID, recipientID, value, type, title, description, date
 - transactionType: id, name(Deposit, Withdrawal, Regular transfer, Own transfer, BLIK, Phone top-up, Currency transfer, Tax transfer)
 - phoneTariffs: id, name
