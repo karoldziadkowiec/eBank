@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:eBank"
         mc:Ignorable="d"
-        Title="eBank" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icon.png" >
-    <Grid>
-        
+        Title="eBank" Height="700" Width="1100" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icon.png" >
+    <Grid Background="#FFE5E5E5">
+        <Rectangle x:Name="nav_Rectangle" HorizontalAlignment="Left" Height="641" Margin="10,0,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Center" Width="250" Fill="White" RadiusX="10" RadiusY="10"/>
+        <Label x:Name="eBank_Label" Content="eBank" Foreground="#FF002301" FontFamily="Eras ITC" FontSize="50" Margin="59,73,879,533"/>
+        <Image x:Name="eBank_Image" HorizontalAlignment="Left" Height="65" Margin="102,26,0,0" VerticalAlignment="Top" Width="68" Source="/icon.png"/>
+        <Button x:Name="home_Button" Content="Home" HorizontalAlignment="Left" Margin="34,151,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToHomePage" Grid.Row="1" Grid.Column="2" FontWeight="Bold" TabIndex="1">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="history_Button" Content="History" HorizontalAlignment="Left" Margin="34,215,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToHistoryPage" TabIndex="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="transfers_Button" Content="Transfers" HorizontalAlignment="Left" Margin="34,279,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToTransfersPage" TabIndex="3">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="services_Button" Content="Services" HorizontalAlignment="Left" Margin="34,345,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToServicesPage" TabIndex="4">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="settings_Button" Content="Settings" HorizontalAlignment="Left" Margin="34,411,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToSettingsPage" TabIndex="5">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation_Rectangle" HorizontalAlignment="Left" Height="2" Margin="34,483,0,0" Stroke="#FF002301" VerticalAlignment="Top" Width="200" Fill="#FF002301"/>
+        <Button x:Name="account_Button" Content="Account" HorizontalAlignment="Left" Margin="34,504,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="Black" Foreground="White" Background="#FF003401" Click="goToAccountPage" TabIndex="6"/>
+        <Button x:Name="logout_Button" Content="Logout" HorizontalAlignment="Left" Margin="34,570,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Background="#FF003401" Foreground="White" Click="Logout" TabIndex="7"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="47,163,0,0" VerticalAlignment="Top" Width="30" Source="/home.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="47,227,0,0" VerticalAlignment="Top" Width="30" Source="/history.png" RenderTransformOrigin="0.64,0.495"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="47,291,0,0" VerticalAlignment="Top" Width="30" Source="/transfers.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="47,357,0,0" VerticalAlignment="Top" Width="30" Source="/services.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="47,423,0,0" VerticalAlignment="Top" Width="30" Source="/settings.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="47,516,0,0" VerticalAlignment="Top" Width="30" Source="/account.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="47,582,0,0" VerticalAlignment="Top" Width="30" Source="/logout.jpg"/>
+        <Rectangle HorizontalAlignment="Left" Height="54" Margin="213,151,0,0" Stroke="#FF003401" VerticalAlignment="Top" Width="21" Fill="#FF003401"/>
+        <Label x:Name="date_Label" Content="date" HorizontalAlignment="Left" Margin="951,20,0,0" VerticalAlignment="Top" Width="139" Height="38" FontFamily="Calibri" FontSize="22" Foreground="#FF2E2E2E"/>
+
     </Grid>
 </Window>

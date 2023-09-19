@@ -30,9 +30,16 @@ namespace eBank
 
         private void InitializeStartVisibility()
         {
+            passwordReminder_Label.Visibility = Visibility.Hidden;
+            r1_Rectangle.Visibility = Visibility.Hidden;
+            question_Label.Visibility = Visibility.Hidden;
             passwordReminder_TextBox.Visibility = Visibility.Hidden;
             next2_Button.Visibility = Visibility.Hidden;
+            newPassword_Label.Visibility = Visibility.Hidden;
+            r2_Rectangle.Visibility = Visibility.Hidden;
             newPassword_PasswordBox.Visibility = Visibility.Hidden;
+            confirmPassword_Label.Visibility = Visibility.Hidden;
+            r3_Rectangle.Visibility = Visibility.Hidden;
             confirmPassword_PasswordBox.Visibility = Visibility.Hidden;
             acceptance_CheckBox.Visibility = Visibility.Hidden;
             save_Button.Visibility = Visibility.Hidden;
@@ -105,7 +112,11 @@ namespace eBank
                                     passwordReminder, withdrawalLimit, transactionLimit, creationDateString,
                                     cardNumber, cardActivity, cardColor, ccardStartDateString, cardEndDateString);
 
+                                login_TextBox.IsReadOnly = true;
                                 next1_Button.Visibility = Visibility.Hidden;
+                                passwordReminder_Label.Visibility = Visibility.Visible;
+                                r1_Rectangle.Visibility = Visibility.Visible;
+                                question_Label.Visibility = Visibility.Visible;
                                 passwordReminder_TextBox.Visibility = Visibility.Visible;
                                 next2_Button.Visibility = Visibility.Visible;
                             }
@@ -129,8 +140,13 @@ namespace eBank
 
             if (client.passwordReminder == passwordReminder)
             {
+                passwordReminder_TextBox.IsReadOnly = true;
                 next2_Button.Visibility = Visibility.Hidden;
+                newPassword_Label.Visibility = Visibility.Visible;
+                r2_Rectangle.Visibility = Visibility.Visible;
                 newPassword_PasswordBox.Visibility = Visibility.Visible;
+                confirmPassword_Label.Visibility = Visibility.Visible;
+                r3_Rectangle.Visibility = Visibility.Visible;
                 confirmPassword_PasswordBox.Visibility = Visibility.Visible;
                 acceptance_CheckBox.Visibility = Visibility.Visible;
                 save_Button.Visibility = Visibility.Visible;

@@ -24,6 +24,48 @@ namespace eBank
         {
             client = _client;
             InitializeComponent();
+            date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
+        }
+        private void goToHomePage(object sender, RoutedEventArgs e)
+        {
+            InvalidateVisual();
+        }
+
+        private void goToHistoryPage(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void goToTransfersPage(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void goToServicesPage(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void goToSettingsPage(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void goToAccountPage(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to log out?", "eBank", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindow loginPage = new MainWindow();
+                loginPage.Show();
+                this.Hide();
+            }
         }
     }
 }

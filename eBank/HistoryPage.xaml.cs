@@ -15,28 +15,27 @@ using System.Windows.Shapes;
 namespace eBank
 {
     /// <summary>
-    /// Logika interakcji dla klasy HomePage.xaml
+    /// Logika interakcji dla klasy HistoryPage.xaml
     /// </summary>
-    public partial class HomePage : Window
+    public partial class HistoryPage : Window
     {
         Client client = null;
-        public HomePage(Client _client)
+        public HistoryPage(Client _client)
         {
             client = _client;
             InitializeComponent();
             date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
         }
-
         private void goToHomePage(object sender, RoutedEventArgs e)
         {
-            InvalidateVisual();
+            HomePage homePage = new HomePage(client);
+            homePage.Show();
+            this.Hide();
         }
 
         private void goToHistoryPage(object sender, RoutedEventArgs e)
         {
-            HistoryPage historyPage = new HistoryPage(client);
-            historyPage.Show();
-            this.Hide();
+            InvalidateVisual();
         }
 
         private void goToTransfersPage(object sender, RoutedEventArgs e)

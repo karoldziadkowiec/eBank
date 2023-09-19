@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="eBank" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icon.png" >
     <Grid>
-        <Canvas Background="#FFEDEDED">
+        <Canvas Background="#FFE5E5E5">
             <Rectangle x:Name="leftGreen_Rectangle" Height="484" Stroke="Black" Width="280
                        " Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label x:Name="eBank_Label" Content="eBank" Canvas.Left="48" Canvas.Top="226" Foreground="White" Height="86" Width="185" VerticalAlignment="Top" FontFamily="Eras ITC" FontSize="60" HorizontalAlignment="Center"/>
@@ -31,7 +31,7 @@
             </ComboBox>
             <Rectangle Height="2" Canvas.Left="327" Stroke="#FF002301" Canvas.Top="56" Width="134" Fill="#FF002301" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <PasswordBox x:Name="password_PasswordBox" Canvas.Left="327" Canvas.Top="236" Width="416" HorizontalAlignment="Left" Height="44" VerticalAlignment="Center" FontFamily="Calibri Light" FontSize="25" VerticalContentAlignment="Center" TabIndex="2"/>
-            <Button x:Name="passwordReminder_Button" Content="I forgot my password." Canvas.Left="462" Canvas.Top="401" Height="26" Width="148" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFEDEDED" BorderBrush="#FFEDEDED" FontFamily="Calibri" FontSize="15" FontStyle="Italic" TabIndex="6" Click="goToPasswordReminderPage"/>
+            <Button x:Name="passwordReminder_Button" Content="I forgot my password." Canvas.Left="462" Canvas.Top="401" Height="26" Width="148" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFE5E5E5" BorderBrush="#FFE5E5E5" FontFamily="Calibri" FontSize="15" FontStyle="Italic" TabIndex="6" Click="goToPasswordReminderPage"/>
         </Canvas>
 
     </Grid>
