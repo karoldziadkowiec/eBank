@@ -69,9 +69,9 @@
             <TextBox x:Name="idCardNumber_TextBox" Canvas.Left="542" TextWrapping="Wrap" Canvas.Top="249" Width="200" Height="35" FontFamily="Calibri Light" FontSize="25" TabIndex="5" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MaxLines="5" MaxLength="9"/>
             <Label x:Name="gender_Label" Content="Gender" Canvas.Left="537" Canvas.Top="286" RenderTransformOrigin="0.108,0.518" Width="116" FontFamily="Calibri" FontSize="22" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Rectangle Height="2                       " Canvas.Left="542" Stroke="#FF002301" Canvas.Top="318" Width="200" Fill="#FF002301" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <RadioButton x:Name="man_RadioButton" Content="Man" Canvas.Left="542" Canvas.Top="332" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Calibri" Width="53" Height="21" FontSize="15" TabIndex="7"/>
-            <RadioButton x:Name="woman_RadioButton" Content="Woman" Canvas.Left="600" Canvas.Top="332" FontFamily="Calibri" Width="72" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" RenderTransformOrigin="0.507,0.864" Height="25" TabIndex="8"/>
-            <RadioButton x:Name="other_RadioButton" Content="Other" Canvas.Left="677" Canvas.Top="332" FontFamily="Calibri" Width="73" FontSize="15" RenderTransformOrigin="0.507,0.864" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" TabIndex="9"/>
+            <RadioButton x:Name="man_RadioButton" Content="Man" Canvas.Left="542" Canvas.Top="334" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Calibri" Width="53" Height="21" FontSize="15" TabIndex="7"/>
+            <RadioButton x:Name="woman_RadioButton" Content="Woman" Canvas.Left="600" Canvas.Top="334" FontFamily="Calibri" Width="72" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.507,0.864" Height="25" TabIndex="8"/>
+            <RadioButton x:Name="other_RadioButton" Content="Other" Canvas.Left="677" Canvas.Top="334" FontFamily="Calibri" Width="73" FontSize="15" RenderTransformOrigin="0.507,0.864" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" TabIndex="9"/>
         </Canvas>
     </Grid>
 </Window>

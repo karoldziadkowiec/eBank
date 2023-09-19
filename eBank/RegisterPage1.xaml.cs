@@ -22,7 +22,6 @@ namespace eBank
     public partial class RegisterPage1 : Window
     {
         Client client = null;
-        string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
 
         public RegisterPage1()
         {

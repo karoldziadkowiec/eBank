@@ -21,7 +21,8 @@ namespace eBank
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
+        private readonly string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
+        Client client;
         public MainWindow()
         {
             InitializeComponent();
@@ -39,14 +40,86 @@ namespace eBank
 
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Complete the empty fields.", "eBank");
+                MessageBox.Show("Complete the empty login fields.", "eBank");
                 return;
             }
 
-            MainWindow homePage = new MainWindow();
-            homePage.Show();
-            this.Hide();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand();
 
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT * FROM clients WHERE login = @login AND password = @password";
+
+                    command.CommandText = query;
+                    command.Connection = connection;
+
+                    command.Parameters.AddWithValue("@login", login);
+                    command.Parameters.AddWithValue("@password", password);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                int id = reader.GetInt32(0);
+                                string accountType = reader.GetString(1);
+                                string peselNumber = reader.GetString(2);
+                                string name = reader.GetString(3);
+                                string surname = reader.GetString(4);
+                                login = reader.GetString(5);
+                                password = reader.GetString(6);
+                                double checkingAccount = reader.GetDouble(7);
+                                double savingsAccount = reader.GetDouble(8);
+                                int activity = reader.GetInt32(9);
+                                string gender = reader.GetString(10);
+                                DateTime birthday = reader.GetDateTime(11);
+                                string birthdayString = birthday.ToString("yyyy-MM-dd");
+                                string idCardNumber = reader.GetString(12);
+                                string placeOfBirth = reader.GetString(13);
+                                string residentialAddress = reader.GetString(14);
+                                string correspondenceAddress = reader.GetString(15);
+                                string email = reader.GetString(16);
+                                string phoneNumber = reader.GetString(17);
+                                string passwordReminder = reader.GetString(18);
+                                double withdrawalLimit = reader.GetDouble(19);
+                                double transactionLimit = reader.GetDouble(20);
+                                DateTime creationDate = reader.GetDateTime(21);
+                                string creationDateString = creationDate.ToString("yyyy-MM-dd");
+                                string cardNumber = reader.GetString(22);
+                                int cardActivity = reader.GetInt32(23);
+                                string cardColor = reader.GetString(24);
+                                DateTime cardStartDate = reader.GetDateTime(25);
+                                string ccardStartDateString = cardStartDate.ToString("yyyy-MM-dd");
+                                DateTime cardEndDate = reader.GetDateTime(26);
+                                string cardEndDateString = cardEndDate.ToString("yyyy-MM-dd");
+
+                                client = new Client(id, accountType, peselNumber, name, surname, login, password, 
+                                    checkingAccount, savingsAccount, activity, gender, birthdayString, idCardNumber, 
+                                    placeOfBirth, residentialAddress, correspondenceAddress, email, phoneNumber, 
+                                    passwordReminder, withdrawalLimit, transactionLimit, creationDateString, 
+                                    cardNumber, cardActivity, cardColor, ccardStartDateString, cardEndDateString);
+                                HomePage homePage = new HomePage(client);
+
+                                homePage.Show();
+                                this.Hide();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please, enter the correct login details.", "eBank");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "eBank");
+                }
+            }
         }
 
         private void goToRegisterPage(object sender, RoutedEventArgs e)

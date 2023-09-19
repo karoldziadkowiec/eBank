@@ -15,8 +15,8 @@ namespace eBank
         public string surname { get; set; }
         public string login { get; set; }
         public string password { get; set; }
-        public float checkingAccount { get; set; }
-        public float savingsAccount { get; set; }
+        public double checkingAccount { get; set; }
+        public double savingsAccount { get; set; }
         public int activity { get; set; }
         public string gender { get; set; }
         public string birthday { get; set; }
@@ -27,8 +27,8 @@ namespace eBank
         public string email { get; set; }
         public string phoneNumber { get; set; }
         public string passwordReminder { get; set; }
-        public float withdrawalLimit { get; set; }
-        public float transactionLimit { get; set; }
+        public double withdrawalLimit { get; set; }
+        public double transactionLimit { get; set; }
         public string creationDate { get; set; }
         public string cardNumber { get; set; }
         public int cardActivity { get; set; }
@@ -37,11 +37,11 @@ namespace eBank
         public string cardEndDate { get; set; }
 
         public Client(int ID, string ACCOUNTTYPE, string PESELNUMBER, string NAME, string SURNAME,
-              string LOGIN, string PASSWORD, float CHECKINGACCOUNT, float SAVINGSACCOUNT,
+              string LOGIN, string PASSWORD, double CHECKINGACCOUNT, double SAVINGSACCOUNT,
               int ACTIVITY, string GENDER, string BIRTHDAY, string IDCARDNUMBER,
               string PLACEOFBIRTH, string RESIDENTIALADDRESS, string CORRESPONDENCEADDRESS,
               string EMAIL, string PHONENUMBER, string PASSWORDREMINDER,
-              float WITHDRAWALLIMIT, float TRANSACTIONLIMIT, string CREATIONDATE,
+              double WITHDRAWALLIMIT, double TRANSACTIONLIMIT, string CREATIONDATE,
               string CARDNUMBER, int CARDACTIVITY, string CARDCOLOR, string CARDSTARTDATE, string CARDENDDATE)
         {
             id = ID;
