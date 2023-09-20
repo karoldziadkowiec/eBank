@@ -81,6 +81,9 @@
     <Compile Include="RegisterPage3.xaml.cs">
       <DependentUpon>RegisterPage3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServicesOrderCard.xaml.cs">
+      <DependentUpon>ServicesOrderCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServicesPage.xaml.cs">
       <DependentUpon>ServicesPage.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegisterPage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServicesOrderCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +206,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="withdraw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="accountActivity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cardActivity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

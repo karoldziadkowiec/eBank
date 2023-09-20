@@ -12,7 +12,11 @@
         <Image x:Name="eBank_Image" HorizontalAlignment="Left" Height="65" Margin="102,26,0,0" VerticalAlignment="Top" Width="68" Source="/icon.png"/>
         <Button x:Name="home_Button" Content="Home" HorizontalAlignment="Left" Margin="34,151,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToHomePage" Grid.Row="1" Grid.Column="2" TabIndex="1">
             <Button.Background>
-                <ImageBrush/>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
             </Button.Background>
         </Button>
         <Button x:Name="history_Button" Content="History" HorizontalAlignment="Left" Margin="34,215,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToHistoryPage" TabIndex="2">
@@ -69,10 +73,10 @@
         <Image HorizontalAlignment="Left" Height="30" Margin="47,423,0,0" VerticalAlignment="Top" Width="30" Source="/settings.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,516,0,0" VerticalAlignment="Top" Width="30" Source="/account.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,582,0,0" VerticalAlignment="Top" Width="30" Source="/logout.jpg"/>
-        <Rectangle HorizontalAlignment="Left" Height="54" Margin="213,411,0,0" Stroke="#FF003401" VerticalAlignment="Top" Width="21" Fill="#FF003401"/>
+        <Rectangle HorizontalAlignment="Left" Height="54" Margin="213,411,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="21" Fill="#FF66BB6A"/>
         <Label x:Name="date_Label" Content="date" HorizontalAlignment="Left" Margin="951,20,0,0" VerticalAlignment="Top" Width="139" Height="38" FontFamily="Calibri" FontSize="22" Foreground="#FF2E2E2E"/>
         <Label x:Name="settings_Label" Content="Settings" HorizontalAlignment="Left" Margin="338,74,0,0" VerticalAlignment="Top" Width="158" FontFamily="Calibri" FontSize="35"/>
-        <Rectangle x:Name="r0_Rectangle" HorizontalAlignment="Left" Height="14" Margin="314,95,0,0" Stroke="Black" VerticalAlignment="Top" Width="32" Fill="#FF003401" RenderTransformOrigin="0.5,0.5">
+        <Rectangle x:Name="r0_Rectangle" HorizontalAlignment="Left" Height="14" Margin="314,95,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="32" Fill="#FF66BB6A" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1"/>
@@ -82,7 +86,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label x:Name="withdrawalLimit_Label" Content="Withdrawal limit" HorizontalAlignment="Left" Margin="490,149,0,0" VerticalAlignment="Top" Width="196" FontFamily="Calibri" FontSize="25"/>
+        <Label x:Name="withdrawalLimit_Label" Content="Withdrawal limit" HorizontalAlignment="Left" Margin="528,149,0,0" VerticalAlignment="Top" Width="196" FontFamily="Calibri" FontSize="25"/>
         <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="493,190,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FF003401" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -93,8 +97,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <TextBox x:Name="withdrawalLimit_TextBox" HorizontalAlignment="Left" Margin="493,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="41" FontSize="25" FontFamily="Calibri" VerticalContentAlignment="Center"/>
-        <Label x:Name="transactionLimit_Label" Content="Transaction limit" HorizontalAlignment="Left" Margin="490,243,0,0" VerticalAlignment="Top" Width="196" FontFamily="Calibri" FontSize="25"/>
+        <TextBox x:Name="withdrawalLimit_TextBox" HorizontalAlignment="Left" Margin="493,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="41" FontSize="25" FontFamily="Calibri Light" VerticalContentAlignment="Center"/>
+        <Label x:Name="transactionLimit_Label" Content="Transaction limit" HorizontalAlignment="Left" Margin="528,243,0,0" VerticalAlignment="Top" Width="188" FontFamily="Calibri" FontSize="25"/>
         <Rectangle x:Name="r2_Rectangle" HorizontalAlignment="Left" Height="2" Margin="493,284,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FF003401" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -105,7 +109,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <TextBox x:Name="transactionLimit_TextBox" HorizontalAlignment="Left" Margin="493,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="41" FontSize="25" FontFamily="Calibri" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="transactionLimit_TextBox" HorizontalAlignment="Left" Margin="493,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="41" FontSize="25" FontFamily="Calibri Light" VerticalContentAlignment="Center"/>
         <Button x:Name="save1_Button" Content="Save" HorizontalAlignment="Left" Margin="766,197,0,0" VerticalAlignment="Top" Height="41" Width="107" Background="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" RenderTransformOrigin="0.5,0.5" Click="saveWithdrawalLimit">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -126,7 +130,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Label x:Name="accountActivityDESC_Label" Content="Account activity" HorizontalAlignment="Left" Margin="490,337,0,0" VerticalAlignment="Top" Width="196" FontFamily="Calibri" FontSize="25"/>
+        <Label x:Name="accountActivityDESC_Label" Content="Account activity" HorizontalAlignment="Left" Margin="528,337,0,0" VerticalAlignment="Top" Width="215" FontFamily="Calibri" FontSize="25"/>
         <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="493,378,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FF003401" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -148,7 +152,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Label x:Name="cardActivityDESC_Label" Content="Card activity" HorizontalAlignment="Left" Margin="490,431,0,0" VerticalAlignment="Top" Width="196" FontFamily="Calibri" FontSize="25"/>
+        <Label x:Name="cardActivityDESC_Label" Content="Card activity" HorizontalAlignment="Left" Margin="528,431,0,0" VerticalAlignment="Top" Width="215" FontFamily="Calibri" FontSize="25"/>
         <Rectangle x:Name="r4_Rectangle" HorizontalAlignment="Left" Height="2" Margin="493,472,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FF003401" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -170,5 +174,11 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Image HorizontalAlignment="Left" Height="35" Margin="493,152,0,0" VerticalAlignment="Top" Width="35" Source="/withdraw.png" RenderTransformOrigin="1.28,0.517"/>
+        <Image HorizontalAlignment="Left" Height="40" Margin="493,243,0,0" VerticalAlignment="Top" Width="40" Source="/transaction.png"/>
+        <Image HorizontalAlignment="Left" Height="35" Margin="493,340,0,0" VerticalAlignment="Top" Width="35" Source="/accountActivity.png"/>
+        <Image HorizontalAlignment="Left" Height="35" Margin="493,434,0,0" VerticalAlignment="Top" Width="35" Source="/cardActivity.png"/>
+        <Label x:Name="PLN1_Label" Content="PLN" HorizontalAlignment="Left" Margin="691,197,0,0" VerticalAlignment="Top" Width="52" FontFamily="Calibri" FontSize="25" Height="41"/>
+        <Label x:Name="PLN2_Label" Content="PLN" HorizontalAlignment="Left" Margin="691,291,0,0" VerticalAlignment="Top" Width="52" FontFamily="Calibri" FontSize="25" Height="41"/>
     </Grid>
 </Window>

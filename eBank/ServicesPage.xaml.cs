@@ -83,5 +83,18 @@ namespace eBank
                 this.Hide();
             }
         }
+
+        private void goToOrderCardPage(object sender, RoutedEventArgs e)
+        {
+            if (client.cardActivity == 0)
+            {
+                ServicesOrderCard servicesOrderCard = new ServicesOrderCard(client);
+                servicesOrderCard.Show();
+                this.Hide();
+            }
+            else if (client.cardActivity == 1) {
+                MessageBox.Show("You already have an active card.", "eBank");
+            }
+        }
     }
 }
