@@ -6,8 +6,7 @@ To-do list:
 - Home: two cards, next to + and -. under the history of the last 5 transfers, next to this month's expenses
 - History: displaying a table with transfers, printing transaction history in PDF, filtering if necessary
 - Transfers: deposit, withdrawal, regular transfer, own transfer, BLIK, phone top-up, currency transfer, tax transfer
-- Services: order a card, expense analysis, transfer request, phone top-up, game top-up and gift cards, transport tickets, motorway tickets, parking tickets
-- Settings: blocking, limits,
+- Services: expense analysis, transfer request, phone top-up, game top-up and gift cards, transport tickets, motorway tickets, parking tickets
 - Account: profile details, my finances, edit profile, delete profile
 - ADMIN PANEL
 
