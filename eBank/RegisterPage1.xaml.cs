@@ -26,7 +26,11 @@ namespace eBank
         public RegisterPage1()
         {
             InitializeComponent();
+            displayData();
+        }
 
+        private void displayData()
+        {
             accountType_ComboBox.Items.Add("Admin");
             accountType_ComboBox.Items.Add("Client");
 

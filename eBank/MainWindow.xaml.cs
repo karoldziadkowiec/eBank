@@ -22,11 +22,15 @@ namespace eBank
     public partial class MainWindow : Window
     {
         private readonly string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
-        Client client;
+        Client client = null;
         public MainWindow()
         {
             InitializeComponent();
+            displayData();
+        }
 
+        private void displayData()
+        {
             accountType_ComboBox.Items.Add("Admin");
             accountType_ComboBox.Items.Add("Client");
 

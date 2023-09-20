@@ -24,8 +24,14 @@ namespace eBank
         {
             client = _client;
             InitializeComponent();
+            displayData();
+        }
+
+        private void displayData()
+        {
             date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
         }
+
         private void goToHomePage(object sender, RoutedEventArgs e)
         {
             HomePage homePage = new HomePage(client);

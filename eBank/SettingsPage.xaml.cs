@@ -24,8 +24,34 @@ namespace eBank
         {
             client = _client;
             InitializeComponent();
-            date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
+            displayData();
         }
+
+        private void displayData() {
+            date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
+            withdrawalLimit_TextBox.Text = client.withdrawalLimit.ToString();
+            transactionLimit_TextBox.Text = client.transactionLimit.ToString();
+
+            if (client.activity == 1)
+            {
+                accountActivity_Label.Content = "active";
+            }
+            else
+            {
+                accountActivity_Label.Content = "inactive";
+            }
+
+            if (client.cardActivity == 1)
+            {
+                cardActivity_Label.Content = "active";
+            }
+            else
+            {
+                cardActivity_Label.Content = "inactive";
+                block_Button.Visibility = Visibility.Hidden;
+            }
+        }
+
         private void goToHomePage(object sender, RoutedEventArgs e)
         {
             HomePage homePage = new HomePage(client);
@@ -76,6 +102,26 @@ namespace eBank
                 loginPage.Show();
                 this.Hide();
             }
+        }
+
+        private void saveWithdrawalLimit(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void saveTransactionLimit(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void changeAccountActivity(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void blockCard(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
