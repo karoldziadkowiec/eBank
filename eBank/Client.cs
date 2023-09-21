@@ -23,7 +23,7 @@ namespace eBank
         public string idCardNumber { get; set; }
         public string placeOfBirth { get; set; }
         public string residentialAddress { get; set; }
-        public string correspondenceAddress { get; set; }
+        public string correspondencyAddress { get; set; }
         public string phoneNumber { get; set; }
         public string email { get; set; }
         public string passwordReminder { get; set; }
@@ -39,7 +39,7 @@ namespace eBank
         public Client(int ID, string ACCOUNTTYPE, string PESELNUMBER, string NAME, string SURNAME,
               string LOGIN, string PASSWORD, double CHECKINGACCOUNT, double SAVINGSACCOUNT,
               int ACTIVITY, string GENDER, string BIRTHDAY, string IDCARDNUMBER,
-              string PLACEOFBIRTH, string RESIDENTIALADDRESS, string CORRESPONDENCEADDRESS,
+              string PLACEOFBIRTH, string RESIDENTIALADDRESS, string CORRESPONDENCYADDRESS,
               string PHONENUMBER, string EMAIL, string PASSWORDREMINDER,
               double WITHDRAWALLIMIT, double TRANSACTIONLIMIT, string CREATIONDATE,
               string CARDNUMBER, int CARDACTIVITY, string CARDCOLOR, string CARDSTARTDATE, string CARDENDDATE)
@@ -59,7 +59,7 @@ namespace eBank
             idCardNumber = IDCARDNUMBER;
             placeOfBirth = PLACEOFBIRTH;
             residentialAddress = RESIDENTIALADDRESS;
-            correspondenceAddress = CORRESPONDENCEADDRESS;
+            correspondencyAddress = CORRESPONDENCYADDRESS;
             phoneNumber = PHONENUMBER;
             email = EMAIL;
             passwordReminder = PASSWORDREMINDER;

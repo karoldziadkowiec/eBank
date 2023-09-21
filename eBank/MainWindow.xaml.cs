@@ -92,7 +92,7 @@ namespace eBank
                                 string idCardNumber = reader.GetString(12);
                                 string placeOfBirth = reader.GetString(13);
                                 string residentialAddress = reader.GetString(14);
-                                string correspondenceAddress = reader.GetString(15);
+                                string correspondencyAddress = reader.GetString(15);
                                 string phoneNumber = reader.GetString(16);
                                 string email = reader.GetString(17);
                                 string passwordReminder = reader.GetString(18);
@@ -110,7 +110,7 @@ namespace eBank
 
                                 client = new Client(id, accountType, peselNumber, name, surname, login, password, 
                                     checkingAccount, savingsAccount, activity, gender, birthdayString, idCardNumber, 
-                                    placeOfBirth, residentialAddress, correspondenceAddress, phoneNumber, email, 
+                                    placeOfBirth, residentialAddress, correspondencyAddress, phoneNumber, email, 
                                     passwordReminder, withdrawalLimit, transactionLimit, creationDateString, 
                                     cardNumber, cardActivity, cardColor, ccardStartDateString, cardEndDateString);
 

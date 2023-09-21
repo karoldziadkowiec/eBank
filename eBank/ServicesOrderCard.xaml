@@ -99,9 +99,9 @@
                    " Fill="#FF003401"/>
         <ComboBox x:Name="cardColor_ComboBox" HorizontalAlignment="Left" Margin="510,422,0,0" VerticalAlignment="Top" Width="150
                   " Height="27" FontSize="15" FontFamily="Calibri"/>
-        <Label x:Name="correspondenceAddressDESC_Label" Content="Correspondence address" HorizontalAlignment="Left" Margin="504,454,0,0" VerticalAlignment="Top" Width="265" FontFamily="Calibri" FontSize="25"/>
+        <Label x:Name="correspondencyAddressDESC_Label" Content="Correspondency address" HorizontalAlignment="Left" Margin="504,454,0,0" VerticalAlignment="Top" Width="265" FontFamily="Calibri" FontSize="25"/>
         <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="510,495,0,0" Stroke="Black" VerticalAlignment="Top" Width="252" Fill="#FF003401"/>
-        <TextBox x:Name="correspondenceAddress_TextBox" HorizontalAlignment="Left" Margin="510,502,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="35" FontFamily="Calibri Light" FontSize="22" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="correspondencyAddress_TextBox" HorizontalAlignment="Left" Margin="510,502,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="35" FontFamily="Calibri Light" FontSize="22" VerticalContentAlignment="Center"/>
         <Button x:Name="order_Button" Content="Order" HorizontalAlignment="Left" Margin="789,550,0,0" VerticalAlignment="Top" Height="41" Width="107                 " Background="#FF003401" BorderBrush="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" Click="orderCard"/>
         <Button x:Name="back_Button" Content="Back" HorizontalAlignment="Left" Margin="789,596,0,0" VerticalAlignment="Top" Height="41" Width="107                 " Background="#FF003401" BorderBrush="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" Click="backToServicesPage"/>
     </Grid>

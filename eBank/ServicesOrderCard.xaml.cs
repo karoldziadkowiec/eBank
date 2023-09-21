@@ -42,7 +42,7 @@ namespace eBank
             cardColor_ComboBox.Items.Add("Black");
             cardColor_ComboBox.Items.Add("Green");
             cardColor_ComboBox.SelectedItem = "Brown";
-            correspondenceAddress_TextBox.Text = client.correspondenceAddress;
+            correspondencyAddress_TextBox.Text = client.correspondencyAddress;
         }
 
         private void goToHomePage(object sender, RoutedEventArgs e)
@@ -158,7 +158,7 @@ namespace eBank
         {
             string cardNumber = cardNumber_Label.Content.ToString();
             string cardColor = cardColor_ComboBox.Text;
-            string correspondenceAddress = correspondenceAddress_TextBox.Text;
+            string correspondencyAddress = correspondencyAddress_TextBox.Text;
             int cardActivity = 1;
             string cardStartDate = DateTime.Today.ToString("yyyy-MM-dd");
             DateTime cardEndDateDateTime = DateTime.Today.AddYears(10);
@@ -173,13 +173,13 @@ namespace eBank
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
-                        string updateQuery = "UPDATE clients SET cardNumber = @cardNumber, cardColor = @cardColor, correspondenceAddress = @correspondenceAddress, cardActivity = @cardActivity, cardStartDate = @cardStartDate, cardEndDate = @cardEndDate WHERE login = @login";
+                        string updateQuery = "UPDATE clients SET cardNumber = @cardNumber, cardColor = @cardColor, correspondenceAddress = @correspondencyAddress, cardActivity = @cardActivity, cardStartDate = @cardStartDate, cardEndDate = @cardEndDate WHERE login = @login";
 
                         using (SqlCommand command = new SqlCommand(updateQuery, connection))
                         {
                             command.Parameters.AddWithValue("@cardNumber", cardNumber);
                             command.Parameters.AddWithValue("@cardColor", cardColor);
-                            command.Parameters.AddWithValue("@correspondenceAddress", correspondenceAddress);
+                            command.Parameters.AddWithValue("@correspondencyAddress", correspondencyAddress);
                             command.Parameters.AddWithValue("@cardActivity", cardActivity);
                             command.Parameters.AddWithValue("@cardStartDate", cardStartDate);
                             command.Parameters.AddWithValue("@cardEndDate", cardEndDate);
@@ -191,7 +191,7 @@ namespace eBank
                             {
                                 client.cardNumber = cardNumber;
                                 client.cardColor = cardColor;
-                                client.correspondenceAddress = correspondenceAddress;
+                                client.correspondencyAddress = correspondencyAddress;
                                 client.cardActivity = cardActivity;
                                 client.cardStartDate = cardStartDate;
                                 client.cardEndDate = cardEndDate;

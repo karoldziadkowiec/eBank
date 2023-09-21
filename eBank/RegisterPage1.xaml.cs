@@ -59,6 +59,11 @@ namespace eBank
             {
                 gender = "Other";
             }
+            else
+            {
+                MessageBox.Show("Select a gender.", "eBank");
+                return;
+            }
 
             string creationDate = DateTime.Today.ToString("yyyy-MM-dd");
             int activity = 1;
@@ -105,7 +110,7 @@ namespace eBank
                 IDCARDNUMBER: idCardNumber,
                 PLACEOFBIRTH: "",
                 RESIDENTIALADDRESS: "",
-                CORRESPONDENCEADDRESS: "",
+                CORRESPONDENCYADDRESS: "",
                 PHONENUMBER: "",
                 EMAIL: "",
                 PASSWORDREMINDER: "",

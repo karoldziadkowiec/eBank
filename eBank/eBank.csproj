@@ -229,5 +229,8 @@
   <ItemGroup>
     <Resource Include="card.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="editing.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

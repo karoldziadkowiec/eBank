@@ -62,7 +62,7 @@ namespace eBank
             valueOfEmail_Label.Content = client.email;
             valueOfPlaceOfBirth_Label.Content = client.placeOfBirth;
             valueOfResidentialAddress_Label.Content = client.residentialAddress;
-            valueOfCorrespondenceAddress_Label.Content = client.correspondenceAddress;
+            valueOfCorrespondencyAddress_Label.Content = client.correspondencyAddress;
             valueOfPasswordReminder_Label.Content = client.passwordReminder;
         }
 

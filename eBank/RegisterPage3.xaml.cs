@@ -75,7 +75,7 @@ namespace eBank
                 {
                     connection.Open();
 
-                    string sqlQuery = "INSERT INTO clients (accountType, peselNumber, name, surname, login, password, checkingAccount, savingsAccount, activity, gender, birthday, idCardNumber, placeOfBirth, residentialAddress, correspondenceAddress, telNumber, email, passwordReminder, withdrawalLimit, transactionLimit, creationDate, cardNumber, cardActivity, cardColor, cardStartDate, cardEndDate) VALUES (@accountType, @peselNumber, @name, @surname, @login, @password, @checkingAccount, @savingsAccount, @activity, @gender, @birthday, @idCardNumber, @placeOfBirth, @residentialAddress, @correspondenceAddress, @telNumber, @email, @passwordReminder, @withdrawalLimit, @transactionLimit, @creationDate, @cardNumber, @cardActivity, @cardColor, @cardStartDate, @cardEndDate);";
+                    string sqlQuery = "INSERT INTO clients (accountType, peselNumber, name, surname, login, password, checkingAccount, savingsAccount, activity, gender, birthday, idCardNumber, placeOfBirth, residentialAddress, correspondenceAddress, telNumber, email, passwordReminder, withdrawalLimit, transactionLimit, creationDate, cardNumber, cardActivity, cardColor, cardStartDate, cardEndDate) VALUES (@accountType, @peselNumber, @name, @surname, @login, @password, @checkingAccount, @savingsAccount, @activity, @gender, @birthday, @idCardNumber, @placeOfBirth, @residentialAddress, @correspondencyAddress, @telNumber, @email, @passwordReminder, @withdrawalLimit, @transactionLimit, @creationDate, @cardNumber, @cardActivity, @cardColor, @cardStartDate, @cardEndDate);";
                     using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                     {
                         command.Parameters.AddWithValue("@accountType", client.accountType);
@@ -92,7 +92,7 @@ namespace eBank
                         command.Parameters.AddWithValue("@idCardNumber", client.idCardNumber);
                         command.Parameters.AddWithValue("@placeOfBirth", client.placeOfBirth);
                         command.Parameters.AddWithValue("@residentialAddress", client.residentialAddress);
-                        command.Parameters.AddWithValue("@correspondenceAddress", client.correspondenceAddress);
+                        command.Parameters.AddWithValue("@correspondencyAddress", client.correspondencyAddress);
                         command.Parameters.AddWithValue("@telNumber", client.phoneNumber);
                         command.Parameters.AddWithValue("@email", client.email);
                         command.Parameters.AddWithValue("@passwordReminder", client.passwordReminder);

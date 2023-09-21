@@ -86,6 +86,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Rectangle x:Name="nav_Rectangle_Kopiuj" HorizontalAlignment="Left" Height="383" Margin="436,132,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="428" Fill="White" RadiusX="10" RadiusY="10"/>
         <Button x:Name="orderCard_Button" Content="Order card" HorizontalAlignment="Left" Margin="550,151,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToOrderCardPage" TabIndex="1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

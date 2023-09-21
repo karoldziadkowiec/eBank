@@ -32,9 +32,9 @@ namespace eBank
             string phoneNumber = phoneNumber_TextBox.Text;
             string placeOfBirth = placeOfBirth_TextBox.Text;
             string residentialAddress = residentialAddress_TextBox.Text;
-            string correspondenceAddress = correspondenceAddress_TextBox.Text;
+            string correspondencyAddress = correspondencyAddress_TextBox.Text;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(placeOfBirth) || string.IsNullOrEmpty(residentialAddress) || string.IsNullOrEmpty(correspondenceAddress))
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(placeOfBirth) || string.IsNullOrEmpty(residentialAddress) || string.IsNullOrEmpty(correspondencyAddress))
             {
                 MessageBox.Show("Complete the empty fields.", "eBank");
                 return;
@@ -54,7 +54,7 @@ namespace eBank
             client.phoneNumber = phoneNumber;
             client.placeOfBirth = placeOfBirth;
             client.residentialAddress = residentialAddress;
-            client.correspondenceAddress = correspondenceAddress;
+            client.correspondencyAddress = correspondencyAddress;
 
             RegisterPage3 registerPage3 = new RegisterPage3(client);
             registerPage3.Show();
