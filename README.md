@@ -7,7 +7,6 @@ To-do list:
 - History: displaying a table with transfers, printing transaction history in PDF, filtering if necessary
 - Transfers: deposit, withdrawal, regular transfer, own transfer, BLIK, phone top-up, currency transfer, tax transfer
 - Services: expense analysis, transfer requests, game top-ups and gift cards, transport tickets, motorway tickets, parking tickets
-- Account: my finances, profile details, edit profile, delete profile, card details(cardNumber, cardActivity, checkingAccount, savingsAccount, cardColor, withdrawalLimit, transactionLimit, cardStartDate, cardEndDate)
 - ADMIN PANEL
 
 Databases:
