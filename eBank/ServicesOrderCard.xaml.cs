@@ -31,7 +31,7 @@ namespace eBank
 
         private void displayData()
         {
-            date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
+            date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
             if (client.cardNumber == "") {
                 cardNumber_Label.Content = "XXXX XXXX XXXX XXXX";
             }
@@ -197,8 +197,8 @@ namespace eBank
                                 client.cardEndDate = cardEndDate;
                                 MessageBox.Show("The card has been created and ordered.", "eBank");
 
-                                SettingsPage settingsPage = new SettingsPage(client);
-                                settingsPage.Show();
+                                AccountPage accountPage = new AccountPage(client);
+                                accountPage.Show();
                                 this.Hide();
                             }
                             else

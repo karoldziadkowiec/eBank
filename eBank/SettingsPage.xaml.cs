@@ -30,7 +30,7 @@ namespace eBank
         }
 
         private void displayData() {
-            date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
+            date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
             withdrawalLimit_TextBox.Text = client.withdrawalLimit.ToString();
             transactionLimit_TextBox.Text = client.transactionLimit.ToString();
 

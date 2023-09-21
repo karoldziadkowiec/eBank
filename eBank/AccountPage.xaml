@@ -64,7 +64,7 @@
             </Button.Background>
         </Button>
         <Rectangle x:Name="separation_Rectangle" HorizontalAlignment="Left" Height="2" Margin="34,483,0,0" Stroke="#FF002301" VerticalAlignment="Top" Width="200" Fill="#FF002301"/>
-        <Button x:Name="account_Button" Content="Account" HorizontalAlignment="Left" Margin="34,504,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="Black" Foreground="White" Background="#FF003401" Click="goToAccountPage" TabIndex="6" FontWeight="Bold"/>
+        <Button x:Name="account_Button" Content="Account" HorizontalAlignment="Left" Margin="34,504,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Foreground="White" Background="#FF003401" Click="goToAccountPage" TabIndex="6" FontWeight="Bold"/>
         <Button x:Name="logout_Button" Content="Logout" HorizontalAlignment="Left" Margin="34,570,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Background="#FF003401" Foreground="White" Click="Logout" TabIndex="7"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,163,0,0" VerticalAlignment="Top" Width="30" Source="/home.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,227,0,0" VerticalAlignment="Top" Width="30" Source="/history.png" RenderTransformOrigin="0.64,0.495"/>
@@ -86,5 +86,46 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Rectangle x:Name="clientData_Rectangle" HorizontalAlignment="Left" Height="497" Margin="294,139,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="463" Fill="White" RadiusX="10" RadiusY="10"/>
+        <Rectangle x:Name="cardData_Rectangle" HorizontalAlignment="Left" Height="497" Margin="797,138,0,0" Stroke="#FF003401" VerticalAlignment="Top" Width="250" Fill="#FF003401" RadiusX="10" RadiusY="10" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.214"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.196"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="cardValue_Rectangle" HorizontalAlignment="Left" Height="151" Margin="816,156,0,0" Stroke="Black" VerticalAlignment="Top" Width="212" Fill="#FF2E8D33" RadiusX="10" RadiusY="10"/>
+        <Label x:Name="chceckingAccount_Label" Content="Checking Account" HorizontalAlignment="Left" Margin="828,159,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="138" FontFamily="Calibri" FontSize="15"/>
+        <Label x:Name="valueOfCheckingAccount_Label" Content="value" HorizontalAlignment="Left" Margin="828,175,0,0" VerticalAlignment="Top" Foreground="White" Width="138" FontFamily="Calibri" FontSize="22" Height="33"/>
+        <Label x:Name="savingsAccount_Label" Content="Savings Account" HorizontalAlignment="Left" Margin="828,205,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="138" FontFamily="Calibri" FontSize="15"/>
+        <Label x:Name="valueOfSavingsAccount_Label" Content="value" HorizontalAlignment="Left" Margin="828,221,0,0" VerticalAlignment="Top" Foreground="White" Width="138" FontFamily="Calibri" FontSize="22" Height="33"/>
+        <Label x:Name="overall_Label" Content="Overall" HorizontalAlignment="Left" Margin="828,252,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="138" FontFamily="Calibri" FontSize="15"/>
+        <Label x:Name="overallValue_Label" Content="value" HorizontalAlignment="Left" Margin="828,268,0,0" VerticalAlignment="Top" Foreground="White" Width="138" FontFamily="Calibri" FontSize="22" Height="33"/>
+        <Label x:Name="cardNumber_Label" Content="Card number" HorizontalAlignment="Left" Margin="816,309,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="212" FontFamily="Calibri" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="valueOfCardNumber_Label" Content="value" HorizontalAlignment="Left" Margin="816,324,0,0" VerticalAlignment="Top" Foreground="White" Width="212" FontFamily="Calibri" FontSize="20" Height="34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="cardStatus_Label" Content="Card status" HorizontalAlignment="Left" Margin="816,354,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="212" FontFamily="Calibri" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="valueOfCardStatus_Label" Content="value" HorizontalAlignment="Left" Margin="816,369,0,0" VerticalAlignment="Top" Foreground="White" Width="212" FontFamily="Calibri" FontSize="18" Height="34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="cardColor_Label" Content="Color" HorizontalAlignment="Left" Margin="816,399,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="212" FontFamily="Calibri" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="valueOfCardColor_Label" Content="value" HorizontalAlignment="Left" Margin="816,414,0,0" VerticalAlignment="Top" Foreground="White" Width="212" FontFamily="Calibri" FontSize="18" Height="34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="cardWithdrawalLimit_Label" Content="Withdrawal limit" HorizontalAlignment="Left" Margin="816,444,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="212" FontFamily="Calibri" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="valueOfCardWithdrawalLimit_Label" Content="value" HorizontalAlignment="Left" Margin="816,459,0,0" VerticalAlignment="Top" Foreground="White" Width="212" FontFamily="Calibri" FontSize="18" Height="34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="cardTransactionLimit_Label" Content="Transaction limit" HorizontalAlignment="Left" Margin="816,489,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="212" FontFamily="Calibri" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="valueOfCardTransactionLimit_Label" Content="value" HorizontalAlignment="Left" Margin="816,504,0,0" VerticalAlignment="Top" Foreground="White" Width="212" FontFamily="Calibri" FontSize="18" Height="34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="cardStartDate_Label" Content="Start date" HorizontalAlignment="Left" Margin="816,534,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="212" FontFamily="Calibri" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="valueOfCardStartDate_Label" Content="value" HorizontalAlignment="Left" Margin="816,549,0,0" VerticalAlignment="Top" Foreground="White" Width="212" FontFamily="Calibri" FontSize="18" Height="34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="cardEndDate_Label" Content="End date" HorizontalAlignment="Left" Margin="816,579,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" Width="212" FontFamily="Calibri" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="valueOfCardEndDate_Label" Content="value" HorizontalAlignment="Left" Margin="816,594,0,0" VerticalAlignment="Top" Foreground="White" Width="212" FontFamily="Calibri" FontSize="18" Height="34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="createCard_Button" Content="Create card" HorizontalAlignment="Left" Margin="822,556,0,0" VerticalAlignment="Top" Height="41" Width="200" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToOrderCardPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

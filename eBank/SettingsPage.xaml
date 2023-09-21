@@ -86,6 +86,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Rectangle x:Name="settings_Rectangle" HorizontalAlignment="Left" Height="408" Margin="465,132,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="426" Fill="White" RadiusX="10" RadiusY="10"/>
+
         <Label x:Name="withdrawalLimit_Label" Content="Withdrawal limit" HorizontalAlignment="Left" Margin="528,149,0,0" VerticalAlignment="Top" Width="196" FontFamily="Calibri" FontSize="25"/>
         <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="493,190,0,0" Stroke="Black" VerticalAlignment="Top" Width="250" Fill="#FF003401" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>

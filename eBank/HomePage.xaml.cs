@@ -24,7 +24,7 @@ namespace eBank
         {
             client = _client;
             InitializeComponent();
-            date_Label.Content = DateTime.Now.ToString("dd.MM.yyyy");
+            date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void goToHomePage(object sender, RoutedEventArgs e)

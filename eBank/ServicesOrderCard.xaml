@@ -86,8 +86,10 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Rectangle x:Name="orderCard_Rectangle" HorizontalAlignment="Left" Height="523" Margin="478,127,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="447" Fill="White" RadiusX="10" RadiusY="10"/>
+
         <Label x:Name="cardNumberDESC_Label" Content="Card number" HorizontalAlignment="Left" Margin="504,285,0,0" VerticalAlignment="Top" Width="154" FontFamily="Calibri" FontSize="25"/>
-        <Image HorizontalAlignment="Left" Height="137" Margin="602,132,0,0" VerticalAlignment="Top" Width="176" Source="/card.png"/>
+        <Image HorizontalAlignment="Left" Height="137" Margin="633,148,0,0" VerticalAlignment="Top" Width="138" Source="/card.png" RenderTransformOrigin="0.475,0.619"/>
         <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="510,326,0,0" Stroke="Black" VerticalAlignment="Top" Width="227" Fill="#FF003401"/>
         <Label x:Name="cardNumber_Label" Content="XXXX XXXX XXXX XXXX" HorizontalAlignment="Left" Margin="507,331,0,0" VerticalAlignment="Top" Width="252" FontFamily="Calibri" FontSize="25"/>
         <Button x:Name="generate_Button" Content="Generate" HorizontalAlignment="Left" Margin="789,329,0,0" VerticalAlignment="Top" Height="41" Width="107
@@ -96,10 +98,10 @@
         <Rectangle x:Name="r2_Rectangle" HorizontalAlignment="Left" Height="2" Margin="510,415,0,0" Stroke="Black" VerticalAlignment="Top" Width="150
                    " Fill="#FF003401"/>
         <ComboBox x:Name="cardColor_ComboBox" HorizontalAlignment="Left" Margin="510,422,0,0" VerticalAlignment="Top" Width="150
-                  " Height="27" FontSize="15"/>
+                  " Height="27" FontSize="15" FontFamily="Calibri"/>
         <Label x:Name="correspondenceAddressDESC_Label" Content="Correspondence address" HorizontalAlignment="Left" Margin="504,454,0,0" VerticalAlignment="Top" Width="265" FontFamily="Calibri" FontSize="25"/>
         <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="510,495,0,0" Stroke="Black" VerticalAlignment="Top" Width="252" Fill="#FF003401"/>
-        <TextBox x:Name="correspondenceAddress_TextBox" HorizontalAlignment="Left" Margin="510,502,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="35" FontFamily="Calibri" FontSize="22" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="correspondenceAddress_TextBox" HorizontalAlignment="Left" Margin="510,502,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="35" FontFamily="Calibri Light" FontSize="22" VerticalContentAlignment="Center"/>
         <Button x:Name="order_Button" Content="Order" HorizontalAlignment="Left" Margin="789,550,0,0" VerticalAlignment="Top" Height="41" Width="107                 " Background="#FF003401" BorderBrush="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" Click="orderCard"/>
         <Button x:Name="back_Button" Content="Back" HorizontalAlignment="Left" Margin="789,596,0,0" VerticalAlignment="Top" Height="41" Width="107                 " Background="#FF003401" BorderBrush="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" Click="backToServicesPage"/>
     </Grid>
