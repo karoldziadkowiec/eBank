@@ -86,8 +86,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="nav_Rectangle_Kopiuj" HorizontalAlignment="Left" Height="383" Margin="436,132,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="428" Fill="White" RadiusX="10" RadiusY="10"/>
-        <Button x:Name="orderCard_Button" Content="Order card" HorizontalAlignment="Left" Margin="550,151,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToOrderCardPage" TabIndex="1">
+        <Rectangle x:Name="services_Rectangle" HorizontalAlignment="Left" Height="474" Margin="436,132,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="428" Fill="White" RadiusX="10" RadiusY="10"/>
+        <Button x:Name="orderCard_Button" Content="Order card" HorizontalAlignment="Left" Margin="497,151,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToOrderCardPage" TabIndex="1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.851"/>
@@ -96,5 +96,72 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Rectangle x:Name="separation_Rectangle_Kopiuj" HorizontalAlignment="Left" Height="2" Margin="573,203,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="expenseAnalysis_Button" Content="Expense analysis" HorizontalAlignment="Left" Margin="497,215,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToExpenseAnalysisPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation_Rectangle_Kopiuj1" HorizontalAlignment="Left" Height="2" Margin="573,267,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="transferRequest_Button" Content="Transfer request" HorizontalAlignment="Left" Margin="497,279,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToTransferRequestPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation_Rectangle_Kopiuj2" HorizontalAlignment="Left" Height="2" Margin="573,331,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="gamesAndGiftCards_Button" Content="Game top-ups and gift cards" HorizontalAlignment="Left" Margin="497,345,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToGamesAndGiftCardsPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation_Rectangle_Kopiuj3" HorizontalAlignment="Left" Height="2" Margin="573,397,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="publicTransport_Button" Content="Public transport tickets" HorizontalAlignment="Left" Margin="497,410,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToPublicTransportTicketsPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation_Rectangle_Kopiuj4" HorizontalAlignment="Left" Height="2" Margin="573,463,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="highwayTickets_Button" Content="Highway tickets" HorizontalAlignment="Left" Margin="497,476,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToHighwayTicketsPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation_Rectangle_Kopiuj5" HorizontalAlignment="Left" Height="2" Margin="573,529,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="parkingTickets_Button" Content="Parking tickets" HorizontalAlignment="Left" Margin="497,542,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToParkingTicketsPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="30" Margin="570,157,0,0" VerticalAlignment="Top" Width="30" Source="/card.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="546,221,0,0" VerticalAlignment="Top" Width="30" Source="/expenseAnalysis.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="546,285,0,0" VerticalAlignment="Top" Width="30" Source="/transferRequest.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="500,351,0,0" VerticalAlignment="Top" Width="31" Source="/gamesAndGiftCards.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="519,416,0,0" VerticalAlignment="Top" Width="30" Source="/transportTickets.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="548,482,0,0" VerticalAlignment="Top" Width="30" Source="/highwayTickets.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="555,548,0,0" VerticalAlignment="Top" Width="30" Source="/parkingTickets.png"/>
     </Grid>
 </Window>

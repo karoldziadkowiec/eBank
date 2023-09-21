@@ -232,5 +232,23 @@
   <ItemGroup>
     <Resource Include="editing.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="expenseAnalysis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="transferRequest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gamesAndGiftCards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="transportTickets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="highwayTickets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="parkingTickets.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

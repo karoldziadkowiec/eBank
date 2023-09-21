@@ -86,5 +86,6 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Rectangle x:Name="nav_Rectangle_Kopiuj" HorizontalAlignment="Left" Height="488" Margin="475,136,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="394" Fill="White" RadiusX="10" RadiusY="10"/>
     </Grid>
 </Window>

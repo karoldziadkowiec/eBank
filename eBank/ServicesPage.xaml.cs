@@ -96,5 +96,35 @@ namespace eBank
                 MessageBox.Show("You already have an active card.", "eBank");
             }
         }
+
+        private void goToExpenseAnalysisPage(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void goToTransferRequestPage(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void goToGamesAndGiftCardsPage(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void goToPublicTransportTicketsPage(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void goToHighwayTicketsPage(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void goToParkingTicketsPage(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
