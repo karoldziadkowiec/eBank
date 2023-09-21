@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AccountEditData.xaml.cs">
+      <DependentUpon>AccountEditData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AccountPage.xaml.cs">
       <DependentUpon>AccountPage.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
     <Compile Include="TransfersPage.xaml.cs">
       <DependentUpon>TransfersPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="AccountEditData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

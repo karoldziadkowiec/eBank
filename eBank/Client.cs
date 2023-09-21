@@ -24,8 +24,8 @@ namespace eBank
         public string placeOfBirth { get; set; }
         public string residentialAddress { get; set; }
         public string correspondenceAddress { get; set; }
-        public string email { get; set; }
         public string phoneNumber { get; set; }
+        public string email { get; set; }
         public string passwordReminder { get; set; }
         public double withdrawalLimit { get; set; }
         public double transactionLimit { get; set; }
@@ -40,7 +40,7 @@ namespace eBank
               string LOGIN, string PASSWORD, double CHECKINGACCOUNT, double SAVINGSACCOUNT,
               int ACTIVITY, string GENDER, string BIRTHDAY, string IDCARDNUMBER,
               string PLACEOFBIRTH, string RESIDENTIALADDRESS, string CORRESPONDENCEADDRESS,
-              string EMAIL, string PHONENUMBER, string PASSWORDREMINDER,
+              string PHONENUMBER, string EMAIL, string PASSWORDREMINDER,
               double WITHDRAWALLIMIT, double TRANSACTIONLIMIT, string CREATIONDATE,
               string CARDNUMBER, int CARDACTIVITY, string CARDCOLOR, string CARDSTARTDATE, string CARDENDDATE)
         {
@@ -60,8 +60,8 @@ namespace eBank
             placeOfBirth = PLACEOFBIRTH;
             residentialAddress = RESIDENTIALADDRESS;
             correspondenceAddress = CORRESPONDENCEADDRESS;
-            email = EMAIL;
             phoneNumber = PHONENUMBER;
+            email = EMAIL;
             passwordReminder = PASSWORDREMINDER;
             withdrawalLimit = WITHDRAWALLIMIT;
             transactionLimit = TRANSACTIONLIMIT;

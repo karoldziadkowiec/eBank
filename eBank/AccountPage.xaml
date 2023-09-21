@@ -127,5 +127,45 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Label x:Name="nameAndSurname_Label" Content="Name and surname" HorizontalAlignment="Left" Margin="315,147,0,0" VerticalAlignment="Top" Width="431" FontFamily="Calibri" FontSize="35" FontWeight="Bold"/>
+        <Rectangle x:Name="r0_Rectangle_Kopiuj" HorizontalAlignment="Left" Height="406" Margin="523,-5,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="4" Fill="#FF66BB6A" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.00"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label x:Name="creationDate_Label" Content="creation date" HorizontalAlignment="Left" Margin="318,197,0,0" VerticalAlignment="Top" Foreground="#FFB1B1B1" Width="410" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label" Content="Account status" HorizontalAlignment="Left" Margin="318,224,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfAccountStatus_Label" Content="value" HorizontalAlignment="Left" Margin="318,239,0,0" VerticalAlignment="Top" Foreground="Black" Width="114" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj" Content="Account type" HorizontalAlignment="Left" Margin="458,224,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfAccountType_Label" Content="value" HorizontalAlignment="Left" Margin="458,239,0,0" VerticalAlignment="Top" Foreground="Black" Width="114" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj1" Content="Login" HorizontalAlignment="Left" Margin="598,224,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfLogin_Label" Content="value" HorizontalAlignment="Left" Margin="598,239,0,0" VerticalAlignment="Top" Foreground="Black" Width="130" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj2" Content="PESEL number" HorizontalAlignment="Left" Margin="318,270,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfPeselNumber_Label" Content="value" HorizontalAlignment="Left" Margin="318,285,0,0" VerticalAlignment="Top" Foreground="Black" Width="135" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj3" Content="ID card number" HorizontalAlignment="Left" Margin="458,270,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfIdCardNumber_Label" Content="value" HorizontalAlignment="Left" Margin="458,285,0,0" VerticalAlignment="Top" Foreground="Black" Width="145" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj4" Content="Gender" HorizontalAlignment="Left" Margin="318,316,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfGender_Label" Content="value" HorizontalAlignment="Left" Margin="318,331,0,0" VerticalAlignment="Top" Foreground="Black" Width="135" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj5" Content="Birthday" HorizontalAlignment="Left" Margin="458,316,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfBirthday_Label" Content="value" HorizontalAlignment="Left" Margin="458,331,0,0" VerticalAlignment="Top" Foreground="Black" Width="135" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj6" Content="Telephone number" HorizontalAlignment="Left" Margin="318,362,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="135" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfTelephoneNumber_Label" Content="value" HorizontalAlignment="Left" Margin="318,377,0,0" VerticalAlignment="Top" Foreground="Black" Width="135" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfEmail_Label" Content="value" HorizontalAlignment="Left" Margin="458,377,0,0" VerticalAlignment="Top" Foreground="Black" Width="135" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj8" Content="Place of birth" HorizontalAlignment="Left" Margin="318,407,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfPlaceOfBirth_Label" Content="value" HorizontalAlignment="Left" Margin="318,422,0,0" VerticalAlignment="Top" Foreground="Black" Width="394" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj9" Content="E-mail" HorizontalAlignment="Left" Margin="458,362,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="114" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj10" Content="Residential address" HorizontalAlignment="Left" Margin="318,452,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="165" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfResidentialAddress_Label" Content="value" HorizontalAlignment="Left" Margin="318,467,0,0" VerticalAlignment="Top" Foreground="Black" Width="394" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj11" Content="Correspondence address" HorizontalAlignment="Left" Margin="318,497,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="197" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfCorrespondenceAddress_Label" Content="value" HorizontalAlignment="Left" Margin="318,512,0,0" VerticalAlignment="Top" Foreground="Black" Width="394" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Label x:Name="accountStatus_Label_Kopiuj12" Content="Mother's name (password reminder)" HorizontalAlignment="Left" Margin="318,542,0,0" VerticalAlignment="Top" Foreground="#FF757575" Width="254" FontFamily="Calibri" FontSize="15" VerticalContentAlignment="Center"/>
+        <Label x:Name="valueOfPasswordReminder_Label" Content="value" HorizontalAlignment="Left" Margin="318,557,0,0" VerticalAlignment="Top" Foreground="Black" Width="197" FontFamily="Calibri" FontSize="18" VerticalContentAlignment="Center"/>
+        <Button x:Name="editData_Button" Content="Edit data" HorizontalAlignment="Left" Margin="594,544,0,0" VerticalAlignment="Top" Height="37" Width="134" FontFamily="Calibri" FontSize="18" BorderBrush="#FFC6C6C6" Click="goToEditDataPage" TabIndex="1" Background="#FF003401" Foreground="White"/>
+        <Button x:Name="deleteAccount_Button" Content="Delete account" HorizontalAlignment="Left" Margin="594,586,0,0" VerticalAlignment="Top" Height="37" Width="134" FontFamily="Calibri" FontSize="18" BorderBrush="#FFC6C6C6" Click="deleteAccount" TabIndex="1" Background="#FF003401" Foreground="White"/>
     </Grid>
 </Window>

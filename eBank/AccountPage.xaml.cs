@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace eBank
     /// </summary>
     public partial class AccountPage : Window
     {
+        private readonly string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
         Client client = null;
         public AccountPage(Client _client)
         {
@@ -30,6 +32,42 @@ namespace eBank
         private void displayData()
         {
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
+            displayAccountData();
+            displayCardData();
+        }
+
+        private void displayAccountData()
+        {
+            string nameAndSurname = client.name + " " + client.surname;
+            nameAndSurname_Label.Content = nameAndSurname;
+            string accountCreated = "account created ";
+            creationDate_Label.Content = accountCreated + client.creationDate.ToString();
+            if (client.activity == 0)
+            {
+                valueOfAccountStatus_Label.Content = "inactive";
+                valueOfAccountStatus_Label.Foreground = Brushes.Red;
+            }
+            else if (client.activity == 1)
+            {
+                valueOfAccountStatus_Label.Content = "active";
+                valueOfAccountStatus_Label.Foreground = Brushes.Green;
+            }
+            valueOfAccountType_Label.Content = client.accountType;
+            valueOfLogin_Label.Content = client.login;
+            valueOfPeselNumber_Label.Content = client.peselNumber;
+            valueOfIdCardNumber_Label.Content = client.idCardNumber;
+            valueOfGender_Label.Content = client.gender;
+            valueOfBirthday_Label.Content = client.birthday;
+            valueOfTelephoneNumber_Label.Content = client.phoneNumber;
+            valueOfEmail_Label.Content = client.email;
+            valueOfPlaceOfBirth_Label.Content = client.placeOfBirth;
+            valueOfResidentialAddress_Label.Content = client.residentialAddress;
+            valueOfCorrespondenceAddress_Label.Content = client.correspondenceAddress;
+            valueOfPasswordReminder_Label.Content = client.passwordReminder;
+        }
+
+        private void displayCardData()
+        {
             string currency = " PLN";
             valueOfCheckingAccount_Label.Content = client.checkingAccount.ToString() + currency;
             valueOfSavingsAccount_Label.Content = client.savingsAccount.ToString() + currency;
@@ -63,7 +101,7 @@ namespace eBank
             {
                 valueOfCardColor_Label.Content = client.cardColor;
             }
-            
+
             valueOfCardWithdrawalLimit_Label.Content = client.withdrawalLimit + currency;
             valueOfCardTransactionLimit_Label.Content = client.transactionLimit + currency;
 
@@ -147,6 +185,58 @@ namespace eBank
             ServicesOrderCard servicesOrderCard = new ServicesOrderCard(client);
             servicesOrderCard.Show();
             this.Hide();
+        }
+
+        private void goToEditDataPage(object sender, RoutedEventArgs e)
+        {
+            AccountEditData accountEditData = new AccountEditData(client);
+            accountEditData.Show();
+            this.Hide();
+        }
+
+        private void deleteAccount(object sender, RoutedEventArgs e)
+        {
+            int clientID = client.id;
+
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete your account?", "eBank", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        string sqlQuery = "DELETE FROM clients WHERE id = @clientID";
+                        SqlCommand command = new SqlCommand(sqlQuery, connection);
+                        command.Parameters.AddWithValue("@clientID", clientID);
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Account successfully removed.", "eBank");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Account not found.", "eBank");
+                        }
+
+                        connection.Close();
+
+                        MainWindow loginPage = new MainWindow();
+                        loginPage.Show();
+                        this.Hide();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error removing profile: " + ex.Message, "eBank");
+                }
+            }
+            else
+            {
+                InvalidateVisual();
+            }
         }
     }
 }
