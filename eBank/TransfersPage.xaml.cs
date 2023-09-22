@@ -30,6 +30,53 @@ namespace eBank
         private void displayData()
         {
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
+            displayCardData();
+        }
+
+        private void displayCardData()
+        {
+            //CARD COLOR
+            if (client.cardColor == "Black")
+            {
+                checkingAccountCard_Rectangle.Fill = Brushes.Black;
+            }
+            else if (client.cardColor == "Brown")
+            {
+                checkingAccountCard_Rectangle.Fill = new SolidColorBrush(Color.FromRgb(64, 50, 40));
+            }
+            else
+            {
+                checkingAccountCard_Rectangle.Fill = new SolidColorBrush(Color.FromRgb(0, 52, 1));
+            }
+
+            string currency = " PLN";
+            //CHECKING ACCOUNT
+            valueOfCheckingAccount_Label.Content = client.checkingAccount + currency;
+
+            string cardNumber = client.cardNumber;
+            if (cardNumber.Length == 16)
+            {
+                string formattedCardNumber = $"{cardNumber.Substring(0, 4)}  {cardNumber.Substring(4, 4)}  {cardNumber.Substring(8, 4)}  {cardNumber.Substring(12, 4)}";
+                cardNumber_Label.Content = formattedCardNumber;
+            }
+            else
+            {
+                cardNumber_Label.Content = "XXXX  XXXX  XXXX  XXXX";
+            }
+
+            string cardEndDate = client.cardEndDate;
+            if (cardEndDate.Length == 10)
+            {
+                string firstSevenCharacters = cardEndDate.Substring(0, 7);
+                cardEndDate_Label.Content = firstSevenCharacters;
+            }
+            else
+            {
+                cardEndDate_Label.Content = "YYYY-MM";
+            }
+
+            string fullName = client.name + " " + client.surname;
+            nameAndSurname_Label.Content = fullName;
         }
 
         private void goToHomePage(object sender, RoutedEventArgs e)

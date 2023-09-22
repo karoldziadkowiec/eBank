@@ -224,7 +224,7 @@ namespace eBank
                 newAccountActivity = 0;
             }
 
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to change your account activity?", "eBank", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to change your account status?", "eBank", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
@@ -248,11 +248,11 @@ namespace eBank
 
                                 if (client.activity == 0)
                                 {
-                                    MessageBox.Show("The account has been set to inactive. You cannot perform any operations.", "eBank");
+                                    MessageBox.Show("The account status has been set to inactive. You cannot perform any operations.", "eBank");
                                 }
                                 else if (client.activity == 1)
                                 {
-                                    MessageBox.Show("The account has been set to active.", "eBank");
+                                    MessageBox.Show("The account status has been set to active.", "eBank");
                                 }
 
                                 SettingsPage settingsPage = new SettingsPage(client);
@@ -261,14 +261,14 @@ namespace eBank
                             }
                             else
                             {
-                                MessageBox.Show("Account activity update failed. Client not found.", "eBank");
+                                MessageBox.Show("Account status update failed. Client not found.", "eBank");
                             }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error updating account activity: " + ex.Message, "eBank");
+                    MessageBox.Show("Error updating account status: " + ex.Message, "eBank");
                 }
             }
         }
@@ -318,7 +318,7 @@ namespace eBank
                             }
                             else
                             {
-                                MessageBox.Show("Card activity update failed. Client not found.", "eBank");
+                                MessageBox.Show("Card status update failed. Client not found.", "eBank");
                             }
                         }
                     }

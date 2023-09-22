@@ -271,5 +271,8 @@
   <ItemGroup>
     <Resource Include="taxTransfer.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="piggyBank.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
