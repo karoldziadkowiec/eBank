@@ -96,6 +96,9 @@
     <Compile Include="TransfersPage.xaml.cs">
       <DependentUpon>TransfersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransfersRegularTransfer.xaml.cs">
+      <DependentUpon>TransfersRegularTransfer.xaml</DependentUpon>
+    </Compile>
     <Page Include="AccountEditData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TransfersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransfersRegularTransfer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

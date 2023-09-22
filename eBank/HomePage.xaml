@@ -87,7 +87,7 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <Rectangle x:Name="cards_Rectangle" HorizontalAlignment="Left" Height="177" Margin="324,195,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="692" Fill="White" RadiusX="10" RadiusY="10"/>
-        <Rectangle x:Name="checkingAccountCard_Rectangle" HorizontalAlignment="Left" Height="147" Margin="350,210,0,0" Stroke="#FF003401" VerticalAlignment="Top" Width="282" Fill="#FF003401" RadiusX="10" RadiusY="10"/>
+        <Rectangle x:Name="checkingAccountCard_Rectangle" HorizontalAlignment="Left" Height="147" Margin="350,210,0,0" Stroke="Black" VerticalAlignment="Top" Width="282" Fill="#FF003401" RadiusX="10" RadiusY="10"/>
         <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="4" Margin="621,281,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="98" Fill="#FF66BB6A" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -108,7 +108,7 @@
         <Label x:Name="checkingAccount_Label" Content="Checking Account" HorizontalAlignment="Left" Margin="502,217,0,0" VerticalAlignment="Top" Foreground="#FFBEBEBE" FontFamily="Calibri" FontSize="14" Width="127"/>
         <Label x:Name="cardEndDate_Label" Content="CARD END DATE" HorizontalAlignment="Left" Margin="368,299,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri" FontSize="16" Width="241"/>
         <Label x:Name="nameAndSurname_Label" Content="NAME SURNAME" HorizontalAlignment="Left" Margin="368,323,0,0" VerticalAlignment="Top" Foreground="#FFC9AE72" FontFamily="Calibri" FontSize="16" Width="241"/>
-        <Rectangle x:Name="savingsAccountCard_Rectangle" HorizontalAlignment="Left" Height="147" Margin="707,210,0,0" Stroke="#FF003401" VerticalAlignment="Top" Width="282" Fill="#FF003401" RadiusX="10" RadiusY="10"/>
+        <Rectangle x:Name="savingsAccountCard_Rectangle" HorizontalAlignment="Left" Height="147" Margin="707,210,0,0" Stroke="Black" VerticalAlignment="Top" Width="282" Fill="#FF003401" RadiusX="10" RadiusY="10"/>
         <Image x:Name="eBank2_Image" HorizontalAlignment="Left" Height="28" Margin="725,215,0,0" VerticalAlignment="Top" Width="29" Source="/icon.png"/>
         <Label x:Name="eBank2_Label" Content="eBank" Foreground="White" FontFamily="Eras ITC" FontSize="20" Margin="753,215,235,419"/>
         <Label x:Name="savingsAccount_Label" Content="Savings Account" HorizontalAlignment="Left" Margin="870,217,0,0" VerticalAlignment="Top" Foreground="#FFBEBEBE" FontFamily="Calibri" FontSize="14" Width="119"/>

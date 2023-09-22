@@ -185,7 +185,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                TransfersRegularTransfer regularTransfer = new TransfersRegularTransfer(client);
+                regularTransfer.Show();
+                this.Hide();
             }
             else
             {
