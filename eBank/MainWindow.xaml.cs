@@ -27,14 +27,28 @@ namespace eBank
         {
             InitializeComponent();
             displayData();
+            clickEnter();
         }
-
+        
         private void displayData()
         {
             accountType_ComboBox.Items.Add("Admin");
             accountType_ComboBox.Items.Add("Client");
 
             accountType_ComboBox.SelectedItem = "Client";
+        }
+
+        private void clickEnter()
+        {
+            password_PasswordBox.KeyUp += PasswordBox_EnterKeyPressed;
+        }
+
+        private void PasswordBox_EnterKeyPressed(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                goToHomePage(null, null);
+            }
         }
 
         private void goToHomePage(object sender, RoutedEventArgs e)

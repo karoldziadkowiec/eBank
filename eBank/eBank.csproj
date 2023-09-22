@@ -93,6 +93,12 @@
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransfersOwnTransferFromCheckingAccount.xaml.cs">
+      <DependentUpon>TransfersOwnTransferFromCheckingAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransfersOwnTransferFromSavingsAccount.xaml.cs">
+      <DependentUpon>TransfersOwnTransferFromSavingsAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransfersPage.xaml.cs">
       <DependentUpon>TransfersPage.xaml</DependentUpon>
     </Compile>
@@ -159,6 +165,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransfersOwnTransferFromCheckingAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransfersOwnTransferFromSavingsAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

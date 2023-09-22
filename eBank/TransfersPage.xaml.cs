@@ -200,6 +200,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
+                TransfersOwnTransferFromCheckingAccount ownTransferFromCheckingAccount = new TransfersOwnTransferFromCheckingAccount(client);
+                ownTransferFromCheckingAccount.Show();
+                this.Hide();
 
             }
             else

@@ -38,23 +38,28 @@ namespace eBank
             {
                 accountActivity_Label.Content = "inactive";
                 accountActivity_Label.Foreground = Brushes.Red;
+                accountAction_Button.Content = "Activate";
             }
             else if (client.activity == 1)
             {
                 accountActivity_Label.Content = "active";
                 accountActivity_Label.Foreground = Brushes.Green;
+                accountAction_Button.Content = "Block";
+                accountAction_Button.Background = new SolidColorBrush(Color.FromRgb(67, 15, 15));
             }
 
             if (client.cardActivity == 0)
             {
                 cardActivity_Label.Content = "inactive";
                 cardActivity_Label.Foreground = Brushes.Red;
-                block_Button.Visibility = Visibility.Hidden;
+                cardAction_Button.Content = "Create";
             }
             else if (client.cardActivity == 1)
             {
                 cardActivity_Label.Content = "active";
                 cardActivity_Label.Foreground = Brushes.Green;
+                cardAction_Button.Content = "Block";
+                cardAction_Button.Background = new SolidColorBrush(Color.FromRgb(67, 15, 15));
             }
         }
 
@@ -214,13 +219,15 @@ namespace eBank
             }
         }
 
-        private void changeAccountActivity(object sender, RoutedEventArgs e)
+        private void changeAccountStatus(object sender, RoutedEventArgs e)
         {
-            int newAccountActivity; 
-            if(client.activity == 0) {
+            int newAccountActivity;
+            if (client.activity == 0)
+            {
                 newAccountActivity = 1;
             }
-            else {
+            else
+            {
                 newAccountActivity = 0;
             }
 
@@ -273,60 +280,69 @@ namespace eBank
             }
         }
 
-        private void blockCard(object sender, RoutedEventArgs e)
+        private void changeCardStatus(object sender, RoutedEventArgs e)
         {
-            int cardActivity = 0;
-            string cardNumber = "";
-            string cardColor = "";
-            string cardStartDate = "";
-            string cardEndDate = "";
-
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to block your card?", "eBank", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
+            if (client.cardActivity == 1)
             {
-                try
+                int cardActivity = 0;
+                string cardNumber = "";
+                string cardColor = "";
+                string cardStartDate = "";
+                string cardEndDate = "";
+
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to block your card?", "eBank", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    try
                     {
-                        connection.Open();
-                        string updateQuery = "UPDATE clients SET cardActivity = @cardActivity, cardNumber = @cardNumber, cardColor = @cardColor, cardStartDate = @cardStartDate, cardEndDate = @cardEndDate WHERE login = @login";
-
-                        using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                        using (SqlConnection connection = new SqlConnection(connectionString))
                         {
-                            command.Parameters.AddWithValue("@cardActivity", cardActivity);
-                            command.Parameters.AddWithValue("@cardNumber", cardNumber);
-                            command.Parameters.AddWithValue("@cardColor", cardColor);
-                            command.Parameters.AddWithValue("@cardStartDate", cardStartDate);
-                            command.Parameters.AddWithValue("@cardEndDate", cardEndDate);
-                            command.Parameters.AddWithValue("@login", client.login);
+                            connection.Open();
+                            string updateQuery = "UPDATE clients SET cardActivity = @cardActivity, cardNumber = @cardNumber, cardColor = @cardColor, cardStartDate = @cardStartDate, cardEndDate = @cardEndDate WHERE login = @login";
 
-                            int rowsAffected = command.ExecuteNonQuery();
+                            using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                            {
+                                command.Parameters.AddWithValue("@cardActivity", cardActivity);
+                                command.Parameters.AddWithValue("@cardNumber", cardNumber);
+                                command.Parameters.AddWithValue("@cardColor", cardColor);
+                                command.Parameters.AddWithValue("@cardStartDate", cardStartDate);
+                                command.Parameters.AddWithValue("@cardEndDate", cardEndDate);
+                                command.Parameters.AddWithValue("@login", client.login);
 
-                            if (rowsAffected > 0)
-                            {
-                                client.cardActivity = cardActivity;
-                                client.cardNumber = cardNumber;
-                                client.cardColor = cardColor;
-                                client.cardStartDate = cardStartDate;
-                                client.cardEndDate = cardEndDate;
-                                MessageBox.Show("The card has been blocked. Create a new card.", "eBank");
-                                
-                                SettingsPage settingsPage = new SettingsPage(client);
-                                settingsPage.Show();
-                                this.Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Card status update failed. Client not found.", "eBank");
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    client.cardActivity = cardActivity;
+                                    client.cardNumber = cardNumber;
+                                    client.cardColor = cardColor;
+                                    client.cardStartDate = cardStartDate;
+                                    client.cardEndDate = cardEndDate;
+                                    MessageBox.Show("The card has been blocked. Create a new card.", "eBank");
+
+                                    SettingsPage settingsPage = new SettingsPage(client);
+                                    settingsPage.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Card status update failed. Client not found.", "eBank");
+                                }
                             }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error blocking card: " + ex.Message, "eBank");
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error blocking card: " + ex.Message, "eBank");
-                }
+            }
+            else
+            {
+                ServicesOrderCard orderCard = new ServicesOrderCard(client);
+                orderCard.Show();
+                this.Hide();
             }
         }
     }

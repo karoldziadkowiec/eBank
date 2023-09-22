@@ -144,7 +144,7 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <Label x:Name="accountActivity_Label" Content="activity" HorizontalAlignment="Left" Margin="493,380,0,0" VerticalAlignment="Top" Width="250" FontFamily="Calibri" FontSize="25" HorizontalContentAlignment="Center"/>
-        <Button x:Name="change_Button" Content="Change" HorizontalAlignment="Left" Margin="766,381,0,0" VerticalAlignment="Top" Height="40" Width="107" Background="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" RenderTransformOrigin="0.5,0.5" Click="changeAccountActivity">
+        <Button x:Name="accountAction_Button" Content="value" HorizontalAlignment="Left" Margin="766,381,0,0" VerticalAlignment="Top" Height="40" Width="107" Background="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" RenderTransformOrigin="0.5,0.5" Click="changeAccountStatus">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -166,7 +166,7 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <Label x:Name="cardActivity_Label" Content="activity" HorizontalAlignment="Left" Margin="493,474,0,0" VerticalAlignment="Top" Width="250" FontFamily="Calibri" FontSize="25" HorizontalContentAlignment="Center"/>
-        <Button x:Name="block_Button" Content="Block" HorizontalAlignment="Left" Margin="766,475,0,0" VerticalAlignment="Top" Height="40" Width="107" Background="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" RenderTransformOrigin="0.5,0.5" Click="blockCard">
+        <Button x:Name="cardAction_Button" Content="value" HorizontalAlignment="Left" Margin="766,475,0,0" VerticalAlignment="Top" Height="40" Width="107" Background="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="22" RenderTransformOrigin="0.5,0.5" Click="changeCardStatus">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
