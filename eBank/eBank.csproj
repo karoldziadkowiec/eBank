@@ -250,5 +250,26 @@
   <ItemGroup>
     <Resource Include="parkingTickets.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="deposit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="withdraw2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ownTransfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="blik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="phoneTopUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="currencyTransfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="taxTransfer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

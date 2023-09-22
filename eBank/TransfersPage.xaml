@@ -86,6 +86,105 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="nav_Rectangle_Kopiuj" HorizontalAlignment="Left" Height="488" Margin="475,136,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="394" Fill="White" RadiusX="10" RadiusY="10"/>
+        <Rectangle x:Name="nav_Rectangle_Kopiuj" HorizontalAlignment="Left" Height="510" Margin="550,132,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="394" Fill="White" RadiusX="10" RadiusY="10"/>
+        <Rectangle x:Name="nav_Rectangle_Kopiuj1" HorizontalAlignment="Left" Height="106" Margin="281,205,0,0" Stroke="#FF003401" VerticalAlignment="Top" Width="244" Fill="#FF003401" RadiusX="10" RadiusY="10"/>
+        <Label x:Name="completeTransfer_Label" Content="Complete transfer" HorizontalAlignment="Left" Margin="281,132,0,0" VerticalAlignment="Top" Width="244" FontFamily="Calibri" FontSize="25"/>
+        <Label x:Name="from_Label" Content="From" HorizontalAlignment="Left" Margin="281,166,0,0" VerticalAlignment="Top" Width="244" FontFamily="Calibri" FontSize="20"/>
+        <Button x:Name="_Button" Content="Home" HorizontalAlignment="Left" Margin="610,145,0,0" VerticalAlignment="Top" Height="40" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToHomePage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="670,200,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="deposit_Button" Content="Deposit" HorizontalAlignment="Left" Margin="610,145,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToDepositPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="withdraw_Button" Content="Withdraw" HorizontalAlignment="Left" Margin="610,207,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToWithdrawPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation2_Rectangle" HorizontalAlignment="Left" Height="2" Margin="670,262,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="regularTransfer_Button" Content="Regular transfer" HorizontalAlignment="Left" Margin="610,269,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToRegularTransferPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="670,324,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="ownTransfer_Button" Content="Own transfer" HorizontalAlignment="Left" Margin="610,331,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToOwnTransferPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation3_Rectangle1" HorizontalAlignment="Left" Height="2" Margin="670,385,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="blik_Button" Content="BLIK" HorizontalAlignment="Left" Margin="610,392,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToBLIKPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation5_Rectangle" HorizontalAlignment="Left" Height="2" Margin="670,447,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="phoneTopUp_Button" Content="Phone top-up" HorizontalAlignment="Left" Margin="610,454,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToPhoneTopUpPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation6_Rectangle" HorizontalAlignment="Left" Height="2" Margin="670,509,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="currencyTransfer_Button" Content="Currency transfer" HorizontalAlignment="Left" Margin="610,516,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToCurrencyTransferPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle x:Name="separation7_Rectangle" HorizontalAlignment="Left" Height="2" Margin="670,571,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
+        <Button x:Name="taxTransfer_Button" Content="Tax transfer" HorizontalAlignment="Left" Margin="610,578,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToTaxTransferPage" TabIndex="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.851"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.99"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="40" Margin="673,150,0,0" VerticalAlignment="Top" Width="40" Source="/deposit.jpg"/>
+        <Image HorizontalAlignment="Left" Height="36" Margin="664,214,0,0" VerticalAlignment="Top" Width="35" Source="/withdraw2.png"/>
+        <Image HorizontalAlignment="Left" Height="40" Margin="633,274,0,0" VerticalAlignment="Top" Width="40" Source="/transaction.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="652,341,0,0" VerticalAlignment="Top" Width="30" Source="/ownTransfer.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="693,402,0,0" VerticalAlignment="Top" Width="30" Source="/blik.jpg"/>
+        <Image HorizontalAlignment="Left" Height="34" Margin="655,462,0,0" VerticalAlignment="Top" Width="33" Source="/phoneTopUp.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="635,526,0,0" VerticalAlignment="Top" Width="30" Source="/currencyTransfer.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="660,588,0,0" VerticalAlignment="Top" Width="30" Source="/taxTransfer.png"/>
     </Grid>
 </Window>

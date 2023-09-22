@@ -83,5 +83,133 @@ namespace eBank
                 this.Hide();
             }
         }
+
+        private bool isAccountActive(int accountStatus)
+        {
+            if (accountStatus == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool isCardActive(int cardStatus)
+        {
+            if (cardStatus == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void goToDepositPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
+
+        private void goToWithdrawPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
+
+        private void goToRegularTransferPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
+
+        private void goToOwnTransferPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
+
+        private void goToBLIKPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
+
+        private void goToPhoneTopUpPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
+
+        private void goToCurrencyTransferPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
+
+        private void goToTaxTransferPage(object sender, RoutedEventArgs e)
+        {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
+        }
     }
 }

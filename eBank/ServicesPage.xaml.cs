@@ -84,6 +84,30 @@ namespace eBank
             }
         }
 
+        private bool isAccountActive(int accountStatus)
+        {
+            if (accountStatus == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool isCardActive(int cardStatus)
+        {
+            if (cardStatus == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void goToOrderCardPage(object sender, RoutedEventArgs e)
         {
             if (client.cardActivity == 0)
@@ -104,27 +128,67 @@ namespace eBank
 
         private void goToTransferRequestPage(object sender, RoutedEventArgs e)
         {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
         }
 
         private void goToGamesAndGiftCardsPage(object sender, RoutedEventArgs e)
         {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
         }
 
         private void goToPublicTransportTicketsPage(object sender, RoutedEventArgs e)
         {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
         }
 
         private void goToHighwayTicketsPage(object sender, RoutedEventArgs e)
         {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
         }
 
         private void goToParkingTicketsPage(object sender, RoutedEventArgs e)
         {
+            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
+                return;
+            }
         }
     }
 }
