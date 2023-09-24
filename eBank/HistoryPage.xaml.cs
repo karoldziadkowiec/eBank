@@ -58,17 +58,18 @@ namespace eBank
                         "[transactions].[id] AS 'Transaction number', " +
                         "CONCAT([transactionType].[name], ': ', [transactions].[title]) AS 'Transaction description', " +
                         "CASE " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] != @clientID THEN '-' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[recipientID] = @clientID AND [transactions].[senderID] != @clientID THEN '+' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @depositID THEN '+' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @withdrawID THEN '-' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND ([transactions].[type] != @depositID AND [transactions].[type] != @withdrawID) THEN CAST([transactions].[value] AS VARCHAR) " +
-                        "ELSE '-' + CAST([transactions].[value] AS VARCHAR) END AS 'Value' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] != @clientID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[recipientID] = @clientID AND [transactions].[senderID] != @clientID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @depositID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @withdrawID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND ([transactions].[type] != @depositID AND [transactions].[type] != @withdrawID) THEN CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "ELSE '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' END AS 'Value' " +
                         "FROM transactions " +
                         "INNER JOIN transactionType ON [transactions].[type] = [transactionType].[id] " +
                         "WHERE [transactions].[date] >= @xDaysAgo " +
                         "AND ([transactions].[senderID] = @clientID OR [transactions].[recipientID] = @clientID) " +
                         "ORDER BY [transactions].[date] DESC", connection);
+
 
                     cmdDataBase.Parameters.AddWithValue("@depositID", depositID);
                     cmdDataBase.Parameters.AddWithValue("@withdrawID", withdrawID);
@@ -162,17 +163,18 @@ namespace eBank
                         "[transactions].[id] AS 'Transaction number', " +
                         "CONCAT([transactionType].[name], ': ', [transactions].[title]) AS 'Transaction description', " +
                         "CASE " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] != @clientID THEN '-' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[recipientID] = @clientID AND [transactions].[senderID] != @clientID THEN '+' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @depositID THEN '+' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @withdrawID THEN '-' + CAST([transactions].[value] AS VARCHAR) " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND ([transactions].[type] != @depositID AND [transactions].[type] != @withdrawID) THEN CAST([transactions].[value] AS VARCHAR) " +
-                        "ELSE '-' + CAST([transactions].[value] AS VARCHAR) END AS 'Value' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] != @clientID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[recipientID] = @clientID AND [transactions].[senderID] != @clientID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @depositID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @withdrawID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND ([transactions].[type] != @depositID AND [transactions].[type] != @withdrawID) THEN CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "ELSE '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' END AS 'Value' " +
                         "FROM transactions " +
                         "INNER JOIN transactionType ON [transactions].[type] = [transactionType].[id] " +
                         "WHERE [transactions].[date] >= @xDaysAgo " +
                         "AND ([transactions].[senderID] = @clientID OR [transactions].[recipientID] = @clientID) " +
                         "ORDER BY [transactions].[date] DESC", connection);
+
 
                     cmdDataBase.Parameters.AddWithValue("@depositID", depositID);
                     cmdDataBase.Parameters.AddWithValue("@withdrawID", withdrawID);
@@ -193,11 +195,6 @@ namespace eBank
         }
 
         private void downloadHistoryToFile(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void goTo(object sender, RoutedEventArgs e)
         {
 
         }

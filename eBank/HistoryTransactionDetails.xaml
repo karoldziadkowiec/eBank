@@ -64,7 +64,7 @@
             </Button.Background>
         </Button>
         <Rectangle x:Name="separation_Rectangle" HorizontalAlignment="Left" Height="2" Margin="34,483,0,0" Stroke="#FF002301" VerticalAlignment="Top" Width="200" Fill="#FF002301"/>
-        <Button x:Name="account_Button" Content="Account" HorizontalAlignment="Left" Margin="34,504,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="Black" Foreground="White" Background="#FF003401" Click="goToAccountPage" TabIndex="6"/>
+        <Button x:Name="account_Button" Content="Account" HorizontalAlignment="Left" Margin="34,504,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Foreground="White" Background="#FF003401" Click="goToAccountPage" TabIndex="6"/>
         <Button x:Name="logout_Button" Content="Logout" HorizontalAlignment="Left" Margin="34,570,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Background="#FF003401" Foreground="White" Click="Logout" TabIndex="7"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,163,0,0" VerticalAlignment="Top" Width="30" Source="/home.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,227,0,0" VerticalAlignment="Top" Width="30" Source="/history.png" RenderTransformOrigin="0.64,0.495"/>
@@ -86,5 +86,36 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Rectangle x:Name="transactionDetails_Rectangle" HorizontalAlignment="Left" Height="502" Margin="338,142,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="666" Fill="White" RadiusX="10" RadiusY="10"/>
+        <Label x:Name="fromSenderAccountDESC_Label" Content="From account:" HorizontalAlignment="Left" Margin="353,156,0,0" VerticalAlignment="Top" Width="119" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="fromSenderAccount_Label" Content="card number" HorizontalAlignment="Left" Margin="472,156,0,0" VerticalAlignment="Top" Width="511" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="senderSurnameAndDESC_Label" Content="Surname and name:" HorizontalAlignment="Left" Margin="353,188,0,0" VerticalAlignment="Top" Width="160" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="senderResidentialAddressDESC_Label" Content="Residential address:" HorizontalAlignment="Left" Margin="353,220,0,0" VerticalAlignment="Top" Width="160" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="358,257,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="625" Fill="#FF66BB6A"/>
+        <Label x:Name="onRecipientAccountDESC_Label" Content="On account:" HorizontalAlignment="Left" Margin="353,264,0,0" VerticalAlignment="Top" Width="101" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="recipientSurnameAndNameDESC_Label" Content="Surname and name:" HorizontalAlignment="Left" Margin="353,296,0,0" VerticalAlignment="Top" Width="160" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="recipientResidentialAddressDESC_Label" Content="Residential address:" HorizontalAlignment="Left" Margin="353,328,0,0" VerticalAlignment="Top" Width="160" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="358,365,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="625" Fill="#FF66BB6A"/>
+        <Label x:Name="typeDESC_Label" Content="Type:" HorizontalAlignment="Left" Margin="353,371,0,0" VerticalAlignment="Top" Width="51" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="titleDESC_Label" Content="Title:" HorizontalAlignment="Left" Margin="353,403,0,0" VerticalAlignment="Top" Width="48" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="descriptionDESC_Label" Content="Description:" HorizontalAlignment="Left" Margin="353,438,0,0" VerticalAlignment="Top" Width="101" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="dateDESC_Label" Content="Date:" HorizontalAlignment="Left" Margin="353,470,0,0" VerticalAlignment="Top" Width="51" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="valueDESC_Label" Content="Value:" HorizontalAlignment="Left" Margin="353,504,0,0" VerticalAlignment="Top" Width="59" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="transactionNumberDESC_Label" Content="Transaction number:" HorizontalAlignment="Left" Margin="353,536,0,0" VerticalAlignment="Top" Width="169" FontFamily="Calibri" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="downloadTransactionConfirmation_Button" Content="Download transaction confirmation" HorizontalAlignment="Left" Margin="400,589,0,0" VerticalAlignment="Top" Height="28
+                " Width="357" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Foreground="White" Background="#FF003401" Click="downloadTransactionConfirmation" TabIndex="6"/>
+        <Image HorizontalAlignment="Left" Height="28" Margin="363,589,0,0" VerticalAlignment="Top" Width="28" Source="/download.png"/>
+        <Button x:Name="back_Button" Content="Back" HorizontalAlignment="Left" Margin="864,581,0,0" VerticalAlignment="Top" Height="43                 " Width="119" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Foreground="White" Background="#FF003401" Click="backToHistoryPage" TabIndex="6"/>
+        <Label x:Name="senderSurnameAndName_Label" Content="surname and name" HorizontalAlignment="Left" Margin="513,188,0,0" VerticalAlignment="Top" Width="470" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="senderResidentialAddress_Label" Content="residential address" HorizontalAlignment="Left" Margin="513,220,0,0" VerticalAlignment="Top" Width="470" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="onRecipientAccount_Label" Content="card number" HorizontalAlignment="Left" Margin="454,264,0,0" VerticalAlignment="Top" Width="529" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="recipientSurnameAndName_Label" Content="surname and name" HorizontalAlignment="Left" Margin="513,296,0,0" VerticalAlignment="Top" Width="470" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="recipientResidentialAddress_Label" Content="residential address" HorizontalAlignment="Left" Margin="513,328,0,0" VerticalAlignment="Top" Width="470" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="type_Label" Content="type" HorizontalAlignment="Left" Margin="406,371,0,0" VerticalAlignment="Top" Width="577" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="title_Label" Content="title" HorizontalAlignment="Left" Margin="403,403,0,0" VerticalAlignment="Top" Width="580" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="description_Label" Content="description" HorizontalAlignment="Left" Margin="454,438,0,0" VerticalAlignment="Top" Width="529" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="transactionDate_Label" Content="date" HorizontalAlignment="Left" Margin="404,470,0,0" VerticalAlignment="Top" Width="579" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="value_Label" Content="value" HorizontalAlignment="Left" Margin="412,504,0,0" VerticalAlignment="Top" Width="579" FontFamily="Calibri" FontSize="18"/>
+        <Label x:Name="transactionNumber_Label" Content="transaction number" HorizontalAlignment="Left" Margin="522,536,0,0" VerticalAlignment="Top" Width="461" FontFamily="Calibri" FontSize="18"/>
     </Grid>
 </Window>
