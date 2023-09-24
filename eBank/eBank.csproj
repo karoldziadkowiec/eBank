@@ -72,6 +72,9 @@
     <Compile Include="HistoryPage.xaml.cs">
       <DependentUpon>HistoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HistoryTransactionDetails.xaml.cs">
+      <DependentUpon>HistoryTransactionDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PasswordReminderPage.xaml.cs">
       <DependentUpon>PasswordReminderPage.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HistoryTransactionDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -294,6 +301,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="piggyBank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -149,7 +149,7 @@ namespace eBank
             double value;
             string title = title_TextBox.Text;
             string description = "Own transfer";
-            string date = DateTime.Today.ToString("yyyy-MM-dd");
+            string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(value_TextBox.Text))
             {

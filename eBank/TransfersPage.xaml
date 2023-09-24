@@ -88,7 +88,7 @@
         </Rectangle>
         <Rectangle x:Name="transfers_Rectangle" HorizontalAlignment="Left" Height="510" Margin="521,132,0,0" Stroke="#FFB4B4B4" VerticalAlignment="Top" Width="394" Fill="White" RadiusX="10" RadiusY="10"/>
         <Label x:Name="completeTransfer_Label" Content="Complete transfer" HorizontalAlignment="Left" Margin="286,132,0,0" VerticalAlignment="Top" Width="244" FontFamily="Calibri" FontSize="25"/>
-        <Label x:Name="from_Label" Content="From" HorizontalAlignment="Left" Margin="286,166,0,0" VerticalAlignment="Top" Width="244" FontFamily="Calibri" FontSize="20"/>
+        <Label x:Name="from_Label" Content="From" HorizontalAlignment="Left" Margin="286,166,0,0" VerticalAlignment="Top" Width="244" FontFamily="Calibri" FontSize="20" FontWeight="Bold"/>
         <Rectangle x:Name="separation1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="641,200,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
         <Button x:Name="deposit_Button" Content="Deposit" HorizontalAlignment="Left" Margin="581,145,0,0" VerticalAlignment="Top" Height="50" Width="274" FontFamily="Calibri" FontSize="22" BorderBrush="#FFC6C6C6" Click="goToDepositPage" TabIndex="8">
             <Button.Background>
