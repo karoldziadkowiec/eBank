@@ -4,7 +4,7 @@ Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL 
 
 To-do list:
 - Home: two tabs, next to + and -. under the history of the last 5 transfers, next to this month's expenses
-- History: displaying a table with transfers, printing transaction history in PDF, filtering if necessary
+- History: printing transaction history in PDF
 - Transfers: deposit, withdrawal, BLIK, phone top-up, currency transfer, tax transfer
 - Services: expense analysis, transfer requests, game top-ups and gift cards, transport tickets, motorway tickets, parking tickets
 - ADMIN PANEL
