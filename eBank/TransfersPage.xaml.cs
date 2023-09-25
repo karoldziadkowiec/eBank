@@ -51,7 +51,14 @@ namespace eBank
 
             string currency = " PLN";
             //CHECKING ACCOUNT
-            valueOfCheckingAccount_Label.Content = client.checkingAccount + currency;
+            if (client.cardActivity == 1)
+            {
+                valueOfCheckingAccount_Label.Content = client.checkingAccount + currency;
+            }
+            else
+            {
+                valueOfCheckingAccount_Label.Content = "-" + currency;
+            }
 
             string cardNumber = client.cardNumber;
             if (cardNumber.Length == 16)
@@ -65,12 +72,12 @@ namespace eBank
             }
 
             string cardEndDate = client.cardEndDate;
-            if (cardEndDate.Length == 10)
+            if (client.cardActivity == 1 && cardEndDate.Length == 10)
             {
                 string firstSevenCharacters = cardEndDate.Substring(0, 7);
                 cardEndDate_Label.Content = firstSevenCharacters;
             }
-            else
+            if (client.cardActivity == 0)
             {
                 cardEndDate_Label.Content = "YYYY-MM";
             }

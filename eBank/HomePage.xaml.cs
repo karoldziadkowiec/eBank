@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,14 @@ namespace eBank
 
             string currency = " PLN";
             //CHECKING ACCOUNT
-            valueOfCheckingAccount_Label.Content = client.checkingAccount + currency;
+            if(client.cardActivity == 1)
+            {
+                valueOfCheckingAccount_Label.Content = client.checkingAccount + currency;
+            }
+            else
+            {
+                valueOfCheckingAccount_Label.Content = "-" + currency;
+            }
 
             string cardNumber = client.cardNumber;
             if (cardNumber.Length == 16)
@@ -74,13 +82,13 @@ namespace eBank
             }
 
             string cardEndDate = client.cardEndDate;
-            if (cardEndDate.Length == 10)
+            if (client.cardActivity == 1 && cardEndDate.Length == 10)
             {
                 string firstSevenCharacters = cardEndDate.Substring(0, 7);
                 cardEndDate_Label.Content = firstSevenCharacters;
             }
-            else
-            {
+            if (client.cardActivity == 0)
+            { 
                 cardEndDate_Label.Content = "YYYY-MM";
             }
 
@@ -88,12 +96,29 @@ namespace eBank
             nameAndSurname_Label.Content = fullName;
 
             //SAVINGS ACCOUNT
-            valueOfSavingsAccount_Label.Content = client.savingsAccount + currency;
+            if (client.cardActivity == 1)
+            {
+                valueOfSavingsAccount_Label.Content = client.savingsAccount + currency;
+
+            }
+            else
+            {
+                valueOfSavingsAccount_Label.Content = "-" + currency;
+            }
 
             //OVERALL VALUE
             string overallString = "Overall: ";
             double overallValue = client.checkingAccount + client.savingsAccount;
-            overallValue_Label.Content = overallString + overallValue + currency;
+            if (client.cardActivity == 1)
+            {
+                overallValue_Label.Content = overallString + overallValue + currency;
+
+            }
+            else
+            {
+                overallValue_Label.Content = overallString + "-" + currency;
+
+            }
         }
 
         private void calculateIncomeAndExpenses()
@@ -156,9 +181,182 @@ namespace eBank
 
         private void displayTransactions()
         {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
 
+                    int depositID = 1;
+                    int withdrawID = 2;
+                    int ownTransferID = 4;
+                    DateTime xDaysAgo = DateTime.Now.AddDays(-30);
+                    int clientID = client.id;
+
+                    SqlCommand command = new SqlCommand("SELECT CONVERT(VARCHAR(10), [transactions].[date], 120) AS 'Date', " +
+                        "[transactions].[id] AS 'Transaction number', " +
+                        "[transactionType].[name] AS 'Type', " +
+                        "[transactions].[senderID] AS 'SenderID', " +
+                        "[transactions].[recipientID] AS 'RecipientID', " +
+                        "CASE " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] != @clientID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[recipientID] = @clientID AND [transactions].[senderID] != @clientID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @depositID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @withdrawID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @ownTransferID THEN CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "ELSE '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' END AS 'Value' " +
+                        "FROM transactions " +
+                        "INNER JOIN transactionType ON [transactions].[type] = [transactionType].[id] " +
+                        "WHERE [transactions].[date] >= @xDaysAgo " +
+                        "AND ([transactions].[senderID] = @clientID OR [transactions].[recipientID] = @clientID) " +
+                        "ORDER BY [transactions].[date] DESC", connection);
+
+                    command.Parameters.AddWithValue("@depositID", depositID);
+                    command.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
+                    command.Parameters.AddWithValue("@xDaysAgo", xDaysAgo);
+                    command.Parameters.AddWithValue("@clientID", clientID);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int recordCount = 1;
+
+                        while (reader.Read() && recordCount <= 3)
+                        {
+                            string transactionDate = reader["Date"].ToString();
+                            string transactionType = reader["Type"].ToString();
+                            string transactionValue = reader["Value"].ToString();
+                            int senderID = reader.GetInt32(reader.GetOrdinal("SenderID"));
+                            int recipientID = reader.GetInt32(reader.GetOrdinal("RecipientID"));
+
+
+                            if (recordCount == 1)
+                            {
+                                transactionDate1_Label.Content = transactionDate;
+                                transactionType1_Label.Content = transactionType;
+                                transactionValue1_Label.Content = transactionValue;
+
+                                // Color arrows
+                                if ((senderID == clientID && recipientID == clientID && transactionType == "Own transfer"))
+                                {
+                                    rightArrow1_Label.Foreground = Brushes.Black;
+                                    leftArrow1_Label.Foreground = Brushes.Black;
+                                    transactionValue1_Label.Background = new SolidColorBrush(Color.FromRgb(206, 206, 206));
+                                }
+                                else if ((senderID != clientID && recipientID == clientID) ||
+                                    (senderID == clientID && recipientID == clientID && transactionType == "Deposit"))
+                                {
+                                    rightArrow1_Label.Foreground = Brushes.LimeGreen;
+                                    transactionValue1_Label.Background = new SolidColorBrush(Color.FromRgb(204, 255, 192));
+                                }
+                                else if ((senderID == clientID && recipientID != clientID) ||
+                                    (senderID == clientID && recipientID == clientID && transactionType == "Withdraw"))
+                                {
+                                    leftArrow1_Label.Foreground = Brushes.Red;
+                                    transactionValue1_Label.Background = new SolidColorBrush(Color.FromRgb(240, 167, 167));
+                                }
+                                else
+                                {
+                                    leftArrow1_Label.Foreground = Brushes.Red;
+                                    transactionValue1_Label.Background = new SolidColorBrush(Color.FromRgb(240, 167, 167));
+                                }
+                            }
+                            else if (recordCount == 2)
+                            {
+                                transactionDate2_Label.Content = transactionDate;
+                                transactionType2_Label.Content = transactionType;
+                                transactionValue2_Label.Content = transactionValue;
+
+                                if ((senderID == clientID && recipientID == clientID && transactionType == "Own transfer"))
+                                {
+                                    rightArrow2_Label.Foreground = Brushes.Black;
+                                    leftArrow2_Label.Foreground = Brushes.Black;
+                                    transactionValue2_Label.Background = new SolidColorBrush(Color.FromRgb(206, 206, 206));
+                                }
+                                else if ((senderID != clientID && recipientID == clientID) ||
+                                    (senderID == clientID && recipientID == clientID && transactionType == "Deposit"))
+                                {
+                                    rightArrow2_Label.Foreground = Brushes.LimeGreen;
+                                    transactionValue2_Label.Background = new SolidColorBrush(Color.FromRgb(204, 255, 192));
+                                }
+                                else if ((senderID == clientID && recipientID != clientID) ||
+                                    (senderID == clientID && recipientID == clientID && transactionType == "Withdraw"))
+                                {
+                                    leftArrow2_Label.Foreground = Brushes.Red;
+                                    transactionValue2_Label.Background = new SolidColorBrush(Color.FromRgb(240, 167, 167));
+                                }
+                                else
+                                {
+                                    leftArrow2_Label.Foreground = Brushes.Red;
+                                    transactionValue2_Label.Background = new SolidColorBrush(Color.FromRgb(240, 167, 167));
+                                }
+                            }
+                            else // recordCount == 3
+                            {
+                                transactionDate3_Label.Content = transactionDate;
+                                transactionType3_Label.Content = transactionType;
+                                transactionValue3_Label.Content = transactionValue;
+
+                                if ((senderID == clientID && recipientID == clientID && transactionType == "Own transfer"))
+                                {
+                                    rightArrow3_Label.Foreground = Brushes.Black;
+                                    leftArrow3_Label.Foreground = Brushes.Black;
+                                    transactionValue3_Label.Background = new SolidColorBrush(Color.FromRgb(206, 206, 206));
+                                }
+                                else if ((senderID != clientID && recipientID == clientID) ||
+                                    (senderID == clientID && recipientID == clientID && transactionType == "Deposit"))
+                                {
+                                    rightArrow3_Label.Foreground = Brushes.LimeGreen;
+                                    transactionValue3_Label.Background = new SolidColorBrush(Color.FromRgb(204, 255, 192));
+                                }
+                                else if ((senderID == clientID && recipientID != clientID) ||
+                                    (senderID == clientID && recipientID == clientID && transactionType == "Withdraw"))
+                                {
+                                    leftArrow3_Label.Foreground = Brushes.Red;
+                                    transactionValue3_Label.Background = new SolidColorBrush(Color.FromRgb(240, 167, 167));
+                                }
+                                else
+                                {
+                                    leftArrow3_Label.Foreground = Brushes.Red;
+                                    transactionValue3_Label.Background = new SolidColorBrush(Color.FromRgb(240, 167, 167));
+                                }
+                            }
+
+                            recordCount++;
+                        }
+
+                        // If no transaction was found, clear the labels
+                        for (int i = recordCount; i <= 3; i++)
+                        {
+                            if (i == 1)
+                            {
+                                transactionDate1_Label.Content = "No transaction found.";
+                                transactionType1_Label.Content = "";
+                                transactionValue1_Label.Content = "- PLN";
+                            }
+                            else if (i == 2)
+                            {
+                                transactionDate2_Label.Content = "No transaction found.";
+                                transactionType2_Label.Content = "";
+                                transactionValue2_Label.Content = "- PLN";
+                            }
+                            else // recordCount == 3
+                            {
+                                transactionDate3_Label.Content = "No transaction found.";
+                                transactionType3_Label.Content = "";
+                                transactionValue3_Label.Content = "- PLN";
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show("Error: " + ex.Message, "eBank");
+                }
+            }
         }
-       
+
+
         private void goToHomePage(object sender, RoutedEventArgs e)
         {
             InvalidateVisual();

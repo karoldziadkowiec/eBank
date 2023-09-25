@@ -69,10 +69,7 @@ namespace eBank
         private void displayCardData()
         {
             string currency = " PLN";
-            valueOfCheckingAccount_Label.Content = client.checkingAccount.ToString() + currency;
-            valueOfSavingsAccount_Label.Content = client.savingsAccount.ToString() + currency;
             double overallValue = client.checkingAccount + client.savingsAccount;
-            overallValue_Label.Content = overallValue.ToString() + currency;
             if (client.cardNumber == "")
             {
                 valueOfCardNumber_Label.Content = "-";
@@ -84,11 +81,17 @@ namespace eBank
 
             if (client.cardActivity == 0)
             {
+                valueOfCheckingAccount_Label.Content = "-" + currency;
+                valueOfSavingsAccount_Label.Content = "-" + currency;
+                overallValue_Label.Content = "-" + currency;
                 valueOfCardStatus_Label.Content = "inactive";
                 valueOfCardStatus_Label.Foreground = Brushes.Red;
             }
             else if (client.cardActivity == 1)
             {
+                valueOfCheckingAccount_Label.Content = client.checkingAccount.ToString() + currency;
+                valueOfSavingsAccount_Label.Content = client.savingsAccount.ToString() + currency;
+                overallValue_Label.Content = overallValue.ToString() + currency;
                 valueOfCardStatus_Label.Content = "active";
                 valueOfCardStatus_Label.Foreground = Brushes.LightSeaGreen;
             }
