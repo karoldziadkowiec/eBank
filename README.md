@@ -3,7 +3,6 @@
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 To-do list:
-- Home: two tabs, next to + and -. under the history of the last 5 transfers, next to this month's expenses
 - Transfers: deposit, withdrawal, BLIK, phone top-up, currency transfer, tax transfer
 - Services: expense analysis, transfer requests, game top-ups and gift cards, transport tickets, motorway tickets, parking tickets
 - ADMIN PANEL
@@ -13,6 +12,7 @@ Databases:
 - eBankData: id, name, value
 - transactions: id, senderID, recipientID, value, type, title, description, date
 - transactionType: id, name(Deposit, Withdrawal, Regular transfer, Own transfer, BLIK, Phone top-up, Currency transfer, Tax transfer)
+- transferRequest: id, senderID, recipientID, value, title, date
 - phoneTariffs: id, name
 - currencies: id, name, percent
 - taxes: id, name
