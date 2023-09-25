@@ -54,6 +54,7 @@ namespace eBank
 
                     int depositID = 1;
                     int withdrawID = 2;
+                    int ownTransferID = 4;
                     DateTime xDaysAgo = DateTime.Now.AddDays(-30);
                     int clientID = client.id;
 
@@ -65,7 +66,7 @@ namespace eBank
                         "WHEN [transactions].[recipientID] = @clientID AND [transactions].[senderID] != @clientID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
                         "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @depositID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
                         "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @withdrawID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND ([transactions].[type] != @depositID AND [transactions].[type] != @withdrawID) THEN CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @ownTransferID THEN CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
                         "ELSE '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' END AS 'Value' " +
                         "FROM transactions " +
                         "INNER JOIN transactionType ON [transactions].[type] = [transactionType].[id] " +
@@ -76,6 +77,7 @@ namespace eBank
 
                     cmdDataBase.Parameters.AddWithValue("@depositID", depositID);
                     cmdDataBase.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    cmdDataBase.Parameters.AddWithValue("@ownTransferID", ownTransferID);
                     cmdDataBase.Parameters.AddWithValue("@xDaysAgo", xDaysAgo);
                     cmdDataBase.Parameters.AddWithValue("@clientID", clientID);
 
@@ -154,6 +156,7 @@ namespace eBank
 
                     int depositID = 1;
                     int withdrawID = 2;
+                    int ownTransferID = 4;
                     if (int.TryParse(numberOfDays_ComboBox.Text, out int numberOfDays))
                     {
                     }
@@ -168,7 +171,7 @@ namespace eBank
                         "WHEN [transactions].[recipientID] = @clientID AND [transactions].[senderID] != @clientID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
                         "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @depositID THEN '+' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
                         "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @withdrawID THEN '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
-                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND ([transactions].[type] != @depositID AND [transactions].[type] != @withdrawID) THEN CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
+                        "WHEN [transactions].[senderID] = @clientID AND [transactions].[recipientID] = @clientID AND [transactions].[type] = @ownTransferID THEN CAST([transactions].[value] AS VARCHAR) + ' PLN' " +
                         "ELSE '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' END AS 'Value' " +
                         "FROM transactions " +
                         "INNER JOIN transactionType ON [transactions].[type] = [transactionType].[id] " +
@@ -179,6 +182,7 @@ namespace eBank
 
                     cmdDataBase.Parameters.AddWithValue("@depositID", depositID);
                     cmdDataBase.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    cmdDataBase.Parameters.AddWithValue("@ownTransferID", ownTransferID);
                     cmdDataBase.Parameters.AddWithValue("@xDaysAgo", xDaysAgo);
                     cmdDataBase.Parameters.AddWithValue("@clientID", clientID);
 
@@ -261,7 +265,6 @@ namespace eBank
             tf.DrawString("Transaction number", titleFont, XBrushes.Black, new XRect(200, 215, page.Width - 100, 20), XStringFormats.TopLeft);
             tf.DrawString("Transaction description", titleFont, XBrushes.Black, new XRect(350, 215, page.Width - 100, 20), XStringFormats.TopLeft);
             tf.DrawString("Value", titleFont, XBrushes.Black, new XRect(500, 215, page.Width - 100, 20), XStringFormats.TopLeft);
-
 
             // Add dataTable to PDF
             int startY = 240;

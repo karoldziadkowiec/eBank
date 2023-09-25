@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace eBank
     /// </summary>
     public partial class HomePage : Window
     {
+        private readonly string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
         Client client = null;
         public HomePage(Client _client)
         {
@@ -33,12 +35,14 @@ namespace eBank
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
             name_Label.Content = client.name;
             displayCardsData();
+            calculateIncomeAndExpenses();
+            displayTransactions();
         }
 
         private void displayCardsData()
-        {   
+        {
             //CARDS COLOR
-            if(client.cardColor == "Black")
+            if (client.cardColor == "Black")
             {
                 checkingAccountCard_Rectangle.Fill = Brushes.Black;
                 savingsAccountCard_Rectangle.Fill = Brushes.Black;
@@ -85,8 +89,76 @@ namespace eBank
 
             //SAVINGS ACCOUNT
             valueOfSavingsAccount_Label.Content = client.savingsAccount + currency;
+
+            //OVERALL VALUE
+            string overallString = "Overall: ";
+            double overallValue = client.checkingAccount + client.savingsAccount;
+            overallValue_Label.Content = overallString + overallValue + currency;
         }
 
+        private void calculateIncomeAndExpenses()
+        {
+            int clientID = client.id;
+            int depositID = 1;
+            int withdrawID = 2;
+            int ownTransferID = 4;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+
+                try
+                {
+                    connection.Open();
+
+                    // Income 
+                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID != @clientID AND recipientID = @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @depositID))";
+                    command.Parameters.AddWithValue("@clientID", clientID);
+                    command.Parameters.AddWithValue("@depositID", depositID);
+
+                    object incomeResult = command.ExecuteScalar();
+                    if (incomeResult != DBNull.Value)
+                    {
+                        decimal income = Convert.ToDecimal(incomeResult);
+                        income_Label.Content = "+" + income.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        income_Label.Content = "0,00 PLN";
+                    }
+
+                    // Expenses
+                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID = @clientID AND recipientID != @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @withdrawID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type != @ownTransferID))";
+                    command.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
+
+                    object expensesResult = command.ExecuteScalar();
+                    if (expensesResult != DBNull.Value)
+                    {
+                        decimal expenses = Convert.ToDecimal(expensesResult);
+                        expenses_Label.Content = "-" + expenses.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        expenses_Label.Content = "0,00 PLN";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show("Error: " + ex.Message, "eBank");
+                }
+            }
+        }
+
+        private void displayTransactions()
+        {
+
+        }
+       
         private void goToHomePage(object sender, RoutedEventArgs e)
         {
             InvalidateVisual();
