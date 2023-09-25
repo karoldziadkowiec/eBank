@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PdfSharp.Drawing.Layout;
 
 namespace eBank
 {
@@ -177,8 +180,72 @@ namespace eBank
 
         private void downloadTransactionConfirmation(object sender, RoutedEventArgs e)
         {
+            string pdfFilePath = "Transaction confirmation.pdf";
+            PdfDocument document = new PdfDocument();
 
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+            XFont logoFont = new XFont("Eras ITC", 16, XFontStyle.Bold);
+            XFont TransactionConfirmationFont = new XFont("Calibri", 20);
+            XFont documentGeneratedFont = new XFont("Calibri Light", 11);
+            XFont detailsFont = new XFont("Calibri", 11);
+            XFont titleFont = new XFont("Calibri", 13, XFontStyle.Bold);
+            XTextFormatter tf = new XTextFormatter(gfx);
+
+            //Data to be saved in a PDF file
+            DateTime currentDate = DateTime.Now;
+            string formattedDate = currentDate.ToString("yyyy-MM-dd, hh:mm:ss");
+
+            string senderCardNumber = fromSenderAccount_Label.Content.ToString();
+            string senderFullName = senderSurnameAndName_Label.Content.ToString();
+            string senderResidentialAddress = senderResidentialAddress_Label.Content.ToString();
+
+            string recipientCardNumber = onRecipientAccount_Label.Content.ToString();
+            string recipientFullName = recipientSurnameAndName_Label.Content.ToString();
+            string recipientResidentialAddress = recipientResidentialAddress_Label.Content.ToString();
+
+            string type = type_Label.Content.ToString();
+            string title = title_Label.Content.ToString();
+            string description = description_Label.Content.ToString();
+            string date = transactionDate_Label.Content.ToString();
+            string value = value_Label.Content.ToString();
+            string transactionNumber = transactionNumber_Label.Content.ToString();
+
+            // Logo and title
+            tf.DrawString("eBank", logoFont, XBrushes.Black, new XRect(50, 50, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Transaction confirmation", TransactionConfirmationFont, XBrushes.Black, new XRect(50, 70, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Document generated: " + formattedDate, documentGeneratedFont, XBrushes.Black, new XRect(50, 95, page.Width - 100, 20), XStringFormats.TopLeft);
+            gfx.DrawLine(XPens.Black, new XPoint(50, 110), new XPoint(page.Width - 100, 110));
+
+            // Payer details
+            tf.DrawString("Payer details:", titleFont, XBrushes.Black, new XRect(50, 120, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Card Number: " + senderCardNumber, detailsFont, XBrushes.Black, new XRect(50, 140, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Surname and name: " + senderFullName, detailsFont, XBrushes.Black, new XRect(50, 160, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Residential Address: " + senderResidentialAddress, detailsFont, XBrushes.Black, new XRect(50, 180, page.Width - 100, 20), XStringFormats.TopLeft);
+            gfx.DrawLine(XPens.Black, new XPoint(50, 200), new XPoint(page.Width - 100, 200));
+
+            // Recipient's details
+            tf.DrawString("Recipient's details:", titleFont, XBrushes.Black, new XRect(50, 210, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Card Number: " + recipientCardNumber, detailsFont, XBrushes.Black, new XRect(50, 230, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Surname and name: " + recipientFullName, detailsFont, XBrushes.Black, new XRect(50, 250, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Residential Address: " + recipientResidentialAddress, detailsFont, XBrushes.Black, new XRect(50, 270, page.Width - 100, 20), XStringFormats.TopLeft);
+            gfx.DrawLine(XPens.Black, new XPoint(50, 290), new XPoint(page.Width - 100, 290));
+
+            // Transfer details
+            tf.DrawString("Transfer details:", titleFont, XBrushes.Black, new XRect(50, 300, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Type: " + type, detailsFont, XBrushes.Black, new XRect(50, 320, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Title: " + title, detailsFont, XBrushes.Black, new XRect(50, 340, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Description: " + description, detailsFont, XBrushes.Black, new XRect(50, 360, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Date: " + date, detailsFont, XBrushes.Black, new XRect(50, 380, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Value: " + value, detailsFont, XBrushes.Black, new XRect(50, 400, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Transaction Number: " + transactionNumber, detailsFont, XBrushes.Black, new XRect(50, 420, page.Width - 100, 20), XStringFormats.TopLeft);
+            gfx.DrawLine(XPens.Black, new XPoint(50, 440), new XPoint(page.Width - 100, 440));
+
+            document.Save(pdfFilePath);
+            System.Diagnostics.Process.Start(pdfFilePath);
         }
+
 
         private void backToHistoryPage(object sender, RoutedEventArgs e)
         {
