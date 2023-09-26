@@ -159,7 +159,7 @@ namespace eBank
 
             if (!Double.TryParse(value_TextBox.Text, out value))
             {
-                MessageBox.Show("Invalid withdrawal limit format. Please enter a valid value (0,00).", "eBank");
+                MessageBox.Show("Invalid transfer format. Please enter a valid value (0,00).", "eBank");
                 return;
             }
 

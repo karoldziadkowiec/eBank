@@ -16,13 +16,13 @@ using System.Windows.Shapes;
 namespace eBank
 {
     /// <summary>
-    /// Logika interakcji dla klasy TransfersRegularTransfer.xaml
+    /// Logika interakcji dla klasy TransfersDeposit.xaml
     /// </summary>
-    public partial class TransfersRegularTransfer : Window
+    public partial class TransfersDeposit : Window
     {
         private readonly string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
         Client client;
-        public TransfersRegularTransfer(Client _client)
+        public TransfersDeposit(Client _client)
         {
             client = _client;
             InitializeComponent();
@@ -32,53 +32,6 @@ namespace eBank
         private void displayData()
         {
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
-            displayCardData();
-        }
-
-        private void displayCardData()
-        {
-            //CARD COLOR
-            if (client.cardColor == "Black")
-            {
-                checkingAccountCard_Rectangle.Fill = Brushes.Black;
-            }
-            else if (client.cardColor == "Brown")
-            {
-                checkingAccountCard_Rectangle.Fill = new SolidColorBrush(Color.FromRgb(64, 50, 40));
-            }
-            else
-            {
-                checkingAccountCard_Rectangle.Fill = new SolidColorBrush(Color.FromRgb(0, 52, 1));
-            }
-
-            string currency = " PLN";
-            //CHECKING ACCOUNT
-            valueOfCheckingAccount_Label.Content = client.checkingAccount + currency;
-
-            string cardNumber = client.cardNumber;
-            if (cardNumber.Length == 16)
-            {
-                string formattedCardNumber = $"{cardNumber.Substring(0, 4)}  {cardNumber.Substring(4, 4)}  {cardNumber.Substring(8, 4)}  {cardNumber.Substring(12, 4)}";
-                cardNumber_Label.Content = formattedCardNumber;
-            }
-            else
-            {
-                cardNumber_Label.Content = "XXXX  XXXX  XXXX  XXXX";
-            }
-
-            string cardEndDate = client.cardEndDate;
-            if (cardEndDate.Length == 10)
-            {
-                string firstSevenCharacters = cardEndDate.Substring(0, 7);
-                cardEndDate_Label.Content = firstSevenCharacters;
-            }
-            else
-            {
-                cardEndDate_Label.Content = "YYYY-MM";
-            }
-
-            string fullName = client.name + " " + client.surname;
-            nameAndSurname_Label.Content = fullName;
         }
 
         private void goToHomePage(object sender, RoutedEventArgs e)
@@ -135,45 +88,40 @@ namespace eBank
             }
         }
 
-        private void sendMoney(object sender, RoutedEventArgs e)
+        private void depositMoney(object sender, RoutedEventArgs e)
         {
-            string transferType = "Regular transfer";
+            string transferType = "Deposit";
             int TransferTypeID = 0;
             int senderID = client.id;
-            int recipientID = 0;
-            string recipientCardNumber = accountNumber_TextBox.Text;
-            double value;
-            string title = title_TextBox.Text;
-            string description = RecipientsNameAndAddress_TextBox.Text;
+            int recipientID = client.id;
+            string title = "Deposit money";
+            string description = "-";
             string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            if (string.IsNullOrEmpty(recipientCardNumber) || string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description) || string.IsNullOrEmpty(value_TextBox.Text))
+            string accountPassword = accountPassword_PasswordBox.Password;
+            double value;
+
+            if (string.IsNullOrEmpty(accountPassword) || string.IsNullOrEmpty(accountPassword))
             {
                 MessageBox.Show("Complete the empty fields.", "eBank");
                 return;
             }
 
+            if (!accountPassword.Equals(client.password))
+            {
+                MessageBox.Show("Wrong password! Correct the data.", "eBank");
+                return;
+            }
+
             if (!Double.TryParse(value_TextBox.Text, out value))
             {
-                MessageBox.Show("Invalid regular transfer format. Please enter a valid value (0,00).", "eBank");
+                MessageBox.Show("Invalid deposit format. Please enter a valid value (0,00).", "eBank");
                 return;
             }
 
             if (value <= 0)
             {
                 MessageBox.Show("Value must be a positive number.", "eBank");
-                return;
-            }
-
-            if (value > client.checkingAccount)
-            {
-                MessageBox.Show("You don't have this value in your checking account.", "eBank");
-                return;
-            }
-
-            if (value > client.transactionLimit)
-            {
-                MessageBox.Show("The entered value is over set transfer limit.", "eBank");
                 return;
             }
 
@@ -193,30 +141,13 @@ namespace eBank
                         TransferTypeID = (int)typeIDResult;
                     }
 
-                    // GET recipientID
-                    string getRecipientIDQuery = "SELECT id FROM clients WHERE cardNumber = @recipientCardNumber";
-                    SqlCommand getRecipientIDCommand = new SqlCommand(getRecipientIDQuery, connection);
-                    getRecipientIDCommand.Parameters.AddWithValue("@recipientCardNumber", recipientCardNumber);
-                    object recipientIDResult = getRecipientIDCommand.ExecuteScalar();
-                    if (recipientIDResult != null)
-                    {
-                        recipientID = (int)recipientIDResult;
-                    }
-
                     SqlTransaction transaction = connection.BeginTransaction();
                     try
                     {
-                        // -
-                        string updateSenderAccountQuery = "UPDATE clients SET checkingAccount = checkingAccount - @value WHERE id = @senderID";
-                        SqlCommand updateSenderAccountCommand = new SqlCommand(updateSenderAccountQuery, connection, transaction);
-                        updateSenderAccountCommand.Parameters.AddWithValue("@senderID", senderID);
-                        updateSenderAccountCommand.Parameters.AddWithValue("@value", value);
-                        updateSenderAccountCommand.ExecuteNonQuery();
-
                         // +
-                        string updateRecipientAccountQuery = "UPDATE clients SET checkingAccount = checkingAccount + @value WHERE id = @recipientID";
+                        string updateRecipientAccountQuery = "UPDATE clients SET checkingAccount = checkingAccount + @value WHERE id = @senderID";
                         SqlCommand updateRecipientAccountCommand = new SqlCommand(updateRecipientAccountQuery, connection, transaction);
-                        updateRecipientAccountCommand.Parameters.AddWithValue("@recipientID", recipientID);
+                        updateRecipientAccountCommand.Parameters.AddWithValue("@senderID", senderID);
                         updateRecipientAccountCommand.Parameters.AddWithValue("@value", value);
                         updateRecipientAccountCommand.ExecuteNonQuery();
 
@@ -243,7 +174,7 @@ namespace eBank
                             client.checkingAccount = (double)CheckingAccountValue;
                         }
 
-                        MessageBox.Show("The transfer has been completed.", "eBank");
+                        MessageBox.Show("The money was successfully deposited.", "eBank");
                         connection.Close();
 
                         HomePage homePage = new HomePage(client);
@@ -253,7 +184,7 @@ namespace eBank
                     catch (SqlException ex)
                     {
                         transaction.Rollback();
-                        MessageBox.Show("Transfer error. Entered client does not exist.", "eBank");
+                        MessageBox.Show("Deposit error.", "eBank");
                     }
                 }
             }

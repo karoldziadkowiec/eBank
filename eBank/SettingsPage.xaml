@@ -64,7 +64,7 @@
             </Button.Background>
         </Button>
         <Rectangle x:Name="separation_Rectangle" HorizontalAlignment="Left" Height="2" Margin="34,483,0,0" Stroke="#FF002301" VerticalAlignment="Top" Width="200" Fill="#FF002301"/>
-        <Button x:Name="account_Button" Content="Account" HorizontalAlignment="Left" Margin="34,504,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="Black" Foreground="White" Background="#FF003401" Click="goToAccountPage" TabIndex="6"/>
+        <Button x:Name="account_Button" Content="Account" HorizontalAlignment="Left" Margin="34,504,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Foreground="White" Background="#FF003401" Click="goToAccountPage" TabIndex="6"/>
         <Button x:Name="logout_Button" Content="Logout" HorizontalAlignment="Left" Margin="34,570,0,0" VerticalAlignment="Top" Height="54" Width="200" FontFamily="Calibri" FontSize="22" BorderBrush="#FF003401" Background="#FF003401" Foreground="White" Click="Logout" TabIndex="7"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,163,0,0" VerticalAlignment="Top" Width="30" Source="/home.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="47,227,0,0" VerticalAlignment="Top" Width="30" Source="/history.png" RenderTransformOrigin="0.64,0.495"/>

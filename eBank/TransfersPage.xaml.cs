@@ -166,7 +166,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                TransfersDeposit deposit = new TransfersDeposit(client);
+                deposit.Show();
+                this.Hide();
             }
             else
             {
@@ -179,7 +181,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                TransfersWithdraw withdraw = new TransfersWithdraw(client);
+                withdraw.Show();
+                this.Hide();
             }
             else
             {
