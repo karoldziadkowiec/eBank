@@ -105,6 +105,9 @@
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransfersBLIK.xaml.cs">
+      <DependentUpon>TransfersBLIK.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransfersDeposit.xaml.cs">
       <DependentUpon>TransfersDeposit.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,9 @@
     </Compile>
     <Compile Include="TransfersPage.xaml.cs">
       <DependentUpon>TransfersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransfersPhoneTopUp.xaml.cs">
+      <DependentUpon>TransfersPhoneTopUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="TransfersRegularTransfer.xaml.cs">
       <DependentUpon>TransfersRegularTransfer.xaml</DependentUpon>
@@ -194,6 +200,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TransfersBLIK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TransfersDeposit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TransfersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransfersPhoneTopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -98,6 +98,6 @@
         <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="551,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Height="32" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="9"/>
         <Label x:Name="PLN_Label" Content="PLN" HorizontalAlignment="Left" Margin="750,453,0,0" VerticalAlignment="Top" Width="44" FontFamily="Calibri" FontSize="20"/>
         <Image x:Name="withdraw_Image" HorizontalAlignment="Left" Height="153" Margin="594,168,0,0" VerticalAlignment="Top" Width="156" Source="/withdraw2.png"/>
-        <PasswordBox x:Name="accountPassword_PasswordBox" HorizontalAlignment="Left" Margin="551,382,0,0" VerticalAlignment="Top" Width="238" Height="32" FontFamily="Calibri" FontSize="20" TabIndex="8" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="accountPassword_PasswordBox" HorizontalAlignment="Left" Margin="551,382,0,0" VerticalAlignment="Top" Width="238" Height="32" FontFamily="Calibri" FontSize="20" TabIndex="8" VerticalContentAlignment="Center" MaxLength="30"/>
     </Grid>
 </Window>

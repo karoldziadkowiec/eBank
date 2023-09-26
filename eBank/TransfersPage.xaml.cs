@@ -227,7 +227,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                TransfersBLIK BLIK = new TransfersBLIK(client);
+                BLIK.Show();
+                this.Hide();
             }
             else
             {
@@ -240,7 +242,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                TransfersPhoneTopUp phoneTopUp = new TransfersPhoneTopUp(client);
+                phoneTopUp.Show();
+                this.Hide();
             }
             else
             {
