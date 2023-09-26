@@ -112,8 +112,8 @@ namespace eBank
         {
             if (client.cardActivity == 0)
             {
-                ServicesOrderCard servicesOrderCard = new ServicesOrderCard(client);
-                servicesOrderCard.Show();
+                ServicesOrderCard orderCard = new ServicesOrderCard(client);
+                orderCard.Show();
                 this.Hide();
             }
             else if (client.cardActivity == 1) {
@@ -130,7 +130,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                ServicesTransferRequest transferRequest = new ServicesTransferRequest(client);
+                transferRequest.Show();
+                this.Hide();
             }
             else
             {

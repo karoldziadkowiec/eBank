@@ -190,7 +190,6 @@ namespace eBank
                     int depositID = 1;
                     int withdrawID = 2;
                     int ownTransferID = 4;
-                    DateTime xDaysAgo = DateTime.Now.AddDays(-30);
                     int clientID = client.id;
 
                     SqlCommand command = new SqlCommand("SELECT CONVERT(VARCHAR(10), [transactions].[date], 120) AS 'Date', " +
@@ -207,14 +206,12 @@ namespace eBank
                         "ELSE '-' + CAST([transactions].[value] AS VARCHAR) + ' PLN' END AS 'Value' " +
                         "FROM transactions " +
                         "INNER JOIN transactionType ON [transactions].[type] = [transactionType].[id] " +
-                        "WHERE [transactions].[date] >= @xDaysAgo " +
-                        "AND ([transactions].[senderID] = @clientID OR [transactions].[recipientID] = @clientID) " +
+                        "WHERE ([transactions].[senderID] = @clientID OR [transactions].[recipientID] = @clientID) " +
                         "ORDER BY [transactions].[date] DESC", connection);
 
                     command.Parameters.AddWithValue("@depositID", depositID);
                     command.Parameters.AddWithValue("@withdrawID", withdrawID);
                     command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
-                    command.Parameters.AddWithValue("@xDaysAgo", xDaysAgo);
                     command.Parameters.AddWithValue("@clientID", clientID);
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -355,7 +352,6 @@ namespace eBank
                 }
             }
         }
-
 
         private void goToHomePage(object sender, RoutedEventArgs e)
         {

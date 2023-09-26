@@ -100,7 +100,7 @@
         </Rectangle>
         <Label x:Name="welcome_Label" Content="Welcome," HorizontalAlignment="Left" Margin="338,127,0,0" VerticalAlignment="Top" Width="116" FontFamily="Calibri" FontSize="25"/>
         <Label x:Name="myAccounts_Label" Content="My accounts" HorizontalAlignment="Left" Margin="338,163,0,0" VerticalAlignment="Top" Width="180" FontFamily="Calibri" FontSize="18"/>
-        <Label x:Name="name_Label" Content="name" HorizontalAlignment="Left" Margin="444,127,0,0" VerticalAlignment="Top" Width="116" FontFamily="Calibri" FontSize="25" Foreground="#FF31A336"/>
+        <Label x:Name="name_Label" Content="name" HorizontalAlignment="Left" Margin="444,127,0,0" VerticalAlignment="Top" Width="116" FontFamily="Calibri" FontSize="25" Foreground="#FF1C9A22"/>
         <Image x:Name="eBank_Image_Kopiuj" HorizontalAlignment="Left" Height="28" Margin="368,215,0,0" VerticalAlignment="Top" Width="29" Source="/icon.png"/>
         <Label x:Name="eBank_Label_Kopiuj" Content="eBank" Foreground="White" FontFamily="Eras ITC" FontSize="20" Margin="396,215,592,419"/>
         <Label x:Name="valueOfCheckingAccount_Label" Content="value" HorizontalAlignment="Left" Margin="368,240,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri" FontSize="26" Width="241" FontWeight="Bold"/>
