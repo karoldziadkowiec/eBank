@@ -270,7 +270,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                TransfersTaxTransfer taxTransfer = new TransfersTaxTransfer(client);
+                taxTransfer.Show();
+                this.Hide();
             }
             else
             {

@@ -126,6 +126,9 @@
     <Compile Include="TransfersRegularTransfer.xaml.cs">
       <DependentUpon>TransfersRegularTransfer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransfersTaxTransfer.xaml.cs">
+      <DependentUpon>TransfersTaxTransfer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransfersWithdraw.xaml.cs">
       <DependentUpon>TransfersWithdraw.xaml</DependentUpon>
     </Compile>
@@ -225,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TransfersRegularTransfer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransfersTaxTransfer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
