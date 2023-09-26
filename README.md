@@ -3,8 +3,8 @@
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 To-do list:
-- Transfers: deposit, withdrawal, BLIK, phone top-up, currency transfer, tax transfer
-- Services: expense analysis, transfer requests, game top-ups and gift cards, transport tickets, motorway tickets, parking tickets
+- Transfers: BLIK, phone top-up, currency transfer, tax transfer
+- Services: expense analysis, game top-ups and gift cards, transport tickets, motorway tickets, parking tickets
 - ADMIN PANEL
 
 Databases:
