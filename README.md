@@ -3,7 +3,7 @@
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 To-do list:
-- Services: expense analysis, highway tickets, parking tickets
+- Services: expense analysis
 - ADMIN PANEL
 
 Databases:
