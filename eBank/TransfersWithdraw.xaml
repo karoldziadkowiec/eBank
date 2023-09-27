@@ -94,9 +94,9 @@
         <Label x:Name="accountPassword_Label" Content="Account password" HorizontalAlignment="Left" Margin="547,348,0,0" VerticalAlignment="Top" Width="242" FontFamily="Calibri" FontSize="20"/>
         <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="551,378,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="238" Fill="#FF66BB6A"/>
         <Label x:Name="value_Label" Content="Value" HorizontalAlignment="Left" Margin="548,420,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="20"/>
-        <Rectangle x:Name="r2_Rectangle" HorizontalAlignment="Left" Height="2" Margin="551,450,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="199" Fill="#FF66BB6A"/>
-        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="551,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Height="32" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="9"/>
-        <Label x:Name="PLN_Label" Content="PLN" HorizontalAlignment="Left" Margin="750,453,0,0" VerticalAlignment="Top" Width="44" FontFamily="Calibri" FontSize="20"/>
+        <Rectangle x:Name="r2_Rectangle" HorizontalAlignment="Left" Height="2" Margin="551,450,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="238" Fill="#FF66BB6A"/>
+        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="551,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" Height="32" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="9"/>
+        <Label x:Name="PLN_Label" Content="PLN" HorizontalAlignment="Left" Margin="745,453,0,0" VerticalAlignment="Top" Width="44" FontFamily="Calibri" FontSize="20"/>
         <Image x:Name="withdraw_Image" HorizontalAlignment="Left" Height="153" Margin="594,168,0,0" VerticalAlignment="Top" Width="156" Source="/withdraw2.png"/>
         <PasswordBox x:Name="accountPassword_PasswordBox" HorizontalAlignment="Left" Margin="551,382,0,0" VerticalAlignment="Top" Width="238" Height="32" FontFamily="Calibri" FontSize="20" TabIndex="8" VerticalContentAlignment="Center" MaxLength="30"/>
     </Grid>

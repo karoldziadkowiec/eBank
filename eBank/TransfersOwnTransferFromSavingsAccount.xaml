@@ -102,8 +102,8 @@
         <Label x:Name="to_Label" Content="To" HorizontalAlignment="Left" Margin="545,166,0,0" VerticalAlignment="Top" Width="91" FontFamily="Calibri" FontSize="20" FontWeight="Bold"/>
         <Label x:Name="details_Label" Content="Details" HorizontalAlignment="Left" Margin="811,166,0,0" VerticalAlignment="Top" Width="90" FontFamily="Calibri" FontSize="20" FontWeight="Bold"/>
         <Label x:Name="value_Label" Content="Value" HorizontalAlignment="Left" Margin="814,216,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
-        <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,242,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="160" Fill="#FF66BB6A"/>
-        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="818,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="10"/>
+        <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,242,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
+        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="818,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="10"/>
         <Label x:Name="title_Label" Content="Title" HorizontalAlignment="Left" Margin="814,295,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
         <Rectangle x:Name="r4_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,321,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
         <TextBox x:Name="title_TextBox" HorizontalAlignment="Left" Margin="818,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="123" FontFamily="Calibri Light" FontSize="20" TabIndex="11" MaxLength="50" AcceptsTab="True" AcceptsReturn="True"/>

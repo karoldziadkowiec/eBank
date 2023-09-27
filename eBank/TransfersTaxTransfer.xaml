@@ -96,7 +96,7 @@
         <Label x:Name="checkingAccount_Label" Content="Checking Account" HorizontalAlignment="Left" Margin="412,205,0,0" VerticalAlignment="Top" Foreground="#FFBEBEBE" FontFamily="Calibri" FontSize="10" Width="97"/>
         <Label x:Name="cardEndDate_Label" Content="CARD END DATE" HorizontalAlignment="Left" Margin="304,266,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri" Width="205"/>
         <Label x:Name="nameAndSurname_Label" Content="NAME SURNAME" HorizontalAlignment="Left" Margin="304,283,0,0" VerticalAlignment="Top" Foreground="#FFC9AE72" FontFamily="Calibri" Width="205"/>
-        <Rectangle x:Name="phoneTopUp_Rectangle" HorizontalAlignment="Left" Height="510" Margin="521,120,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="528" Fill="White" RadiusX="10" RadiusY="10"/>
+        <Rectangle x:Name="taxTransfer_Rectangle" HorizontalAlignment="Left" Height="510" Margin="521,120,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="528" Fill="White" RadiusX="10" RadiusY="10"/>
         <Rectangle x:Name="separator_Rectangle" HorizontalAlignment="Left" Height="449" Margin="784,163,0,0" VerticalAlignment="Top" Width="2
            " Stroke="#FFB4B4B4" Fill="#FFB4B4B4"/>
         <Button x:Name="send_Button" Content="Send" HorizontalAlignment="Left" Margin="818,527,0,0" VerticalAlignment="Top" Background="#FF003401" BorderBrush="#FF003401" Foreground="White" FontFamily="Calibri" FontSize="20" Width="198" Height="40" Click="sendMoney" TabIndex="11"/>
@@ -107,16 +107,16 @@
         <Label x:Name="details_Label" Content="Details" HorizontalAlignment="Left" Margin="811,166,0,0" VerticalAlignment="Top" Width="90" FontFamily="Calibri" FontSize="20" FontWeight="Bold"/>
         <Label x:Name="billingPeriod_Label" Content="Billing period" HorizontalAlignment="Left" Margin="814,287,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
         <Rectangle x:Name="r4_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,313,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
-        <Label x:Name="typeOfTax_Label" Content="Type of tax" HorizontalAlignment="Left" Margin="546,218,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
-        <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="550,243,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
+        <Label x:Name="typeOfTax_Label" Content="Type of tax" HorizontalAlignment="Left" Margin="549,218,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
+        <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="553,243,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
         <Label x:Name="value_Label" Content="Value" HorizontalAlignment="Left" Margin="814,218,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
-        <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,244,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="160" Fill="#FF66BB6A"/>
-        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="818,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="10"/>
+        <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,244,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
+        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="818,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="10"/>
         <Label x:Name="PLN_Label" Content="PLN" HorizontalAlignment="Left" Margin="979,248,0,0" VerticalAlignment="Top" Width="37" FontFamily="Calibri" FontSize="16"/>
-        <ComboBox x:Name="typeOfTax_ComboBox" HorizontalAlignment="Left" Margin="550,249,0,0" VerticalAlignment="Top" Width="198" Height="30" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="8"/>
-        <Label x:Name="details_Label1" Content="Details" HorizontalAlignment="Left" Margin="546,287,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
-        <Rectangle x:Name="r2_Rectangle" HorizontalAlignment="Left" Height="2" Margin="550,313,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
-        <TextBox x:Name="details_TextBox" HorizontalAlignment="Left" Margin="550,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="9" MaxLength="30"/>
+        <ComboBox x:Name="typeOfTax_ComboBox" HorizontalAlignment="Left" Margin="553,249,0,0" VerticalAlignment="Top" Width="198" Height="30" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="8"/>
+        <Label x:Name="details_Label1" Content="Details" HorizontalAlignment="Left" Margin="549,287,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
+        <Rectangle x:Name="r2_Rectangle" HorizontalAlignment="Left" Height="2" Margin="553,313,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
+        <TextBox x:Name="details_TextBox" HorizontalAlignment="Left" Margin="553,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="9" MaxLength="30"/>
         <Label x:Name="surnameAndName_Label" Content="Surname and name" HorizontalAlignment="Left" Margin="814,425,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
         <Rectangle x:Name="r6_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,451,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
         <TextBox x:Name="surnameAndName_TextBox" HorizontalAlignment="Left" Margin="818,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="13" MaxLength="50"/>

@@ -109,8 +109,8 @@
         <Rectangle x:Name="r11_Rectangle" HorizontalAlignment="Left" Height="2" Margin="879,151,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="170" Fill="#FF66BB6A"/>
         <TextBox x:Name="requestNumber_TextBox" HorizontalAlignment="Left" Margin="879,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="9" MaxLength="16"/>
         <Label x:Name="expectedValue_Label" Content="Expected value" HorizontalAlignment="Left" Margin="814,348,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
-        <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,374,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="160" Fill="#FF66BB6A"/>
-        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="818,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="13"/>
+        <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,374,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
+        <TextBox x:Name="value_TextBox" HorizontalAlignment="Left" Margin="818,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center" FontFamily="Calibri Light" FontSize="20" TabIndex="13"/>
         <Label x:Name="title_Label" Content="Title" HorizontalAlignment="Left" Margin="814,428,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
         <Rectangle x:Name="r4_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,452,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
         <TextBox x:Name="title_TextBox" HorizontalAlignment="Left" Margin="818,456,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="56" FontFamily="Calibri Light" FontSize="20" TabIndex="14" MaxLength="50" AcceptsTab="True" AcceptsReturn="True"/>

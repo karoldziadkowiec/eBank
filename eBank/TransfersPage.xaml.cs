@@ -257,7 +257,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                TransfersCurrencyTransfer currencyTransfer = new TransfersCurrencyTransfer(client);
+                currencyTransfer.Show();
+                this.Hide();
             }
             else
             {

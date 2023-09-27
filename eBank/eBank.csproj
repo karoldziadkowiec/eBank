@@ -108,6 +108,9 @@
     <Compile Include="TransfersBLIK.xaml.cs">
       <DependentUpon>TransfersBLIK.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransfersCurrencyTransfer.xaml.cs">
+      <DependentUpon>TransfersCurrencyTransfer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransfersDeposit.xaml.cs">
       <DependentUpon>TransfersDeposit.xaml</DependentUpon>
     </Compile>
@@ -204,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TransfersBLIK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransfersCurrencyTransfer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
