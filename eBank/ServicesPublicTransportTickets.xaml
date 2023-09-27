@@ -105,7 +105,7 @@
         <Button x:Name="X_Button" Content="X" HorizontalAlignment="Left" Margin="981,163,0,0" VerticalAlignment="Top" Background="White" BorderBrush="#FFB4B4B4" Foreground="Black" FontFamily="Calibri" FontSize="20" Width="35" Height="36" Click="backToServicesPage" TabIndex="12"/>
         <Label x:Name="cardDetails_Label" Content="Ticket details" HorizontalAlignment="Left" Margin="545,166,0,0" VerticalAlignment="Top" Width="129" FontFamily="Calibri" FontSize="20" FontWeight="Bold"/>
         <Label x:Name="serviceDetails_Label" Content="Service details" HorizontalAlignment="Left" Margin="811,166,0,0" VerticalAlignment="Top" Width="153" FontFamily="Calibri" FontSize="20" FontWeight="Bold"/>
-        <Label x:Name="cardType_Label" Content="Ticket type" HorizontalAlignment="Left" Margin="548,218,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
+        <Label x:Name="ticketType_Label" Content="Ticket type" HorizontalAlignment="Left" Margin="548,218,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
         <Rectangle x:Name="r1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="552,244,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>
         <Label x:Name="valueDESC_Label" Content="Value" HorizontalAlignment="Left" Margin="814,218,0,0" VerticalAlignment="Top" Width="202" FontFamily="Calibri" FontSize="16"/>
         <Rectangle x:Name="r3_Rectangle" HorizontalAlignment="Left" Height="2" Margin="818,244,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="198" Fill="#FF66BB6A"/>

@@ -229,7 +229,7 @@ namespace eBank
 
         private void payAndGetTicket(object sender, RoutedEventArgs e)
         {
-            string transferType = "Public transport tickets";
+            string transferType = "Public transport ticket";
             int TransferTypeID = 0;
             int senderID = client.id;
             int recipientID = client.id;
@@ -312,7 +312,7 @@ namespace eBank
                             client.checkingAccount = (double)CheckingAccountValue;
                         }
 
-                        MessageBox.Show("Top-up has been completed.", "eBank");
+                        MessageBox.Show("Payment has been completed.", "eBank");
                         connection.Close();
 
                         getTicketDetails();
@@ -324,7 +324,7 @@ namespace eBank
                     catch (SqlException ex)
                     {
                         transaction.Rollback();
-                        MessageBox.Show("Top-up error.", "eBank");
+                        MessageBox.Show("Payment error.", "eBank");
                     }
                 }
             }
@@ -343,7 +343,7 @@ namespace eBank
             XGraphics gfx = XGraphics.FromPdfPage(page);
 
             XFont logoFont = new XFont("Eras ITC", 16, XFontStyle.Bold);
-            XFont ticketDetailsFont = new XFont("Calibri", 20);
+            XFont publicTransportTicketFont = new XFont("Calibri", 20);
             XFont ticketGeneratedFont = new XFont("Calibri Light", 11);
             XFont detailsFont = new XFont("Calibri", 11);
             XFont titleFont = new XFont("Calibri", 13, XFontStyle.Bold);
@@ -367,7 +367,7 @@ namespace eBank
 
             // Logo and title
             tf.DrawString("eBank", logoFont, XBrushes.Black, new XRect(50, 50, page.Width - 100, 20), XStringFormats.TopLeft);
-            tf.DrawString("Ticket details", ticketDetailsFont, XBrushes.Black, new XRect(50, 70, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Public transport ticket", publicTransportTicketFont, XBrushes.Black, new XRect(50, 70, page.Width - 100, 20), XStringFormats.TopLeft);
             tf.DrawString("Ticket generated: " + currentDate, ticketGeneratedFont, XBrushes.Black, new XRect(50, 95, page.Width - 100, 20), XStringFormats.TopLeft);
             gfx.DrawLine(XPens.Black, new XPoint(50, 110), new XPoint(page.Width - 100, 110));
 

@@ -171,24 +171,13 @@ namespace eBank
             }
         }
 
-        private void goToHighwayTicketsPage(object sender, RoutedEventArgs e)
-        {
-            if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("You cannot make a transfer. Your account or card are inactive.", "eBank");
-                return;
-            }
-        }
-
         private void goToParkingTicketsPage(object sender, RoutedEventArgs e)
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                ServicesParkingTickets parkingTickets = new ServicesParkingTickets(client);
+                parkingTickets.Show();
+                this.Hide();
             }
             else
             {

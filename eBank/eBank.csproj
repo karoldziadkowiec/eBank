@@ -102,6 +102,9 @@
     <Compile Include="ServicesPage.xaml.cs">
       <DependentUpon>ServicesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServicesParkingTickets.xaml.cs">
+      <DependentUpon>ServicesParkingTickets.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServicesPublicTransportTickets.xaml.cs">
       <DependentUpon>ServicesPublicTransportTickets.xaml</DependentUpon>
     </Compile>
@@ -205,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ServicesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServicesParkingTickets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -19,13 +19,13 @@ using System.Windows.Shapes;
 namespace eBank
 {
     /// <summary>
-    /// Logika interakcji dla klasy ServicesGameAndGiftCards.xaml
+    /// Logika interakcji dla klasy ServicesParkingTickets.xaml
     /// </summary>
-    public partial class ServicesGameAndGiftCards : Window
+    public partial class ServicesParkingTickets : Window
     {
         private readonly string connectionString = "Server=.;Database=eBank;Integrated Security=True;";
         Client client;
-        public ServicesGameAndGiftCards(Client _client)
+        public ServicesParkingTickets(Client _client)
         {
             client = _client;
             InitializeComponent();
@@ -36,8 +36,9 @@ namespace eBank
         {
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
             displayCardData();
-            displayCardTypeInComboBox();
-            displayCardValues();
+            displayTicketTimeInComboBox();
+            displayCitiesInComboBox();
+            showTicketValue();
         }
 
         private void displayCardData()
@@ -86,7 +87,7 @@ namespace eBank
             nameAndSurname_Label.Content = fullName;
         }
 
-        private void displayCardTypeInComboBox()
+        private void displayTicketTimeInComboBox()
         {
             try
             {
@@ -94,14 +95,14 @@ namespace eBank
                 {
                     connection.Open();
 
-                    SqlCommand cmdDataBase = new SqlCommand("SELECT name FROM gameAndGiftCards", connection);
+                    SqlCommand cmdDataBase = new SqlCommand("SELECT time FROM parkingTickets", connection);
 
                     using (SqlDataReader reader = cmdDataBase.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string tariffName = reader["name"].ToString();
-                            cardType_ComboBox.Items.Add(tariffName);
+                            string tariffName = reader["time"].ToString();
+                            time_ComboBox.Items.Add(tariffName);
                         }
                     }
 
@@ -114,13 +115,61 @@ namespace eBank
             }
         }
 
-        private void displayCardValues()
+        private void displayCitiesInComboBox()
         {
-            value_ComboBox.Items.Add(20);
-            value_ComboBox.Items.Add(40);
-            value_ComboBox.Items.Add(60);
-            value_ComboBox.Items.Add(100);
-            value_ComboBox.Items.Add(200);
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand cmdDataBase = new SqlCommand("SELECT name FROM cities", connection);
+
+                    using (SqlDataReader reader = cmdDataBase.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string tariffName = reader["name"].ToString();
+                            city_ComboBox.Items.Add(tariffName);
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "eBank");
+            }
+        }
+        private void showTicketValue()
+        {
+            time_ComboBox.SelectionChanged += TicketTimeComboBox_SelectionChanged;
+        }
+
+        private Dictionary<string, string> ticketValues = new Dictionary<string, string>
+            {
+                { "30 min", "3,00" },
+                { "1 h", "6,00" },
+                { "2 h", "12,00" },
+                { "4 h", "20,00" },
+                { "12 h", "60,00" },
+                { "1 day", "80,00" },
+                { "7 days", "150,00" },
+            };
+
+        private void TicketTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedTicketTime = time_ComboBox.SelectedItem as string;
+
+            if (!string.IsNullOrEmpty(selectedTicketTime) && ticketValues.ContainsKey(selectedTicketTime))
+            {
+                value_Label.Content = ticketValues[selectedTicketTime];
+            }
+            else
+            {
+                value_Label.Content = "";
+            }
         }
 
         private void goToHomePage(object sender, RoutedEventArgs e)
@@ -177,20 +226,21 @@ namespace eBank
             }
         }
 
-        private void payAndGetCard(object sender, RoutedEventArgs e)
+        private void payAndGetTicket(object sender, RoutedEventArgs e)
         {
-            string transferType = "Game/gift card";
+            string transferType = "Parking ticket";
             int TransferTypeID = 0;
             int senderID = client.id;
             int recipientID = client.id;
-            string cardType = cardType_ComboBox.Text;
-            string valueString = value_ComboBox.Text;
+            string ticketTime = time_ComboBox.Text;
+            string city = city_ComboBox.Text;
+            string valueString = value_Label.Content.ToString();
             double value;
-            string title = title_TextBox.Text;
-            string description = "Card: " + cardType;
+            string title = city;
+            string description = "Ticket: " + ticketTime + ", " + city;
             string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            if (string.IsNullOrEmpty(cardType) || string.IsNullOrEmpty(valueString) || string.IsNullOrEmpty(title))
+            if (string.IsNullOrEmpty(ticketTime) || string.IsNullOrEmpty(city) || string.IsNullOrEmpty(valueString))
             {
                 MessageBox.Show("Complete the empty fields.", "eBank");
                 return;
@@ -261,10 +311,10 @@ namespace eBank
                             client.checkingAccount = (double)CheckingAccountValue;
                         }
 
-                        MessageBox.Show("Top-up has been completed.", "eBank");
+                        MessageBox.Show("Payment has been completed.", "eBank");
                         connection.Close();
 
-                        getCardDetails();
+                        getTicketDetails();
 
                         HomePage homePage = new HomePage(client);
                         homePage.Show();
@@ -273,7 +323,7 @@ namespace eBank
                     catch (SqlException ex)
                     {
                         transaction.Rollback();
-                        MessageBox.Show("Top-up error.", "eBank");
+                        MessageBox.Show("Payment error.", "eBank");
                     }
                 }
             }
@@ -283,39 +333,41 @@ namespace eBank
             }
         }
 
-        private void getCardDetails()
+        private void getTicketDetails()
         {
-            string pdfFilePath = "Card details.pdf";
+            string pdfFilePath = "Parking ticket details.pdf";
             PdfDocument document = new PdfDocument();
 
             PdfPage page = document.AddPage();
             XGraphics gfx = XGraphics.FromPdfPage(page);
 
             XFont logoFont = new XFont("Eras ITC", 16, XFontStyle.Bold);
-            XFont cardDetailsFont = new XFont("Calibri", 20);
-            XFont cardGeneratedFont = new XFont("Calibri Light", 11);
+            XFont parkingTicketFont = new XFont("Calibri", 20);
+            XFont ticketGeneratedFont = new XFont("Calibri Light", 11);
             XFont detailsFont = new XFont("Calibri", 11);
             XFont titleFont = new XFont("Calibri", 13, XFontStyle.Bold);
             XTextFormatter tf = new XTextFormatter(gfx);
 
             //Data to be saved in a PDF file
             DateTime currentDateTime = DateTime.Now;
-            string currentDate = currentDateTime.ToString("yyyy-MM-dd");
-            DateTime futureDateTime = currentDateTime.AddDays(30);
-            string futureDate = futureDateTime.ToString("yyyy-MM-dd");
+            string currentDate = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
             string senderCardNumber = client.cardNumber;
             string senderFullName = client.surname + " " + client.name;
             string senderResidentialAddress = client.residentialAddress;
 
-            string cardType = cardType_ComboBox.Text.ToString();
-            string value = value_ComboBox.Text.ToString();
-            string generatedCardNumber = generateRandomCardNumber();
+            string ticketTime = time_ComboBox.Text.ToString();
+            string city = city_ComboBox.Text.ToString();
+            string valueString = value_Label.Content.ToString();
+            double value;
+            if (!Double.TryParse(valueString, out value))
+            {
+            }
 
             // Logo and title
             tf.DrawString("eBank", logoFont, XBrushes.Black, new XRect(50, 50, page.Width - 100, 20), XStringFormats.TopLeft);
-            tf.DrawString("Card details", cardDetailsFont, XBrushes.Black, new XRect(50, 70, page.Width - 100, 20), XStringFormats.TopLeft);
-            tf.DrawString("Card generated: " + currentDate, cardGeneratedFont, XBrushes.Black, new XRect(50, 95, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Parking ticket", parkingTicketFont, XBrushes.Black, new XRect(50, 70, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Ticket generated: " + currentDate, ticketGeneratedFont, XBrushes.Black, new XRect(50, 95, page.Width - 100, 20), XStringFormats.TopLeft);
             gfx.DrawLine(XPens.Black, new XPoint(50, 110), new XPoint(page.Width - 100, 110));
 
             // Payer details
@@ -326,31 +378,16 @@ namespace eBank
             gfx.DrawLine(XPens.Black, new XPoint(50, 200), new XPoint(page.Width - 100, 200));
 
             // Recipient's details
-            tf.DrawString("Card details:", titleFont, XBrushes.Black, new XRect(50, 210, page.Width - 100, 20), XStringFormats.TopLeft);
-            tf.DrawString("Generated card number: " + generatedCardNumber, detailsFont, XBrushes.Black, new XRect(50, 230, page.Width - 100, 20), XStringFormats.TopLeft);
-            tf.DrawString("Type: " + cardType, detailsFont, XBrushes.Black, new XRect(50, 250, page.Width - 100, 20), XStringFormats.TopLeft);
-            tf.DrawString("Value: " + value + " PLN", detailsFont, XBrushes.Black, new XRect(50, 270, page.Width - 100, 20), XStringFormats.TopLeft);
-            tf.DrawString("Active until: " + futureDateTime, detailsFont, XBrushes.Black, new XRect(50, 290, page.Width - 100, 20), XStringFormats.TopLeft);
-            gfx.DrawLine(XPens.Black, new XPoint(50, 310), new XPoint(page.Width - 100, 310));
+            tf.DrawString("Ticket details:", titleFont, XBrushes.Black, new XRect(50, 210, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Time: " + ticketTime, detailsFont, XBrushes.Black, new XRect(50, 230, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("Value: " + value + " PLN", detailsFont, XBrushes.Black, new XRect(50, 250, page.Width - 100, 20), XStringFormats.TopLeft);
+            tf.DrawString("City: " + city, detailsFont, XBrushes.Black, new XRect(50, 270, page.Width - 100, 20), XStringFormats.TopLeft);
+            gfx.DrawLine(XPens.Black, new XPoint(50, 290), new XPoint(page.Width - 100, 290));
 
             document.Save(pdfFilePath);
             System.Diagnostics.Process.Start(pdfFilePath);
         }
 
-        public static string generateRandomCardNumber()
-        {
-            Random random = new Random();
-            StringBuilder cardNumberBuilder = new StringBuilder();
-
-            for (int i = 0; i < 12; i++)
-            {
-                int randomNumber = random.Next(10);
-                cardNumberBuilder.Append(randomNumber);
-            }
-
-            string generatedCardNumber = cardNumberBuilder.ToString();
-            return generatedCardNumber;
-        }
         private void backToServicesPage(object sender, RoutedEventArgs e)
         {
             ServicesPage servicesPage = new ServicesPage(client);
