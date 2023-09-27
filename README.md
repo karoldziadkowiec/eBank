@@ -3,7 +3,6 @@
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 To-do list:
-- Transfers: currency transfer
 - Services: expense analysis, game top-ups and gift cards, transport tickets, motorway tickets, parking tickets
 - ADMIN PANEL
 
