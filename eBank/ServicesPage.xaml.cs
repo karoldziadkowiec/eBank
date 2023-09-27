@@ -121,9 +121,11 @@ namespace eBank
             }
         }
 
-        private void goToExpenseAnalysisPage(object sender, RoutedEventArgs e)
+        private void goToAccountAnalysisPage(object sender, RoutedEventArgs e)
         {
-
+            ServicesAccountAnalysis accountAnalysis = new ServicesAccountAnalysis(client);
+            accountAnalysis.Show();
+            this.Hide();
         }
 
         private void goToTransferRequestPage(object sender, RoutedEventArgs e)

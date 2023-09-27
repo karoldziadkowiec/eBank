@@ -75,7 +75,7 @@
         <Image HorizontalAlignment="Left" Height="30" Margin="47,582,0,0" VerticalAlignment="Top" Width="30" Source="/logout.jpg"/>
         <Rectangle HorizontalAlignment="Left" Height="54" Margin="213,279,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="21" Fill="#FF66BB6A"/>
         <Label x:Name="date_Label" Content="date" HorizontalAlignment="Left" Margin="951,20,0,0" VerticalAlignment="Top" Width="139" Height="38" FontFamily="Calibri" FontSize="22" Foreground="#FF2E2E2E"/>
-        <Label x:Name="currencyTransfer_Label" Content="Currency transfer" HorizontalAlignment="Left" Margin="338,74,0,0" VerticalAlignment="Top" Width="271" FontFamily="Calibri" FontSize="35" FontWeight="Bold"/>
+        <Label x:Name="currencyTransfer_Label" Content="Currency transfer" HorizontalAlignment="Left" Margin="338,75,0,0" VerticalAlignment="Top" Width="271" FontFamily="Calibri" FontSize="35" FontWeight="Bold"/>
         <Rectangle x:Name="r0_Rectangle" HorizontalAlignment="Left" Height="14" Margin="314,95,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="32" Fill="#FF66BB6A" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>

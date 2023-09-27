@@ -75,7 +75,7 @@
         <Image HorizontalAlignment="Left" Height="30" Margin="47,582,0,0" VerticalAlignment="Top" Width="30" Source="/logout.jpg"/>
         <Rectangle HorizontalAlignment="Left" Height="54" Margin="213,345,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="21" Fill="#FF66BB6A"/>
         <Label x:Name="date_Label" Content="date" HorizontalAlignment="Left" Margin="951,20,0,0" VerticalAlignment="Top" Width="139" Height="38" FontFamily="Calibri" FontSize="22" Foreground="#FF2E2E2E"/>
-        <Label x:Name="services_Label" Content="Services" HorizontalAlignment="Left" Margin="338,74,0,0" VerticalAlignment="Top" Width="158" FontFamily="Calibri" FontSize="35"/>
+        <Label x:Name="services_Label" Content="Services" HorizontalAlignment="Left" Margin="338,75,0,0" VerticalAlignment="Top" Width="158" FontFamily="Calibri" FontSize="35" FontWeight="Bold"/>
         <Rectangle x:Name="r0_Rectangle" HorizontalAlignment="Left" Height="14" Margin="314,95,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="32" Fill="#FF66BB6A" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -97,7 +97,7 @@
             </Button.Background>
         </Button>
         <Rectangle x:Name="separation1_Rectangle" HorizontalAlignment="Left" Height="2" Margin="593,223,0,0" Stroke="#FF66BB6A" VerticalAlignment="Top" Width="154" Fill="#FF66BB6A"/>
-        <Button x:Name="expenseAnalysis_Button" Content="Expense analysis" HorizontalAlignment="Left" Margin="517,235,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToExpenseAnalysisPage" TabIndex="1">
+        <Button x:Name="accoountAnalysis_Button" Content="Account analysis" HorizontalAlignment="Left" Margin="517,235,0,0" VerticalAlignment="Top" Height="42" Width="306" FontFamily="Calibri" FontSize="20" BorderBrush="#FFC6C6C6" Click="goToAccountAnalysisPage" TabIndex="1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.851"/>

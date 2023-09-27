@@ -144,7 +144,7 @@ namespace eBank
             string recipientTelephoneNumber = telephoneNumber_TextBox.Text;
             double value;
             string title = title_TextBox.Text;
-            string description = RecipientsNameAndAddress_TextBox.Text;
+            string description = "Telephone number: " + recipientTelephoneNumber + " - " + RecipientsNameAndAddress_TextBox.Text;
             string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
             if (string.IsNullOrEmpty(recipientTelephoneNumber) || string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description) || string.IsNullOrEmpty(value_TextBox.Text))

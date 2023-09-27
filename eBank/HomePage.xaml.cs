@@ -157,7 +157,7 @@ namespace eBank
                     // Expenses
                     command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID = @clientID AND recipientID != @clientID) OR " +
                                           "(senderID = @clientID AND recipientID = @clientID AND type = @withdrawID) OR " +
-                                          "(senderID = @clientID AND recipientID = @clientID AND type != @ownTransferID))";
+                                          "(senderID = @clientID AND recipientID = @clientID AND (type != @ownTransferID AND type != @depositID)))";
                     command.Parameters.AddWithValue("@withdrawID", withdrawID);
                     command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
 
