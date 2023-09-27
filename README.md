@@ -14,8 +14,7 @@ Databases:
 - phoneTariffs: id(int), name(varchar)
 - currencies: id(int), name(varchar), divisor(float)
 - taxes: id(int), name(varchar)
-- games: id, name, value
-- giftCards: id, name, value
-- transportTickets: id, name, type, time, value
-- highwayTickets: id, name, type, value
-- parkingTickets: id, name, time, value
+- gameAndGiftCards: id(int), name(varchar)
+- transportTickets: id(int), name(varchar)
+- cities: id(int), name(varchar)
+- parkingTickets: id(int), name(varchar)
