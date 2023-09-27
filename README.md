@@ -3,7 +3,7 @@
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 To-do list:
-- Services: expense analysis, game top-ups and gift cards, transport tickets, motorway tickets, parking tickets
+- Services: expense analysis
 - ADMIN PANEL
 
 Databases:
@@ -14,8 +14,7 @@ Databases:
 - phoneTariffs: id(int), name(varchar)
 - currencies: id(int), name(varchar), divisor(float)
 - taxes: id(int), name(varchar)
-- games: id, name, value
-- giftCards: id, name, value
-- transportTickets: id, name, type, time, value
-- highwayTickets: id, name, type, value
-- parkingTickets: id, name, time, value
+- gameAndGiftCards: id(int), name(varchar)
+- transportTickets: id(int), name(varchar)
+- cities: id(int), name(varchar)
+- parkingTickets: id(int), name(varchar)
