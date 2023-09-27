@@ -141,11 +141,13 @@ namespace eBank
             }
         }
 
-        private void goToGamesAndGiftCardsPage(object sender, RoutedEventArgs e)
+        private void goToGameAndGiftCardsPage(object sender, RoutedEventArgs e)
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                ServicesGameAndGiftCards gameAndGiftCards = new ServicesGameAndGiftCards(client);
+                gameAndGiftCards.Show();
+                this.Hide();
             }
             else
             {
@@ -158,7 +160,9 @@ namespace eBank
         {
             if (isAccountActive(client.activity) && isCardActive(client.cardActivity))
             {
-
+                ServicesPublicTransportTickets publicTransportTickets = new ServicesPublicTransportTickets(client);
+                publicTransportTickets.Show();
+                this.Hide();
             }
             else
             {

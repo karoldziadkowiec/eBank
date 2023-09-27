@@ -246,7 +246,6 @@ namespace eBank
             System.Diagnostics.Process.Start(pdfFilePath);
         }
 
-
         private void backToHistoryPage(object sender, RoutedEventArgs e)
         {
             HistoryPage historyPage = new HistoryPage(client);

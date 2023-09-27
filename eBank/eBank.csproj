@@ -93,11 +93,17 @@
     <Compile Include="RegisterPage3.xaml.cs">
       <DependentUpon>RegisterPage3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServicesGameAndGiftCards.xaml.cs">
+      <DependentUpon>ServicesGameAndGiftCards.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServicesOrderCard.xaml.cs">
       <DependentUpon>ServicesOrderCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServicesPage.xaml.cs">
       <DependentUpon>ServicesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesPublicTransportTickets.xaml.cs">
+      <DependentUpon>ServicesPublicTransportTickets.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServicesTransferRequest.xaml.cs">
       <DependentUpon>ServicesTransferRequest.xaml</DependentUpon>
@@ -190,11 +196,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ServicesGameAndGiftCards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ServicesOrderCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ServicesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServicesPublicTransportTickets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
