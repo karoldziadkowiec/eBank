@@ -2,9 +2,7 @@
 
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
-To-do list:
-- Services: expense analysis
-- ADMIN PANEL
+
 
 Databases:
 - clients: id(int), accountType(varchar), peselNumber(varchar), name(varchar), surname(varchar), login(varchar), password(varchar), checkingAccount(float), savingsAccount(float), activity(int), gender(varchar), birthday(datetime), idCardNumber(varchar), placeOfBirth(varchar), residentialAddress(varchar), correspondenceAddress(varchar), email(varchar), telNumber(varchar), passwordReminder(varchar), withdrawalLimit(float), transactionLimit(float), creationDate(datetime), cardNumber(varchar), cardActivity(int), cardColor(varchar), cardStartDate(datetime), cardEndDate(datetime)
