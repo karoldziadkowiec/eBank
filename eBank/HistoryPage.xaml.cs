@@ -36,6 +36,7 @@ namespace eBank
         private void displayData()
         {
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
+            numberOfDays_ComboBox.Items.Add(7);
             numberOfDays_ComboBox.Items.Add(30);
             numberOfDays_ComboBox.Items.Add(90);
             numberOfDays_ComboBox.Items.Add(180);

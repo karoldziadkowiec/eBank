@@ -1,6 +1,7 @@
 ﻿using PdfSharp.Charting;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,156 @@ namespace eBank
         private void displayData()
         {
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
+            numberOfDays_ComboBox.Items.Add(3);
+            numberOfDays_ComboBox.Items.Add(7);
+            numberOfDays_ComboBox.Items.Add(30);
+            numberOfDays_ComboBox.Items.Add(90);
+            numberOfDays_ComboBox.Items.Add(180);
+            numberOfDays_ComboBox.Items.Add(365);
+            numberOfDays_ComboBox.SelectedItem = 30;
+            displayCardData();
+            calculateMonthlyIncomeAndExpenses();
+            calculateOverallIncomeAndExpenses();
+        }
+
+        private void displayCardData()
+        {
+            string currency = " PLN";
+            double overallValue = client.checkingAccount + client.savingsAccount;
+
+            if (client.cardActivity == 0)
+            {
+                valueOfCheckingAccount_Label.Content = "-" + currency;
+                valueOfSavingsAccount_Label.Content = "-" + currency;
+                overallValue_Label.Content = "-" + currency;
+            }
+            else if (client.cardActivity == 1)
+            {
+                valueOfCheckingAccount_Label.Content = client.checkingAccount.ToString() + currency;
+                valueOfSavingsAccount_Label.Content = client.savingsAccount.ToString() + currency;
+                overallValue_Label.Content = overallValue.ToString() + currency;
+            }
+        }
+
+        private void calculateMonthlyIncomeAndExpenses()
+        {
+            int clientID = client.id;
+            int depositID = 1;
+            int withdrawID = 2;
+            int ownTransferID = 4;
+            DateTime thirtyDaysAgo = DateTime.Now.AddDays(-30);
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+
+                try
+                {
+                    connection.Open();
+
+                    // Income 
+                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID != @clientID AND recipientID = @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @depositID)) " +
+                                          "AND [transactions].[date] >= @thirtyDaysAgo";
+                    command.Parameters.AddWithValue("@clientID", clientID);
+                    command.Parameters.AddWithValue("@depositID", depositID);
+                    command.Parameters.AddWithValue("@thirtyDaysAgo", thirtyDaysAgo);
+
+                    object incomeResult = command.ExecuteScalar();
+                    if (incomeResult != DBNull.Value)
+                    {
+                        decimal income = Convert.ToDecimal(incomeResult);
+                        income2_Label.Content = "+" + income.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        income2_Label.Content = "0,00 PLN";
+                    }
+
+                    // Expenses
+                    command.CommandText = "SELECT SUM(value) FROM transactions " +
+                                          "WHERE ((senderID = @clientID AND recipientID != @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @withdrawID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND (type != @ownTransferID AND type != @depositID))) " +
+                                          "AND [transactions].[date] >= @thirtyDaysAgo";
+                    command.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
+
+                    object expensesResult = command.ExecuteScalar();
+                    if (expensesResult != DBNull.Value)
+                    {
+                        decimal expenses = Convert.ToDecimal(expensesResult);
+                        expenses2_Label.Content = "-" + expenses.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        expenses2_Label.Content = "0,00 PLN";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show("Error: " + ex.Message, "eBank");
+                }
+            }
+        }
+
+        private void calculateOverallIncomeAndExpenses()
+        {
+            int clientID = client.id;
+            int depositID = 1;
+            int withdrawID = 2;
+            int ownTransferID = 4;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+
+                try
+                {
+                    connection.Open();
+
+                    // Income 
+                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID != @clientID AND recipientID = @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @depositID))";
+                    command.Parameters.AddWithValue("@clientID", clientID);
+                    command.Parameters.AddWithValue("@depositID", depositID);
+
+                    object incomeResult = command.ExecuteScalar();
+                    if (incomeResult != DBNull.Value)
+                    {
+                        decimal income = Convert.ToDecimal(incomeResult);
+                        income_Label.Content = "+" + income.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        income_Label.Content = "0,00 PLN";
+                    }
+
+                    // Expenses
+                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID = @clientID AND recipientID != @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @withdrawID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND (type != @ownTransferID AND type != @depositID)))";
+                    command.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
+
+                    object expensesResult = command.ExecuteScalar();
+                    if (expensesResult != DBNull.Value)
+                    {
+                        decimal expenses = Convert.ToDecimal(expensesResult);
+                        expenses_Label.Content = "-" + expenses.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        expenses_Label.Content = "0,00 PLN";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show("Error: " + ex.Message, "eBank");
+                }
+            }
         }
 
         private void goToHomePage(object sender, RoutedEventArgs e)
@@ -85,6 +236,74 @@ namespace eBank
                 MainWindow loginPage = new MainWindow();
                 loginPage.Show();
                 this.Hide();
+            }
+        }
+
+        private void filterTransations(object sender, RoutedEventArgs e)
+        {
+            int clientID = client.id;
+            int depositID = 1;
+            int withdrawID = 2;
+            int ownTransferID = 4;
+            if (int.TryParse(numberOfDays_ComboBox.Text, out int numberOfDays))
+            {
+            }
+            DateTime xDaysAgo = DateTime.Now.AddDays(-numberOfDays);
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+
+                try
+                {
+                    connection.Open();
+
+                    // Income 
+                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID != @clientID AND recipientID = @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @depositID)) " +
+                                          "AND [transactions].[date] >= @xDaysAgo";
+                    command.Parameters.AddWithValue("@clientID", clientID);
+                    command.Parameters.AddWithValue("@depositID", depositID);
+                    command.Parameters.AddWithValue("@xDaysAgo", xDaysAgo);
+
+                    object incomeResult = command.ExecuteScalar();
+                    if (incomeResult != DBNull.Value)
+                    {
+                        decimal income = Convert.ToDecimal(incomeResult);
+                        income2_Label.Content = "+" + income.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        income2_Label.Content = "0,00 PLN";
+                    }
+
+                    // Expenses
+                    command.CommandText = "SELECT SUM(value) FROM transactions " +
+                                          "WHERE ((senderID = @clientID AND recipientID != @clientID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND type = @withdrawID) OR " +
+                                          "(senderID = @clientID AND recipientID = @clientID AND (type != @ownTransferID AND type != @depositID))) " +
+                                          "AND [transactions].[date] >= @xDaysAgo";
+                    command.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
+
+                    object expensesResult = command.ExecuteScalar();
+                    if (expensesResult != DBNull.Value)
+                    {
+                        decimal expenses = Convert.ToDecimal(expensesResult);
+                        expenses2_Label.Content = "-" + expenses.ToString() + " PLN";
+                    }
+                    else
+                    {
+                        expenses2_Label.Content = "0,00 PLN";
+                    }
+
+                    InvalidateVisual();
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show("Error: " + ex.Message, "eBank");
+                }
             }
         }
     }

@@ -35,8 +35,9 @@ namespace eBank
         {
             date_Label.Content = DateTime.Now.ToString("yyyy-MM-dd");
             name_Label.Content = client.name;
+            month_Label.Content = DateTime.Now.ToString("MMMM");
             displayCardsData();
-            calculateIncomeAndExpenses();
+            calculateMonthlyExpenses();
             displayTransactions();
         }
 
@@ -121,7 +122,7 @@ namespace eBank
             }
         }
 
-        private void calculateIncomeAndExpenses()
+        private void calculateMonthlyExpenses()
         {
             int clientID = client.id;
             int depositID = 1;
@@ -137,28 +138,14 @@ namespace eBank
                 {
                     connection.Open();
 
-                    // Income 
-                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID != @clientID AND recipientID = @clientID) OR " +
-                                          "(senderID = @clientID AND recipientID = @clientID AND type = @depositID))";
-                    command.Parameters.AddWithValue("@clientID", clientID);
-                    command.Parameters.AddWithValue("@depositID", depositID);
-
-                    object incomeResult = command.ExecuteScalar();
-                    if (incomeResult != DBNull.Value)
-                    {
-                        decimal income = Convert.ToDecimal(incomeResult);
-                        income_Label.Content = "+" + income.ToString() + " PLN";
-                    }
-                    else
-                    {
-                        income_Label.Content = "0,00 PLN";
-                    }
-
-                    // Expenses
-                    command.CommandText = "SELECT SUM(value) FROM transactions WHERE ((senderID = @clientID AND recipientID != @clientID) OR " +
+                    command.CommandText = "SELECT SUM(value) FROM transactions " +
+                                          "WHERE ((senderID = @clientID AND recipientID != @clientID) OR " +
                                           "(senderID = @clientID AND recipientID = @clientID AND type = @withdrawID) OR " +
-                                          "(senderID = @clientID AND recipientID = @clientID AND (type != @ownTransferID AND type != @depositID)))";
+                                          "(senderID = @clientID AND recipientID = @clientID AND (type != @ownTransferID AND type != @depositID))) " +
+                                          "AND DATEPART(MONTH, date) = DATEPART(MONTH, GETDATE())";
+                    command.Parameters.AddWithValue("@clientID", clientID);
                     command.Parameters.AddWithValue("@withdrawID", withdrawID);
+                    command.Parameters.AddWithValue("@depositID", depositID);
                     command.Parameters.AddWithValue("@ownTransferID", ownTransferID);
 
                     object expensesResult = command.ExecuteScalar();
