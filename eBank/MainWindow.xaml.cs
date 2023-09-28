@@ -128,16 +128,9 @@ namespace eBank
                                     passwordReminder, withdrawalLimit, transactionLimit, creationDateString, 
                                     cardNumber, cardActivity, cardColor, ccardStartDateString, cardEndDateString);
 
-                                if (client.accountType == "Client") {
-                                    HomePage homePage = new HomePage(client);
-                                    homePage.Show();
-                                    this.Hide();
-                                }
-                                else {
-                                    AdminHomePage adminHomePage = new AdminHomePage(client);
-                                    adminHomePage.Show();
-                                    this.Hide();
-                                }
+                                HomePage homePage = new HomePage(client);
+                                homePage.Show();
+                                this.Hide();
                             }
                         }
                         else

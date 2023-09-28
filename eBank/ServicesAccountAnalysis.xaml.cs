@@ -27,7 +27,36 @@ namespace eBank
         {
             client = _client;
             InitializeComponent();
+            displayAdminPanel();
             displayData();
+        }
+
+        private void displayAdminPanel()
+        {
+            if (client.accountType == "Admin")
+            {
+                adminPanel_Rectangle.Visibility = Visibility.Visible;
+                clients_Button.Visibility = Visibility.Visible;
+                clients_Image.Visibility = Visibility.Visible;
+                sep1_Rectangle.Visibility = Visibility.Visible;
+                transactions_Button.Visibility = Visibility.Visible;
+                transactions_Image.Visibility = Visibility.Visible;
+                sep2_Rectangle.Visibility = Visibility.Visible;
+                permissions_Button.Visibility = Visibility.Visible;
+                permissions_Image.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                adminPanel_Rectangle.Visibility = Visibility.Hidden;
+                clients_Button.Visibility = Visibility.Hidden;
+                clients_Image.Visibility = Visibility.Hidden;
+                sep1_Rectangle.Visibility = Visibility.Hidden;
+                transactions_Button.Visibility = Visibility.Hidden;
+                transactions_Image.Visibility = Visibility.Hidden;
+                sep2_Rectangle.Visibility = Visibility.Hidden;
+                permissions_Button.Visibility = Visibility.Hidden;
+                permissions_Image.Visibility = Visibility.Hidden;
+            }
         }
 
         private void displayData()
@@ -40,6 +69,7 @@ namespace eBank
             numberOfDays_ComboBox.Items.Add(180);
             numberOfDays_ComboBox.Items.Add(365);
             numberOfDays_ComboBox.SelectedItem = 30;
+            accountCreated_Label.Content = "Account created: " + client.creationDate;
             displayCardData();
             calculateMonthlyIncomeAndExpenses();
             calculateOverallIncomeAndExpenses();
@@ -239,6 +269,27 @@ namespace eBank
             }
         }
 
+        private void goToClientsPage(object sender, RoutedEventArgs e)
+        {
+            AdminClientsPage clientsPage = new AdminClientsPage(client);
+            clientsPage.Show();
+            this.Hide();
+        }
+
+        private void goToTransactionsPage(object sender, RoutedEventArgs e)
+        {
+            AdminTransactionsPage transactionsPage = new AdminTransactionsPage(client);
+            transactionsPage.Show();
+            this.Hide();
+        }
+
+        private void goToPermissionsPage(object sender, RoutedEventArgs e)
+        {
+            AdminPermissionsPage permissionsPage = new AdminPermissionsPage(client);
+            permissionsPage.Show();
+            this.Hide();
+        }
+
         private void filterTransations(object sender, RoutedEventArgs e)
         {
             int clientID = client.id;
@@ -305,6 +356,13 @@ namespace eBank
                     System.Windows.MessageBox.Show("Error: " + ex.Message, "eBank");
                 }
             }
+        }
+
+        private void backToServicesPage(object sender, RoutedEventArgs e)
+        {
+            ServicesPage servicesPage = new ServicesPage(client);
+            servicesPage.Show();
+            this.Hide();
         }
     }
 }
