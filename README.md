@@ -6,8 +6,8 @@ Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL 
 Features of the project: registration, login, password reminder function, viewing account funds, viewing transactions with filtering, function of downloading the list of transactions in PDF, function of downloading details of the selected transaction in PDF, selection and execution of transfers and services, setting transfer and withdrawal limits, blocking/activating the account and card, reviewing profile data and editing, deleting the account, logging out.
 
 
-Available transfers:
-- Deposit, Withdraw, Regular transfer, Own transfer, BLIK transfer, Phone top-up, Currency transfer, Tax transfer
+-Available transfers:
+Deposit, Withdraw, Regular transfer, Own transfer, BLIK transfer, Phone top-up, Currency transfer, Tax transfer
  
 Available services:
 - Creating and ordering a card (generating your own card number)
