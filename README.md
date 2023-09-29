@@ -26,6 +26,7 @@ Available transfers:
 - Currency transfer
 - Tax transfer
 
+Below are only selected transfers:
 ![Transfers panel](https://github.com/karoldziadkowiec/eBank/blob/master/photos/6.png)
 
 ![Deposit money](https://github.com/karoldziadkowiec/eBank/blob/master/photos/7.png)
@@ -39,12 +40,13 @@ Available transfers:
 Available services: 
 
 - Creating and ordering a card (generating your own card number)
-- Account analysis (review of account funds, income, expenses
-- Transfer request (accepting/refusing transfers, sending requests
+- Account analysis (review of account funds, income, expenses)
+- Transfer request (accepting/refusing transfers, sending requests)
 - Game top-ups and gift cards (after payment, the card is downloaded in PDF)
 - Public transport tickets (after paying, the ticket is downloaded in PDF)
 - Parking tickets (after paying, you download the ticket in PDF)
 
+Below are only selected services:
 ![Services panel](https://github.com/karoldziadkowiec/eBank/blob/master/photos/11.png)
 
 ![Order card](https://github.com/karoldziadkowiec/eBank/blob/master/photos/12.png)
