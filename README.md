@@ -3,16 +3,12 @@ eBank is a modern banking application that allows you to effectively manage your
 
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
-Features of the project: registration, login, password reminder function, viewing account funds, viewing transactions with filtering, function of downloading the list of transactions in PDF, function of downloading details of the selected transaction in PDF, selection and execution of transfers and services, setting transfer and withdrawal limits, blocking/activating the account and card, reviewing profile data and editing, deleting the account, logging out.
+Features of the project: registration, login, password reminder function, viewing account funds, viewing transactions with filtering, function of downloading the list of transactions and details of the selected transaction in PDF, selection and execution of transfers and services, setting transfer and withdrawal limits, blocking/activating the account and card, reviewing profile data and editing, deleting the account, logging out.
 
 
-- Available transfers:
-
-Deposit, Withdraw, Regular transfer, Own transfer, BLIK transfer, Phone top-up, Currency transfer, Tax transfer
+- Available transfers: Deposit, Withdraw, Regular transfer, Own transfer, BLIK transfer, Phone top-up, Currency transfer, Tax transfer
  
-- Available services:
-
-Creating and ordering a card (generating your own card number), Account analysis (review of account funds, income, expenses, Transfer request (accepting/refusing transfers, sending requests, Game top-ups and gift cards (after payment, the card is downloaded in PDF), Public transport tickets (after paying, the ticket is downloaded in PDF), Parking tickets (after paying, you download the ticket in PDF)
+- Available services: Creating and ordering a card (generating your own card number), Account analysis (review of account funds, income, expenses, Transfer request (accepting/refusing transfers, sending requests, Game top-ups and gift cards (after payment, the card is downloaded in PDF), Public transport tickets (after paying, the ticket is downloaded in PDF), Parking tickets (after paying, you download the ticket in PDF)
 
 ![Login page](https://github.com/karoldziadkowiec/eBank/blob/master/photos/1.png)
 
