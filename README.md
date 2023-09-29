@@ -53,4 +53,5 @@ Creating and ordering a card (generating your own card number), Account analysis
 ![Edit account data](https://github.com/karoldziadkowiec/eBank/blob/master/photos/19.png)
 
 Database tables created:
+
 ![Databases](https://github.com/karoldziadkowiec/eBank/blob/master/photos/db.png)
