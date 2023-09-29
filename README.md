@@ -13,9 +13,8 @@ Available transfers:
 - Phone top-up
 - Currency transfer
 - Tax transfer,
-- 
+ 
 Available services:
-
 - Creating and ordering a card (generating your own card number)
 - Account analysis (review of account funds, income, expenses
 - Transfer request (accepting/refusing transfers, sending requests
