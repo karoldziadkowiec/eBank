@@ -4,6 +4,7 @@ eBank is a modern banking application that allows you to effectively manage your
 Technologies used in the project: C#, .NET Framework (WPF), XAML, Microsoft SQL Server.
 
 Features of the project: registration, login, password reminder function, viewing account funds, viewing transactions with filtering, function of downloading the list of transactions in PDF, function of downloading details of the selected transaction in PDF, 
+
 Available transfers:
 - Deposit
 - Withdraw
