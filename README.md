@@ -26,9 +26,9 @@ Available transfers:
 - Currency transfer
 - Tax transfer
 
-Below are only selected transfers:
 ![Transfers panel](https://github.com/karoldziadkowiec/eBank/blob/master/photos/6.png)
 
+Below are only selected transfers:
 ![Deposit money](https://github.com/karoldziadkowiec/eBank/blob/master/photos/7.png)
 
 ![Regular transfer](https://github.com/karoldziadkowiec/eBank/blob/master/photos/8.png)
@@ -46,9 +46,9 @@ Available services:
 - Public transport tickets (after paying, the ticket is downloaded in PDF)
 - Parking tickets (after paying, you download the ticket in PDF)
 
-Below are only selected services:
 ![Services panel](https://github.com/karoldziadkowiec/eBank/blob/master/photos/11.png)
 
+Below are only selected services:
 ![Order card](https://github.com/karoldziadkowiec/eBank/blob/master/photos/12.png)
 
 ![Account analysis](https://github.com/karoldziadkowiec/eBank/blob/master/photos/13.png)
