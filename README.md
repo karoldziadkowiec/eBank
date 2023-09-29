@@ -7,14 +7,7 @@ Features of the project: registration, login, password reminder function, viewin
 
 
 Available transfers:
-- Deposit
-- Withdraw
-- Regular transfer
-- Own transfer
-- BLIK transfer
-- Phone top-up
-- Currency transfer
-- Tax transfer,
+- Deposit, Withdraw, Regular transfer, Own transfer, BLIK transfer, Phone top-up, Currency transfer, Tax transfer
  
 Available services:
 - Creating and ordering a card (generating your own card number)
