@@ -1,5 +1,5 @@
 # eBank
-eBank is a modern banking application that allows you to effectively manage your finances and bank account. This project is a window application that significantly improves the processes related to transferring funds. Application allows access to various types of transfers, services and transaction history. The intuitive graphical interface helps you use the application more efficiently. The application has two main forms of use: client's side and administrator's side (in development phase).
+eBank is a modern banking application that allows you to effectively manage your finances and bank account. This project is a window application that significantly improves the processes related to transferring funds. Application allows access to various types of transfers, services and transaction history. The intuitive graphical interface helps you use the application more efficiently. The application has two main forms of use: client's side and administrator's side (in development phase). App has simple unit tests.
 
 Technologies used in the project: C#, .NET Framework (WPF), Microsoft SQL Server, XAML.
 
