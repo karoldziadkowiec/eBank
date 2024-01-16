@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBank", "eBank\eBank.csproj", "{F5975190-1DC2-46FE-901F-9E5E4335E429}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBankTests", "eBankTests\eBankTests.csproj", "{10B2FDBD-E37D-4B31-818D-2FFE229A2D0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F5975190-1DC2-46FE-901F-9E5E4335E429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5975190-1DC2-46FE-901F-9E5E4335E429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5975190-1DC2-46FE-901F-9E5E4335E429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B2FDBD-E37D-4B31-818D-2FFE229A2D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B2FDBD-E37D-4B31-818D-2FFE229A2D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B2FDBD-E37D-4B31-818D-2FFE229A2D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B2FDBD-E37D-4B31-818D-2FFE229A2D0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

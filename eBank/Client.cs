@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,6 +36,11 @@ namespace eBank
         public string cardColor { get; set; }
         public string cardStartDate { get; set; }
         public string cardEndDate { get; set; }
+
+        public Client()
+        {
+
+        }
 
         public Client(int ID, string ACCOUNTTYPE, string PESELNUMBER, string NAME, string SURNAME,
               string LOGIN, string PASSWORD, double CHECKINGACCOUNT, double SAVINGSACCOUNT,
@@ -72,6 +78,5 @@ namespace eBank
             cardStartDate = CARDSTARTDATE;
             cardEndDate = CARDENDDATE;
         }
-
     }
 }

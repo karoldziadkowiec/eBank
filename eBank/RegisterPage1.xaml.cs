@@ -135,6 +135,5 @@ namespace eBank
             loginPage.Show();
             this.Hide();
         }
-
     }
 }
