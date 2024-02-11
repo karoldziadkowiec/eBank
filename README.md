@@ -4,6 +4,7 @@ eBank is a modern banking application that allows you to effectively manage your
 Technologies used in the project: 
 - **.NET Framework (WPF)**
 - **C#**
+- **ADO.NET**
 - **Microsoft SQL Server**
 - **XAML**
 
