@@ -11,7 +11,7 @@ eBank is a modern banking application that allows bank users to effectively mana
 - **XAML**
 
 ## Features of the project
-Registration, login, password reminder function, viewing account funds, viewing transactions with filtering, function of downloading the list of transactions and details of the selected transaction in PDF, selection and execution of transfers and services, setting transfer and withdrawal limits, blocking/activating the account and card, reviewing profile data and editing, deleting the account, logging out.
+Registration, login, password reminder function, displaying account funds, displaying transactions with filtering, function of printing the list of transactions and details of the selected transaction in PDF, selection and execution of transfers and services, setting transfer and withdrawal limits, blocking/activating the account and card, reviewing profile data and editing, deleting the account, logging out.
 
 ## Images
 ![Login page](https://github.com/karoldziadkowiec/eBank/blob/master/photos/1.png)
